@@ -1,0 +1,122 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Erfassen von Geodaten im Feld mit qfield und qfield Cloud",
+    "section": "",
+    "text": "Abstract\nWelcome",
+    "crumbs": [
+      "Abstract"
+    ]
+  },
+  {
+    "objectID": "installation.html",
+    "href": "installation.html",
+    "title": "1  System aufsetzen",
+    "section": "",
+    "text": "1.1 Schritt 1: qgis (Desktop) installieren\n(einmalig notwendig)\nDie nachfolgenden Schritte müssen einmalig durchgeführt werden.\nUm Daten in qfield erfassen zu können, braucht es ein “Projekt”. Dieses Projekt wird mit qgis auf dem Desktop erstellt. qgis kann von der qgis Website heruntergelanden werden: https://qgis.org/download/.\nWir empfehlen, die Menüsprache auf Englisch umzustellen (siehe Abbildung 1.1). So ist es viel einfacher, im Internet nach Hilfestellungen und Anleitungen zu suchen. Die Bezeichnungen in dieser Anleitungen sind jeweils auf Englisch.\nUm die Menüsprache auf Englisch umzustellen klickt man auf Einstellungen → Options:\nDanach muss qgis neu gestartet werden.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>System aufsetzen</span>"
+    ]
+  },
+  {
+    "objectID": "installation.html#schritt-1-qgis-desktop-installieren",
+    "href": "installation.html#schritt-1-qgis-desktop-installieren",
+    "title": "1  System aufsetzen",
+    "section": "",
+    "text": "☑ System-Locale Übersteuern\nBenutzeroberflächenübersetzung: American English\n\n\n\n\n\n\n\n\nAbbildung 1.1: “Locale” bezieht sich lediglich auf die Darstellung von Zahlen, Datumsangaben und Währungen",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>System aufsetzen</span>"
+    ]
+  },
+  {
+    "objectID": "installation.html#schritt-2-qgis-plugin-installieren",
+    "href": "installation.html#schritt-2-qgis-plugin-installieren",
+    "title": "1  System aufsetzen",
+    "section": "1.2 Schritt 2: qgis Plugin installieren",
+    "text": "1.2 Schritt 2: qgis Plugin installieren\nDamit ein qgis Projekt in qfield verwendet werden kann, braucht es das qgis Plugin qfield Sync. Das Plugin kann via dem Plugin Manager Plugins → Manage and install plugins installiert werden.\n\n\n\n\n\n\nAbbildung 1.2: qfield Sync Plugin",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>System aufsetzen</span>"
+    ]
+  },
+  {
+    "objectID": "installation.html#schritt-3-qfield-installieren",
+    "href": "installation.html#schritt-3-qfield-installieren",
+    "title": "1  System aufsetzen",
+    "section": "1.3 Schritt 3: qfield installieren",
+    "text": "1.3 Schritt 3: qfield installieren\nqfield muss auf dem mobilen Gerät (mit dem man die Daten erfassen möchte) installiert werden. qfield gibt es für Andoid, iOS und Windows und kann im jeweiligen Store bezogen werden.\n\nAndroid Google Play\niOS Apple Store\nWindows Microsoft Store\nLinux\nMacOS",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>System aufsetzen</span>"
+    ]
+  },
+  {
+    "objectID": "projekt.html",
+    "href": "projekt.html",
+    "title": "2  Projekt aufsetzen",
+    "section": "",
+    "text": "2.1 Schritt 1: qgis Projekt erstellen\n(mehrmalig notwendig)\nDie nachfolgenden Schritte müssen pro Projekt gemacht werden. Um die Anleitung etwas verständlicher zu machen, spielen wir ein Beispiel durch. In diesem Beispiel werden verschiedene Vegetationstrukturen erfasst:\nAls erster Schritt wird mit qgis Desktop ein Projekt erstellt (Project → New). Wir speichern das Projekt mit dem Namen Vegetation-CH an einem sinnvollen Ort auf unserem Computer ab (Project → Save As).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Projekt aufsetzen</span>"
+    ]
+  },
+  {
+    "objectID": "projekt.html#schritt-2-geopackage-erstellen",
+    "href": "projekt.html#schritt-2-geopackage-erstellen",
+    "title": "2  Projekt aufsetzen",
+    "section": "2.2 Schritt 2: Geopackage erstellen",
+    "text": "2.2 Schritt 2: Geopackage erstellen\nSämtliche Vektordaten werden in qfield in sogenannten Geopackages erfasst. Geopackages sind alternativen zu Shapefiles und ESRI Geodatabases.\nUm ein Geopackage zu erstellen, rechtsklick auf Browser Panel → Project Home und danach New → Geopackage. Beachtet, dass Project Home ist nur sichtbar ist, wenn das qgis Projekt abgespeichert wurde.\nDas Geopackage erscheint mit dem Namen New Geopackage.gpkg unter Project Home (siehe Abbildung 2.1). Wir benennen das File in Felderhebung.gpkg um (Rechtsklick → Manage → Rename..).\n\n\n\n\n\n\nAbbildung 2.1: Der Speicherort des neu erstellten Geopackages ist indentisch mit dem Projektspeicherort (Kapitel 2.1)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Projekt aufsetzen</span>"
+    ]
+  },
+  {
+    "objectID": "projekt.html#schritt-2-geopackage-layer-erstellen",
+    "href": "projekt.html#schritt-2-geopackage-layer-erstellen",
+    "title": "2  Projekt aufsetzen",
+    "section": "2.3 Schritt 2: Geopackage layer erstellen",
+    "text": "2.3 Schritt 2: Geopackage layer erstellen\nFür jeden Datentyp (Punkte, Linien, Polygone), der Erfasst werden soll, wird ein Geopackage Layer erstellt. Dafür klickt man mit Rechts auf das Geopackage → New Table. Nun muss ein Layer Name (Name), ein Geometrietyp (Geometry Type) sowie ein Koordinatenbezugssystem (CRS) ausgewählt werden (siehe Abbildung 2.2). Für die Schweiz wird das CRS CH1903+ LV95 mit dem EPSG Code 2056 empfohlen.\n\n\n\n\n\n\nAbbildung 2.2: Minimal müssen pro Tabelle der Name, der Geometrietyp sowie das CRS festgelegt werden. Optional können hier bereits Felder / Fields erfasst werden, dazu mehr in Kapitel 2.4\n\n\n\nFür unsere Datentypen verwenden wir die Layer Namen und Geometrietypen wie in Tabelle 2.1 beschreiben. Beachtet, dass die Layernamen weder Umlaute, Sonderzeichen oder Leerzeichen enthalten sollen.\n\n\n\nTabelle 2.1: Layernamen und Geometrietypen für das fiktive Projekt Vegetation-CH.\n\n\n\n\n\nBeschreibung\nLayer Name\nGeometry Type\n\n\n\n\nWiesen & Weiden\nWiesen_Weiden\nPolygon\n\n\nHecken\nHecken\nLineString\n\n\nEinzelbäume & Sträucher\nBaume_Straucher\nPoint\n\n\n\n\n\n\nWir verwenden in unserem Beispiel (Tabelle 2.1) einfache Point / LineString / Polygon. Zu diesen Geometrietypen stehen noch MultiPoint, MultiLineString und MultiPolygon zur Verfügung. Diese werden dann verwendet, wenn sich mehrere Objekte alle Attribute teilen. Mehr zu Attributen im nächsten Unterkapitel.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Projekt aufsetzen</span>"
+    ]
+  },
+  {
+    "objectID": "projekt.html#sec-attribute",
+    "href": "projekt.html#sec-attribute",
+    "title": "2  Projekt aufsetzen",
+    "section": "2.4 Schritt 3: Attribute definieren",
+    "text": "2.4 Schritt 3: Attribute definieren\nDamit wir die Beobachtungen, die wir im Feld machen auch festhalten können, brauchen wir Spalten (sog. Attribute). Diese Attribute (engl: Fields) werden pro Layer separat erstellt. Für jede Spalte wird ein Datentyp ausgewählt, wobei folgende Datentypen am häufigsten sind:\n\nNummerische Werte (mit / ohne Nachkommastellen)\nText\nDatum (mit / ohne Uhrzeit)\nBilder\n\nSpalten können entweder direkt während der Erstellung des Layers (siehe Abbildung 2.2) oder auch nachträglich hinzugefügt werden. Für ein nachträgliches Hinzufügen von Spalten muss der Layer dem Projekt hinzugefügt werden (Rechtscklick → Add Layer to Project).\nDanach im Layers Panel mit Rechtsklick auf den Layer → Properties → Fields. Nach Klick auf 🖉 Toggle Editing Mode können witere Spalten hinzugefügt werden.\nWir erstellen pro Layer die nachstehenden Spalten. Die Namen der Felder sollten keine Umlaute, Leerschläge oder Sonderzeichen enthalten. Allerdings kann pro Feld ein Alias definiert werden: Dabei handelt es sich um eine alternative Bezeichnung, bei dem diese Regeln nicht gelten.\n\n\n\nTabelle 2.2: Spalten für Wiesen_Weiden sowie Hecken\n\n\n\n\n\nBezeichnung / Alias\nDatentyp\nSpaltenname\n\n\n\n\nErfassungsdatum\nDate\nerfassungsdatum\n\n\nTyp\nText (String) 1\ntyp\n\n\nAnzahl Arten\nInteger (32 Bit) 2\nanzahl_arten\n\n\n\n\n\n\n\n\n\nTabelle 2.3: Spalten für Wiesen_Weiden sowie Hecken\n\n\n\n\n\n\n\n\n\n\nBezeichnung / Alias\nDatentyp\nSpaltenname\n\n\n\n\nErfassungsdatum\nDate\nerfassungsdatum\n\n\nArt\nText (String)\nart\n\n\nWuchshöhe\nDecimal Number (real) 3\nwuchshohe\n\n\nBemerkung\nText (String)\nbemerkung\n\n\n\n\n\n\nDetailliertere Informationen zu den Datentypen in Geopackages findet ihr in Tabelle 3.1",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Projekt aufsetzen</span>"
+    ]
+  },
+  {
+    "objectID": "projekt.html#schritt-4-attributeingabe-festlegen",
+    "href": "projekt.html#schritt-4-attributeingabe-festlegen",
+    "title": "2  Projekt aufsetzen",
+    "section": "2.5 Schritt 4: Attributeingabe festlegen",
+    "text": "2.5 Schritt 4: Attributeingabe festlegen\nUm den Input von Attribute zu vereinfachen, können Eingabefelder festgelegt werden. Beispielsweise für solche Vereinfachungen:\n\nEingabe von numerischen Werten via einem Slider (zum Beispiel wenn sich der Wert nur in einem bestimmten Bereich bewegen kann)\nEingabe von Ja/Nein mittels Checkbox\nEingabe von Text über ein Dropdown Menü (wenn es eine festgelegte beschränkte Liste von Optionen gibt)\nEingabe von Datum via einem Kalender\n\nZudem können Datenqualitätsaspekte festgelegt werden. Beispielsweise:\n\nEin Feld darf nicht leer sein (zwingende Eingabe)\nJeder Wert darf nur 1x vorkommen (Eindeutige Werte)\nEin Feld wird automatisch ausgefüllt und darf nicht editiert werden (zum Beispiel fid)\n\nWeiter können auch kleinere Erleichterungen eingebaut werden. Beispielsweise, dass der Defaultwert eines Feldes der letzten Eingabe entspricht. Dies kann sinnvoll sein, wenn absehbar ist, dass oft die gleichen Attribute nacheinander eingetragen werden müssen (z.B. Erfassungsdatum.)\nDiese Aspekte werden im qgis Projekt festgehalten. Rechtsklick auf den Layer Properties → Attribute Form\nIn unserem Fiktiven Beispiel können wir folgende Formulareingaben festhalten:\n\nWiesen_Weiden sowie Hecken\n\nDatum:\n\nFolgende Standarteinstellungen für Datumsfelder sind bereits ausreichend (Widget Type: Date/Time, 🗹 Calender Popup)\nUm die letzte Eingabe als Defaultwert für neue Objekte zu machen, setzen wir noch 🗹 Reuse last entered value\n\nTyp:\n\nHier hätten wir gerne eine Dropdownliste verschiedener Wiesen/Weiden bzw. Heckentypen. Für Wiesen/Weiden: soll es nur zwei mögliche Einträge geben: Wiese sowie Weide\n\nAnzahl Arten\nBemerkung",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Projekt aufsetzen</span>"
+    ]
+  },
+  {
+    "objectID": "projekt.html#footnotes",
+    "href": "projekt.html#footnotes",
+    "title": "2  Projekt aufsetzen",
+    "section": "",
+    "text": "Bei Text kann optional die maximale Textlänge angegeben werden. Der Defaultwert 0 bedeutet “unbeschränkt”↩︎\nZahlen ohne Nachkommastellen im Wertebereich ca. -2.1 bis +2.1 Mio. Für grössere Zahlen 64 Bit verwenden↩︎\neine Fliesskommazahl↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Projekt aufsetzen</span>"
+    ]
+  },
+  {
+    "objectID": "anhang.html",
+    "href": "anhang.html",
+    "title": "3  Anhang",
+    "section": "",
+    "text": "Tabelle 3.1: Geopackage Data Types. Quelle: geopackage.org\n\n\n\n\n\n\n\n\n\nData Type\nSize and Description\n\n\n\n\nINTEGER 32 bit\n32-bit signed two’s complement integer. Stored as SQLite INTEGER with values in the range [-2147483648, 2147483647].\n\n\nINTEGER 64 bit\n64-bit signed two’s complement integer. Stored as SQLite INTEGER with values in the range [-9223372036854775808, 9223372036854775807].\n\n\nREAL\n64-bit IEEE floating point number. Stored as SQLite REAL.\n\n\nTEXT{(maxchar_count)}\nVariable length string encoded in either UTF-8 or UTF-16. The optional maxchar_count defines the maximum number of characters in the string. If not specified, the length is unbounded. Stored as SQLite TEXT.\n\n\nBLOB{(max_size)}\nVariable length binary data. The optional max_size defines the maximum number of bytes in the blob. If not specified, the length is unbounded.\n\n\nDATE\nISO 8601 date string in the form YYYY-MM-DD encoded in either UTF-8 or UTF-16. Stored as SQLite TEXT (see TEXT above).\n\n\nDATETIME\nISO-8601 date/time string in the form YYYY-MM-DDTHH:MM:SS.SSSZ with T separator character and Z suffix for coordinated universal time (UTC) encoded in either UTF-8 or UTF-16. Stored as SQLite TEXT (see TEXT above).",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Anhang</span>"
+    ]
+  }
+]

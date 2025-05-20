@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.13">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; Projekt aufsetzen – Erfassen von Geodaten im Feld mit [qfield]{.q} und [qfield]{.q} Cloud</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./anhang.html" rel="next">
+<link href="./installation.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-66ab7fd5e73b7f0a764e0d49b3e29ab1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-e6054d741114aecf273fcc43dc7bfa58.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./projekt.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Projekt aufsetzen</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Erfassen von Geodaten im Feld mit <span class="q">qfield</span> und <span class="q">qfield</span> Cloud</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Suchen"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abstract</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">System aufsetzen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./projekt.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Projekt aufsetzen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./anhang.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anhang</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#sec-project-erstellen" id="toc-sec-project-erstellen" class="nav-link active" data-scroll-target="#sec-project-erstellen"><span class="header-section-number">2.1</span> Schritt 1: <span class="q">qgis</span> Projekt erstellen</a></li>
+  <li><a href="#schritt-2-geopackage-erstellen" id="toc-schritt-2-geopackage-erstellen" class="nav-link" data-scroll-target="#schritt-2-geopackage-erstellen"><span class="header-section-number">2.2</span> Schritt 2: Geopackage erstellen</a></li>
+  <li><a href="#schritt-2-geopackage-layer-erstellen" id="toc-schritt-2-geopackage-layer-erstellen" class="nav-link" data-scroll-target="#schritt-2-geopackage-layer-erstellen"><span class="header-section-number">2.3</span> Schritt 2: Geopackage layer erstellen</a></li>
+  <li><a href="#sec-attribute" id="toc-sec-attribute" class="nav-link" data-scroll-target="#sec-attribute"><span class="header-section-number">2.4</span> Schritt 3: Attribute definieren</a></li>
+  <li><a href="#schritt-4-attributeingabe-festlegen" id="toc-schritt-4-attributeingabe-festlegen" class="nav-link" data-scroll-target="#schritt-4-attributeingabe-festlegen"><span class="header-section-number">2.5</span> Schritt 4: Attributeingabe festlegen</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Projekt aufsetzen</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>(mehrmalig notwendig)</p>
+<p>Die nachfolgenden Schritte müssen pro Projekt gemacht werden. Um die Anleitung etwas verständlicher zu machen, spielen wir ein Beispiel durch. In diesem Beispiel werden verschiedene Vegetationstrukturen erfasst:</p>
+<ul>
+<li>Wiesen und Weiden (Flächenhafte ausprägung)</li>
+<li>Hecken (Linienstrukturen)</li>
+<li>Einzelbäume und Sträucher (Punkte)</li>
+</ul>
+<section id="sec-project-erstellen" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sec-project-erstellen"><span class="header-section-number">2.1</span> Schritt 1: <span class="q">qgis</span> Projekt erstellen</h2>
+<p>Als erster Schritt wird mit <span class="q">qgis</span> Desktop ein Projekt erstellt (<span class="menu">Project → New</span>). Wir speichern das Projekt mit dem Namen <em>Vegetation-CH</em> an einem sinnvollen Ort auf unserem Computer ab (<span class="menu">Project → Save As</span>).</p>
+</section>
+<section id="schritt-2-geopackage-erstellen" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="schritt-2-geopackage-erstellen"><span class="header-section-number">2.2</span> Schritt 2: Geopackage erstellen</h2>
+<p>Sämtliche Vektordaten werden in <span class="q">qfield</span> in sogenannten <em>Geopackages</em> erfasst. Geopackages sind alternativen zu <em>Shapefiles</em> und <em>ESRI Geodatabases</em>.</p>
+<p>Um ein Geopackage zu erstellen, rechtsklick auf <span class="menu">Browser Panel → Project Home</span> und danach <span class="menu">New → Geopackage</span>. Beachtet, dass <em>Project Home</em> ist nur sichtbar ist, wenn das <span class="q">qgis</span> Projekt abgespeichert wurde.</p>
+<p>Das Geopackage erscheint mit dem Namen <em>New Geopackage.gpkg</em> unter <em>Project Home</em> (siehe <a href="#fig-new-geopackage" class="quarto-xref">Abbildung&nbsp;<span>2.1</span></a>). Wir benennen das File in <em>Felderhebung.gpkg</em> um (<span class="menu">Rechtsklick → Manage → Rename..</span>).</p>
+<div id="fig-new-geopackage" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-new-geopackage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/new-geopackage.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-new-geopackage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;2.1: Der Speicherort des neu erstellten Geopackages ist indentisch mit dem Projektspeicherort (<a href="#sec-project-erstellen" class="quarto-xref"><span>Kapitel 2.1</span></a>)
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="schritt-2-geopackage-layer-erstellen" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="schritt-2-geopackage-layer-erstellen"><span class="header-section-number">2.3</span> Schritt 2: Geopackage layer erstellen</h2>
+<p>Für jeden Datentyp (Punkte, Linien, Polygone), der Erfasst werden soll, wird ein Geopackage Layer erstellt. Dafür klickt man mit Rechts auf das <span class="menu">Geopackage → New Table</span>. Nun muss ein Layer Name (<em>Name</em>), ein Geometrietyp (<em>Geometry Type</em>) sowie ein Koordinatenbezugssystem (<em>CRS</em>) ausgewählt werden (siehe <a href="#fig-new-layer" class="quarto-xref">Abbildung&nbsp;<span>2.2</span></a>). Für die Schweiz wird das CRS <code>CH1903+ LV95</code> mit dem EPSG Code <em>2056</em> empfohlen.</p>
+<div id="fig-new-layer" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-new-layer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/new-layer.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-new-layer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;2.2: Minimal müssen pro Tabelle der Name, der Geometrietyp sowie das CRS festgelegt werden. Optional können hier bereits Felder / Fields erfasst werden, dazu mehr in <a href="#sec-attribute" class="quarto-xref"><span>Kapitel 2.4</span></a>
+</figcaption>
+</figure>
+</div>
+<p>Für unsere Datentypen verwenden wir die Layer Namen und Geometrietypen wie in <a href="#tbl-layers" class="quarto-xref">Tabelle&nbsp;<span>2.1</span></a> beschreiben. Beachtet, dass die Layernamen weder Umlaute, Sonderzeichen oder Leerzeichen enthalten sollen.</p>
+<div id="tbl-layers" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabelle&nbsp;2.1: Layernamen und Geometrietypen für das fiktive Projekt <em>Vegetation-CH</em>.
+</figcaption>
+<div aria-describedby="tbl-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Beschreibung</th>
+<th style="text-align: left;">Layer Name</th>
+<th style="text-align: left;">Geometry Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Wiesen &amp; Weiden</td>
+<td style="text-align: left;"><code>Wiesen_Weiden</code></td>
+<td style="text-align: left;">Polygon</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hecken</td>
+<td style="text-align: left;"><code>Hecken</code></td>
+<td style="text-align: left;">LineString</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Einzelbäume &amp; Sträucher</td>
+<td style="text-align: left;"><code>Baume_Straucher</code></td>
+<td style="text-align: left;">Point</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Wir verwenden in unserem Beispiel (<a href="#tbl-layers" class="quarto-xref">Tabelle&nbsp;<span>2.1</span></a>) <em>einfache</em> Point / LineString / Polygon. Zu diesen Geometrietypen stehen noch <em>MultiPoint</em>, <em>MultiLineString</em> und <em>MultiPolygon</em> zur Verfügung. Diese werden dann verwendet, wenn <strong>sich mehrere Objekte alle Attribute teilen</strong>. Mehr zu Attributen im nächsten Unterkapitel.</p>
+</section>
+<section id="sec-attribute" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="sec-attribute"><span class="header-section-number">2.4</span> Schritt 3: Attribute definieren</h2>
+<p>Damit wir die Beobachtungen, die wir im Feld machen auch festhalten können, brauchen wir Spalten (sog. Attribute). Diese Attribute (engl: <em>Fields</em>) werden pro Layer separat erstellt. Für jede Spalte wird ein Datentyp ausgewählt, wobei folgende Datentypen am häufigsten sind:</p>
+<ul>
+<li>Nummerische Werte (mit / ohne Nachkommastellen)</li>
+<li>Text</li>
+<li>Datum (mit / ohne Uhrzeit)</li>
+<li>Bilder</li>
+</ul>
+<p>Spalten können entweder direkt während der Erstellung des Layers (siehe <a href="#fig-new-layer" class="quarto-xref">Abbildung&nbsp;<span>2.2</span></a>) oder auch nachträglich hinzugefügt werden. Für ein nachträgliches Hinzufügen von Spalten muss der Layer dem Projekt hinzugefügt werden (<span class="menu">Rechtscklick → Add Layer to Project</span>).</p>
+<p>Danach im <em>Layers</em> Panel mit Rechtsklick auf den <span class="menu">Layer → Properties → Fields</span>. Nach Klick auf <span class="menu">🖉 Toggle Editing Mode</span> können witere Spalten hinzugefügt werden.</p>
+<p>Wir erstellen pro Layer die nachstehenden Spalten. Die <em>Namen</em> der Felder sollten keine Umlaute, Leerschläge oder Sonderzeichen enthalten. Allerdings kann pro Feld ein <em>Alias</em> definiert werden: Dabei handelt es sich um eine alternative Bezeichnung, bei dem diese Regeln nicht gelten.</p>
+<div id="tbl-spalten-wiesen-hecken" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spalten-wiesen-hecken-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabelle&nbsp;2.2: Spalten für <em>Wiesen_Weiden</em> sowie <em>Hecken</em>
+</figcaption>
+<div aria-describedby="tbl-spalten-wiesen-hecken-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Bezeichnung / Alias</th>
+<th>Datentyp</th>
+<th>Spaltenname</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Erfassungsdatum</td>
+<td><code>Date</code></td>
+<td>erfassungsdatum</td>
+</tr>
+<tr class="even">
+<td>Typ</td>
+<td><code>Text (String)</code> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
+<td>typ</td>
+</tr>
+<tr class="odd">
+<td>Anzahl Arten</td>
+<td><code>Integer (32 Bit)</code> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></td>
+<td>anzahl_arten</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div id="tbl-spalten-einzelbaeume" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spalten-einzelbaeume-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabelle&nbsp;2.3: Spalten für <em>Wiesen_Weiden</em> sowie <em>Hecken</em>
+</figcaption>
+<div aria-describedby="tbl-spalten-einzelbaeume-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 47%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bezeichnung / Alias</th>
+<th>Datentyp</th>
+<th>Spaltenname</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Erfassungsdatum</td>
+<td><code>Date</code></td>
+<td>erfassungsdatum</td>
+</tr>
+<tr class="even">
+<td>Art</td>
+<td><code>Text (String)</code></td>
+<td>art</td>
+</tr>
+<tr class="odd">
+<td>Wuchshöhe</td>
+<td><code>Decimal Number (real)</code> <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></td>
+<td>wuchshohe</td>
+</tr>
+<tr class="even">
+<td>Bemerkung</td>
+<td><code>Text (String)</code></td>
+<td>bemerkung</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Detailliertere Informationen zu den Datentypen in Geopackages findet ihr in <a href="anhang.html#tbl-geopackage-datatypes" class="quarto-xref">Tabelle&nbsp;<span>3.1</span></a></p>
+</section>
+<section id="schritt-4-attributeingabe-festlegen" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="schritt-4-attributeingabe-festlegen"><span class="header-section-number">2.5</span> Schritt 4: Attributeingabe festlegen</h2>
+<p>Um den Input von Attribute zu vereinfachen, können Eingabefelder festgelegt werden. Beispielsweise für solche Vereinfachungen:</p>
+<ul>
+<li>Eingabe von numerischen Werten via einem Slider (zum Beispiel wenn sich der Wert nur in einem bestimmten Bereich bewegen kann)</li>
+<li>Eingabe von Ja/Nein mittels Checkbox</li>
+<li>Eingabe von Text über ein Dropdown Menü (wenn es eine festgelegte beschränkte Liste von Optionen gibt)</li>
+<li>Eingabe von Datum via einem Kalender</li>
+</ul>
+<p>Zudem können Datenqualitätsaspekte festgelegt werden. Beispielsweise:</p>
+<ul>
+<li>Ein Feld darf <em>nicht</em> leer sein (zwingende Eingabe)</li>
+<li>Jeder Wert darf nur 1x vorkommen (Eindeutige Werte)</li>
+<li>Ein Feld wird automatisch ausgefüllt und darf <em>nicht</em> editiert werden (zum Beispiel <code>fid</code>)</li>
+</ul>
+<p>Weiter können auch kleinere Erleichterungen eingebaut werden. Beispielsweise, dass der Defaultwert eines Feldes der letzten Eingabe entspricht. Dies kann sinnvoll sein, wenn absehbar ist, dass oft die gleichen Attribute nacheinander eingetragen werden müssen (z.B. <em>Erfassungsdatum</em>.)</p>
+<p>Diese Aspekte werden im <span class="q">qgis</span> Projekt festgehalten. Rechtsklick auf den Layer <span class="menu">Properties → Attribute Form</span></p>
+<p>In unserem Fiktiven Beispiel können wir folgende Formulareingaben festhalten:</p>
+<ul>
+<li><em>Wiesen_Weiden</em> sowie <em>Hecken</em>
+<ul>
+<li>Datum:
+<ul>
+<li>Folgende Standarteinstellungen für Datumsfelder sind bereits ausreichend (<span class="menu">Widget Type: Date/Time</span>, <span class="menu">🗹 Calender Popup</span>)</li>
+<li>Um die letzte Eingabe als Defaultwert für neue Objekte zu machen, setzen wir noch <span class="menu">🗹 Reuse last entered value</span></li>
+</ul></li>
+<li>Typ:
+<ul>
+<li>Hier hätten wir gerne eine Dropdownliste verschiedener Wiesen/Weiden bzw. Heckentypen. Für Wiesen/Weiden: soll es nur zwei mögliche Einträge geben: <em>Wiese</em> sowie <em>Weide</em></li>
+</ul></li>
+<li>Anzahl Arten</li>
+<li>Bemerkung</li>
+</ul></li>
+</ul>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Bei Text kann <em>optional</em> die maximale Textlänge angegeben werden. Der Defaultwert 0 bedeutet “unbeschränkt”<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Zahlen ohne Nachkommastellen im Wertebereich ca. -2.1 bis +2.1 Mio. Für grössere Zahlen <code>64 Bit</code> verwenden<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>eine Fliesskommazahl<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Kopiert");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Kopiert");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./installation.html" class="pagination-link" aria-label="System aufsetzen">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">System aufsetzen</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./anhang.html" class="pagination-link" aria-label="Anhang">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anhang</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
