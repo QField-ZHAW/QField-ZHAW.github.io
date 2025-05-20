@@ -4,9 +4,9 @@
     "href": "index.html",
     "title": "Erfassen von Geodaten im Feld mit qfield und qfield Cloud",
     "section": "",
-    "text": "Abstract\nWelcome",
+    "text": "Einleitung\nDie nachstehende Anleitung dient dazu, Geodaten im Feld mittels qfield und qfield cloud durchzuführen. In 1  System aufsetzen beschreiben wir die installation der notwenigen Software und Plugins. In 2  Projekt aufsetzen geht es darum, ein qfield Projekt mittels qgis aufzusetzen.",
     "crumbs": [
-      "Abstract"
+      "Einleitung"
     ]
   },
   {
@@ -14,7 +14,7 @@
     "href": "installation.html",
     "title": "1  System aufsetzen",
     "section": "",
-    "text": "1.1 Schritt 1: qgis (Desktop) installieren\n(einmalig notwendig)\nDie nachfolgenden Schritte müssen einmalig durchgeführt werden.\nUm Daten in qfield erfassen zu können, braucht es ein “Projekt”. Dieses Projekt wird mit qgis auf dem Desktop erstellt. qgis kann von der qgis Website heruntergelanden werden: https://qgis.org/download/.\nWir empfehlen, die Menüsprache auf Englisch umzustellen (siehe Abbildung 1.1). So ist es viel einfacher, im Internet nach Hilfestellungen und Anleitungen zu suchen. Die Bezeichnungen in dieser Anleitungen sind jeweils auf Englisch.\nUm die Menüsprache auf Englisch umzustellen klickt man auf Einstellungen → Options:\nDanach muss qgis neu gestartet werden.",
+    "text": "1.1 Schritt 1: qgis (Desktop) installieren\nUm Daten in qfield erfassen zu können, braucht es ein “Projekt”. Dieses Projekt wird mit qgis auf dem Desktop erstellt. qgis kann von der qgis Website heruntergelanden werden: https://qgis.org/download/.\nWir empfehlen, die Menüsprache auf Englisch umzustellen (siehe Abbildung 1.1). So ist es viel einfacher, im Internet nach Hilfestellungen und Anleitungen zu suchen. Die Bezeichnungen in dieser Anleitungen sind jeweils auf Englisch.\nUm die Menüsprache auf Englisch umzustellen klickt man auf Einstellungen → Options:\nDanach muss qgis neu gestartet werden.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>System aufsetzen</span>"
     ]
@@ -54,7 +54,7 @@
     "href": "projekt.html",
     "title": "2  Projekt aufsetzen",
     "section": "",
-    "text": "2.1 Schritt 1: qgis Projekt erstellen\n(mehrmalig notwendig)\nDie nachfolgenden Schritte müssen pro Projekt gemacht werden. Um die Anleitung etwas verständlicher zu machen, spielen wir ein Beispiel durch. In diesem Beispiel werden verschiedene Vegetationstrukturen erfasst:\nAls erster Schritt wird mit qgis Desktop ein Projekt erstellt (Project → New). Wir speichern das Projekt mit dem Namen Vegetation-CH an einem sinnvollen Ort auf unserem Computer ab (Project → Save As).",
+    "text": "2.1 Schritt 1: qgis Projekt erstellen\nUm die Anleitung etwas verständlicher zu machen, spielen wir ein Beispiel durch. In diesem Beispiel werden verschiedene Vegetationstrukturen erfasst:\nAls erster Schritt wird mit qgis Desktop ein Projekt erstellt (Project → New). Wir speichern das Projekt mit dem Namen Vegetation-CH an einem sinnvollen Ort auf unserem Computer ab (Project → Save As).",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Projekt aufsetzen</span>"
     ]
