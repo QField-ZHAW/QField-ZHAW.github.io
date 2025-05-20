@@ -1,8 +1,11 @@
-# System aufsetzen
+# System aufsetzen {#sec-installation}
 
- (einmalig notwendig)
+
+:::{.callout-note}
 
 Die nachfolgenden Schritte müssen _einmalig_ durchgeführt werden. 
+
+:::
 
 ## Schritt 1: [qgis]{.q} (Desktop) installieren
 

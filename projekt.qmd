@@ -1,8 +1,12 @@
-# Projekt aufsetzen 
+# Projekt aufsetzen {#sec-projekt}
 
-(mehrmalig notwendig)
+:::{.callout-note}
 
-Die nachfolgenden Schritte müssen pro Projekt gemacht werden. Um die Anleitung etwas verständlicher zu machen, spielen wir ein Beispiel durch. In diesem Beispiel werden verschiedene Vegetationstrukturen erfasst: 
+Die nachfolgenden Schritte müssen *pro Projekt* gemacht werden. 
+
+:::
+
+Um die Anleitung etwas verständlicher zu machen, spielen wir ein Beispiel durch. In diesem Beispiel werden verschiedene Vegetationstrukturen erfasst: 
 
 - Wiesen und Weiden (Flächenhafte ausprägung)
 - Hecken (Linienstrukturen)
