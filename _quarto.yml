@@ -1,0 +1,21 @@
+project:
+  type: book
+
+book:
+  title: "Erfassen von Geodaten im Feld mit [qfield]{.q} und [qfield]{.q} Cloud"
+  date: "5/20/2025"
+  chapters:
+    - index.qmd
+    - installation.qmd
+    - projekt.qmd
+    - anhang.qmd
+
+bibliography: references.bib
+lang: de
+format: 
+  html: 
+    toc: true
+    css: style.css
+
+
+

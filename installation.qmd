@@ -1,0 +1,41 @@
+# System aufsetzen
+
+ (einmalig notwendig)
+
+Die nachfolgenden Schritte müssen _einmalig_ durchgeführt werden. 
+
+## Schritt 1: [qgis]{.q} (Desktop) installieren
+
+Um Daten in [qfield]{.q} erfassen zu können, braucht es ein "Projekt". Dieses Projekt wird mit [qgis]{.q} auf dem Desktop erstellt. [qgis]{.q} kann von der [qgis]{.q} Website heruntergelanden werden: [https://qgis.org/download/](qgis.org/download). 
+
+Wir empfehlen, die Menüsprache auf Englisch umzustellen (siehe @fig-system-locale). So ist es viel einfacher, im Internet nach Hilfestellungen und Anleitungen zu suchen. **Die Bezeichnungen in dieser Anleitungen sind jeweils auf Englisch.**
+
+Um die Menüsprache auf Englisch umzustellen klickt man auf [Einstellungen → Options]{.menu}: 
+
+- ☑ System-Locale Übersteuern 
+- Benutzeroberflächenübersetzung: _American English_
+
+Danach muss [qgis]{.q} neu gestartet werden.
+
+
+!["Locale" bezieht sich lediglich auf die Darstellung von Zahlen, Datumsangaben und Währungen](images/system-locale.png){#fig-system-locale}
+
+## Schritt 2: [qgis]{.q} Plugin installieren
+
+Damit ein [qgis]{.q} Projekt in [qfield]{.q} verwendet werden kann, braucht es das [qgis]{.q} Plugin _[qfield]{.q} Sync_. Das Plugin kann via dem Plugin Manager [Plugins → Manage and install plugins]{.menu} installiert werden.
+
+
+![[qfield]{.q} Sync Plugin](images/qfield-sync.png){#fig-qfield-sync}
+
+
+
+## Schritt 3: [qfield]{.q} installieren
+
+[qfield]{.q} muss auf dem mobilen Gerät (mit dem man die Daten erfassen möchte) installiert werden. [qfield]{.q} gibt es für Andoid, iOS und Windows und kann im jeweiligen Store bezogen werden.
+
+- Android [Google Play](https://play.google.com/store/apps/details?id=ch.opengis.qfield)
+- iOS [Apple Store](https://apps.apple.com/us/app/qfield-for-qgis/id1531726814)
+- Windows [Microsoft Store](https://apps.microsoft.com/detail/xp99h3bcx4bw7f?hl=en-US&gl=CH)
+- [Linux](https://qfield.org/get_latest/?platform=linux)
+- [MacOS](https://qfield.org/get_latest/?platform=macos)
+
