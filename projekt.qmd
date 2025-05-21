@@ -142,7 +142,7 @@ Um die Attributeingabe festzulegen, müssen die Tabellen erstmal dem QGIS Projek
 
 :::{.callout-note}
 
-Alle Einstellungen an den Attributeingaben sind teil des [qgis]{.q} *Projektes* und müssen neu festgelegt werden, wenn ein neues QGIS Projekt erstellt wird. 
+Alle Einstellungen an den Attributeingaben sind teil des [qgis]{.q} *Projektes*. Die Einstellungen aus @sec-attribute hingegen waren Teil des *Geopackage*. 
 
 :::
 
@@ -175,11 +175,25 @@ _Wiesen_Weiden_
 
 ![Slider](images/slider.png){#fig-slider}
 
-Verschiedene Attribut Form optionen
+Verschiedene Attribut-Formular Optionen
 
 :::
 
-
-
-
 ::::
+
+
+
+## Schritt 5: QGIS Projekt in → QFIELD Projekt umwandeln
+
+:::{.callout-warning}
+
+## Todo
+
+- Layerspezifische Einstellungen
+- Basemaps
+
+:::
+
+## Schritt 6: QField Projekt mit der Cloud Synchronisieren
+
+

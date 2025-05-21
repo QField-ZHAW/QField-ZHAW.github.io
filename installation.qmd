@@ -42,3 +42,20 @@ Damit ein [qgis]{.q} Projekt in [qfield]{.q} verwendet werden kann, braucht es d
 - [Linux](https://qfield.org/get_latest/?platform=linux)
 - [MacOS](https://qfield.org/get_latest/?platform=macos)
 
+
+
+## Schritt 3: [qfield]{.q} Cloud Account erstellen
+
+
+
+
+:::{.callout-warning}
+
+## TODO
+
+- Anleitung für das Erstellen eines Cloud Accountes <https://app.qfield.cloud/accounts/signup/>
+- Freischalten des Accountes auf der ZHAW Organization (was bringt das?)
+- Einloggen
+
+
+:::
