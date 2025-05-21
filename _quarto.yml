@@ -16,6 +16,8 @@ format:
   html: 
     toc: true
     css: style.css
+    number-depth: 2
+
 
 
 

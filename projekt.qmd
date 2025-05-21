@@ -9,7 +9,6 @@ Die nachfolgenden Schritte müssen *pro Projekt* gemacht werden.
 Um die Anleitung etwas verständlicher zu machen, spielen wir ein Beispiel durch. In diesem Beispiel werden verschiedene Vegetationstrukturen erfasst: 
 
 - Wiesen und Weiden (Flächenhafte ausprägung)
-- Hecken (Linienstrukturen)
 - Einzelbäume und Sträucher (Punkte)
 
 ## Schritt 1: [qgis]{.q} Projekt erstellen {#sec-project-erstellen}
@@ -24,35 +23,42 @@ Um ein Geopackage zu erstellen, rechtsklick auf [Browser Panel → Project Home]
 
 Das Geopackage erscheint mit dem Namen _New Geopackage.gpkg_ unter _Project Home_ (siehe @fig-new-geopackage). Wir benennen das File in *Felderhebung.gpkg* um ([Rechtsklick → Manage → Rename..]{.menu}). 
 
-![Der Speicherort des neu erstellten Geopackages ist indentisch mit dem Projektspeicherort (@sec-project-erstellen)](images/new-geopackage.png){#fig-new-geopackage}
+![Der Speicherort des neu erstellten Geopackages ist indentisch mit dem Projekt-Speicherort, welchen wir in @sec-project-erstellen definiert haben.](images/new-geopackage.png){#fig-new-geopackage}
 
-## Schritt 2: Geopackage layer erstellen
+## Schritt 2: Geopackage Tabelle erstellen
 
-Für jeden Datentyp (Punkte, Linien, Polygone), der Erfasst werden soll, wird ein Geopackage Layer erstellt. Dafür klickt man mit Rechts auf das [Geopackage → New Table]{.menu}. Nun muss ein Layer Name (_Name_), ein Geometrietyp (_Geometry Type_) sowie ein Koordinatenbezugssystem (_CRS_) ausgewählt werden (siehe @fig-new-layer). Für die Schweiz wird das CRS `CH1903+ LV95` mit dem EPSG Code *2056* empfohlen. 
+Für jeden Datentyp (Punkte, Linien, Polygone), der Erfasst werden soll, wird eine "Tabelle" in der Geopackage erstellt. Dafür klickt man mit Rechts auf das Geopackage [→ New Table]{.menu}. Für die Tabelle muss nun ein Name ([Name]{.menu}), ein Geometrietyp ([Geometry Type]{.menu}) sowie ein Koordinatenbezugssystem ([CRS]{.menu}) ausgewählt werden (siehe @fig-new-layer). 
+
+- Für Erhebungen in der Schweiz empfehlen wir CRS `CH1903+ LV95` (EPSG Code `2056`). 
+- Für Erhebungen ausserhalb der Schweiz in einem kleinen Gebiet empfehlen wir die jeweilige UTM Zone ([hier auswählen](https://mangomap.com/robertyoung/maps/69585/what-utm-zone-am-i-in-#))
+- Für globale Erhebungen empfehlen wir WGS84 (EPSG Code `4326`)
 
 
 
 ![Minimal müssen pro Tabelle der Name, der Geometrietyp sowie das CRS festgelegt werden. Optional können hier bereits Felder / Fields erfasst werden, dazu mehr in @sec-attribute](images/new-layer.png){#fig-new-layer}
 
 
-Für unsere Datentypen verwenden wir die Layer Namen und Geometrietypen wie in @tbl-layers beschreiben. Beachtet, dass die Layernamen weder Umlaute, Sonderzeichen oder Leerzeichen enthalten sollen.
+Für unsere Datentypen verwenden wir die Tabellen-Namen und Geometrietypen wie in @tbl-layers beschreiben. Beachtet, dass die Tabellen-Namen weder Umlaute, Sonderzeichen oder Leerzeichen enthalten sollen.
 
 
 
-| Beschreibung            | Layer Name        | Geometry Type |
+| Beschreibung            | Tabellen-Name     | Geometry Type |
 |:------------------------|:------------------|:--------------|
-| Wiesen & Weiden         | `Wiesen_Weiden`   | Polygon       |
-| Hecken                  | `Hecken`          | LineString    |
-| Einzelbäume & Sträucher | `Baume_Straucher` | Point         |
+| Wiesen & Weiden         | `wiesen_weiden`   | MultiPolygon  |
+| Einzelbäume & Sträucher | `baume_straucher` | Point         |
 
-: Layernamen und Geometrietypen für das fiktive Projekt *Vegetation-CH*. {#tbl-layers}
+: Tabellen-Namen und Geometrietypen für das fiktive Projekt *Vegetation-CH*. Wir empfehlen alles konsistent klein zu schreiben, Leerzeichen mit `_` zu ersetzen und Umlaute zu vermeiden (z.B. `a` statt `ä`) . {#tbl-layers}
 
 
-Wir verwenden in unserem Beispiel (@tbl-layers) *einfache* Point / LineString / Polygon. Zu diesen Geometrietypen stehen noch *MultiPoint*, *MultiLineString* und *MultiPolygon* zur Verfügung. Diese werden dann verwendet, wenn **sich mehrere Objekte alle Attribute teilen**. Mehr zu Attributen im nächsten Unterkapitel.
+Wir verwenden in unserem Beispiel (@tbl-layers) `Point` für die Einzelbäume und `MultiPolygon` für die Wiesen & Weiden. Der Grund ist der folgende: 
+
+- Eine Wiese oder eine Weide kann aus verschiedenen, voneinander getrennten Teilstücken bestehen. In diesem Fall wollen wir alle Teilstücke "in einem Zug" erfassen können und dabei die Attribute (mehr zu Attributen in @sec-attribute) nur einmalig eingeben. Deshalb verwenden wir `MultiPolygon` statt `Polygon`.
+- Bei Bäumen und Sträucher ist das anders: Hier verpflichten wir uns, jeden Baum und jeder Strauch einzeln zu erfassen, weil beispielsweise die Wuchshöhe für jedes Objekt einzeln angegeben werden muss. Deshalb verwenden wir `Point` statt `MultiPoint`.
+
 
 ## Schritt 3: Attribute definieren {#sec-attribute}
 
-Damit wir die Beobachtungen, die wir im Feld machen auch festhalten können, brauchen wir Spalten (sog. Attribute). Diese Attribute (engl: _Fields_) werden pro Layer separat erstellt. Für jede Spalte wird ein Datentyp ausgewählt, wobei folgende Datentypen am häufigsten sind:
+Damit wir die Beobachtungen, die wir im Feld machen auch festhalten können, brauchen wir Spalten (sog. Attribute). Diese Attribute (engl: _Fields_) werden pro Tabelle separat erstellt. Für jede Spalte wird ein Datentyp ausgewählt, wobei folgende Datentypen am häufigsten sind:
 
 - Nummerische Werte (mit / ohne Nachkommastellen)
 - Text
@@ -60,30 +66,39 @@ Damit wir die Beobachtungen, die wir im Feld machen auch festhalten können, bra
 - Bilder 
 
 
-Spalten können entweder direkt während der Erstellung des Layers (siehe @fig-new-layer) oder auch nachträglich hinzugefügt werden. Für ein nachträgliches Hinzufügen von Spalten muss der Layer dem Projekt hinzugefügt werden ([Rechtscklick → Add Layer to Project]{.menu}). 
+Spalten können entweder direkt während der Erstellung der Tabelle (siehe @fig-new-layer) oder auch nachträglich hinzugefügt werden. Für ein nachträgliches erfassen muss man im [Browser Panel]{.menu} das Geopackage "ausklappen", so dass die [Fields]{.menu} sichtbar sind (siehe @fig-add-field-1). Mit Rechtsklick auf [Fields → Add New Field]{.menu} können weitere Spalten hinzugefügt werden, mit Rechtsklick auf eine bestehendes "Field" kann dieses editiert (z.B. umbenannt) werden.
 
 
-Danach im _Layers_ Panel mit Rechtsklick auf den [Layer → Properties → Fields]{.menu}. Nach Klick auf [🖉 Toggle Editing Mode]{.menu} können witere Spalten hinzugefügt werden.
+:::{#fig-add-field layout-ncol=2}
 
-Wir erstellen pro Layer die nachstehenden Spalten. Die _Namen_ der Felder sollten keine Umlaute, Leerschläge oder Sonderzeichen enthalten. Allerdings kann pro Feld ein _Alias_ definiert werden: Dabei handelt es sich um eine alternative Bezeichnung, bei dem diese Regeln nicht gelten.
+![Im Browser Panel können Geopackages nachträglich editiert werden.](images/add-field.png){#fig-add-field-1}
+
+![Für jedes Field muss ein Name und ein Datentyp definiert werden. Ein Alias sowie ein Kommentar helfen das Attribut besser zu beschreiben](images/add-field-2.png){#fig-add-field-2}
 
 
-| Bezeichnung / Alias | Datentyp                    | Spaltenname     |
-|---------------------|-----------------------------|-----------------|
-| Erfassungsdatum     | `Date`                      | erfassungsdatum |
-| Typ                 | `Text (String)` [^text]     | typ             |
-| Anzahl Arten        | `Integer (32 Bit)` [^int32] | anzahl_arten    |
+:::
 
-: Spalten für _Wiesen_Weiden_ sowie _Hecken_ {#tbl-spalten-wiesen-hecken}
+Die Spalten für für die Tabelle `wiesen_weiden` sind in @tbl-spalten-wiesen beschreiben. Die Spalten für die Tabelle `baume_straucher` sind in @tbl-spalten-einzelbaeume dargestellt.
+
+Die _Namen_ der Felder sollten keine Umlaute, Leerschläge oder Sonderzeichen enthalten. Allerdings kann pro Feld ein _Alias_ definiert werden: Dabei handelt es sich um eine alternative Bezeichnung, bei dem diese Regeln nicht gelten.
+
 
 | Bezeichnung / Alias | Datentyp                         | Spaltenname     |
-|---------------------|----------------------------------|-----------------|
+|:--------------------|:---------------------------------|:----------------|
+| Erfassungsdatum     | `Date`                           | erfassungsdatum |
+| Typ                 | `Text (String)` [^text]          | typ             |
+| Anzahl Arten        | `Integer (32 Bit)` [^int32]      | anzahl_arten    |
+
+: Spalten für _wiesen_weiden_ {#tbl-spalten-wiesen}
+
+| Bezeichnung / Alias | Datentyp                         | Spaltenname     |
+|:--------------------|:---------------------------------|:----------------|
 | Erfassungsdatum     | `Date`                           | erfassungsdatum |
 | Art                 | `Text (String)`                  | art             |
 | Wuchshöhe           | `Decimal Number (real)` [^real]  | wuchshohe       |
 | Bemerkung           | `Text (String)`                  | bemerkung       |
 
-: Spalten für _Wiesen_Weiden_ sowie _Hecken_ {#tbl-spalten-einzelbaeume}
+: Spalten für _baume_straucher_ {#tbl-spalten-einzelbaeume}
 
 
   
@@ -98,6 +113,9 @@ Detailliertere Informationen zu den Datentypen in Geopackages findet ihr in @tbl
 
 
 ## Schritt 4: Attributeingabe festlegen
+
+
+### Warum?
 
 Um den Input von Attribute zu vereinfachen, können Eingabefelder festgelegt werden. Beispielsweise für solche Vereinfachungen:
 
@@ -116,15 +134,52 @@ Zudem können Datenqualitätsaspekte festgelegt werden. Beispielsweise:
 
 Weiter können auch kleinere Erleichterungen eingebaut werden. Beispielsweise, dass der Defaultwert eines Feldes der letzten Eingabe entspricht. Dies kann sinnvoll sein, wenn absehbar ist, dass oft die gleichen Attribute nacheinander eingetragen werden müssen (z.B. *Erfassungsdatum*.)
 
-Diese Aspekte werden im [qgis]{.q} Projekt festgehalten. Rechtsklick auf den Layer [Properties → Attribute Form]{.menu}
+
+### Wie?
+
+Um die Attributeingabe festzulegen, müssen die Tabellen erstmal dem QGIS Projekt hinzugefügt werden. Dazu im [Browser Panel]{.menu} den jeweiligen doppelklicken oder Rechtsklick [Add Layer to Project]{.menu}. Danach im [Layers Panel]{.menu} rechtsklick auf den Layer [Properties → Attribute Form]{.menu} (siehe @fig-attribute-form).
+
+
+:::{.callout-note}
+
+Alle Einstellungen an den Attributeingaben sind teil des [qgis]{.q} *Projektes* und müssen neu festgelegt werden, wenn ein neues QGIS Projekt erstellt wird. 
+
+:::
+
+
+![In den Layer Properties können die Eingaben definiert werden](images/attribute-form.png){#fig-attribute-form} 
+
+
+
+
+
+### Beispiel *Vegetation-CH*
 
 In unserem Fiktiven Beispiel können wir folgende Formulareingaben festhalten:
 
-- _Wiesen_Weiden_ sowie _Hecken_
-  - Datum:
-    - Folgende Standarteinstellungen für Datumsfelder sind bereits ausreichend ([Widget Type: Date/Time]{.menu}, [🗹 Calender Popup]{.menu})
-    - Um die letzte Eingabe als Defaultwert für neue Objekte zu machen, setzen wir noch [🗹 Reuse last entered value]{.menu}
-  - Typ:
-    - Hier hätten wir gerne eine Dropdownliste verschiedener Wiesen/Weiden bzw. Heckentypen. Für Wiesen/Weiden: soll es nur zwei mögliche Einträge geben: *Wiese* sowie *Weide*
-  - Anzahl Arten
-  - Bemerkung
+_Wiesen_Weiden_
+
+- **Datum**:
+  - QGIS verwendet für Datumsfelder per Default den [Widget Type: Date/Time]{.menu} sowie, [🗹 Calender Popup]{.menu}. Dies ist auch für unsere Anwendung sinnvoll
+  - Es ist absehbar, dass wir am gleichen Tag mehrere Objekte erfassen, deshalb setzen wir noch [🗹 Reuse last entered value]{.menu}
+- **Typ**: Hier hätten wir gerne eine Dropdownliste mit zwei Einträgen: Wiese sowie Weide. Zu diesem Zweck verwenden wir das [Widget Type: Value Map]{.menu} und erfassen unsere Liste möglicher Werte in der dazu verfügung stehender Tabelle (siehe @fig-value-map)
+- **Anzahl Arten**: Hier setzen wir den minimum Wert auf 0 und den maximalwert auf 100 und nutzen die Eingabe [Slider]{.menu}
+- **Bemerkung**: Hier belassen wir die Default Einstellungen
+
+
+::::{.column-page}
+
+:::{#fig-attribute-form layout-ncol=2}
+
+![Value map](images/value-map.png){#fig-value-map}
+
+![Slider](images/slider.png){#fig-slider}
+
+Verschiedene Attribut Form optionen
+
+:::
+
+
+
+
+::::

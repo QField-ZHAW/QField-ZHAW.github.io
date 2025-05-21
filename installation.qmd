@@ -15,8 +15,8 @@ Wir empfehlen, die Menüsprache auf Englisch umzustellen (siehe @fig-system-loca
 
 Um die Menüsprache auf Englisch umzustellen klickt man auf [Einstellungen → Options]{.menu}: 
 
-- ☑ System-Locale Übersteuern 
-- Benutzeroberflächenübersetzung: _American English_
+- [☑ System-Locale Übersteuern ]{.menu}
+- [Benutzeroberflächenübersetzung: _American English_]{.menu}
 
 Danach muss [qgis]{.q} neu gestartet werden.
 
@@ -28,7 +28,7 @@ Danach muss [qgis]{.q} neu gestartet werden.
 Damit ein [qgis]{.q} Projekt in [qfield]{.q} verwendet werden kann, braucht es das [qgis]{.q} Plugin _[qfield]{.q} Sync_. Das Plugin kann via dem Plugin Manager [Plugins → Manage and install plugins]{.menu} installiert werden.
 
 
-![[qfield]{.q} Sync Plugin](images/qfield-sync.png){#fig-qfield-sync}
+![[qfield]{.q} Sync Plugin im Plugin Manager](images/qfield-sync.png){#fig-qfield-sync}
 
 
 

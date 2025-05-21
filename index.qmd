@@ -1,4 +1,7 @@
 
 # Einleitung {.unnumbered .unlisted}
 
-Die nachstehende Anleitung dient dazu, Geodaten im Feld mittels [qfield]{.q} und [qfield cloud]{.q} durchzuführen. In  @sec-installation beschreiben wir die installation der notwenigen Software und Plugins. In @sec-projekt geht es darum, ein [qfield]{.q} Projekt mittels [qgis]{.q} aufzusetzen.
+Die nachstehende Anleitung dient dazu, Geodaten im Feld mittels [qfield]{.q} und [qfield cloud]{.q} durchzuführen. 
+
+- In  @sec-installation beschreiben wir die installation der notwenigen Software und Plugins. Das ist einmalig nötig und kann übersprungen werden, wenn die notwendige Software bereits installiert ist
+- In @sec-projekt geht es darum, ein [qfield]{.q} Projekt mittels [qgis]{.q} aufzusetzen. Um die Schritte zu veranschaulichen, spielen wir ein fikitves Projekt mit dem Namen *Vegetation-CH* durch
