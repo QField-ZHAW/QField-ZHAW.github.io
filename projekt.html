@@ -144,14 +144,19 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#sec-project-erstellen" id="toc-sec-project-erstellen" class="nav-link active" data-scroll-target="#sec-project-erstellen"><span class="header-section-number">2.1</span> Schritt 1: <span class="q">qgis</span> Projekt erstellen</a></li>
   <li><a href="#schritt-2-geopackage-erstellen" id="toc-schritt-2-geopackage-erstellen" class="nav-link" data-scroll-target="#schritt-2-geopackage-erstellen"><span class="header-section-number">2.2</span> Schritt 2: Geopackage erstellen</a></li>
-  <li><a href="#schritt-2-geopackage-layer-erstellen" id="toc-schritt-2-geopackage-layer-erstellen" class="nav-link" data-scroll-target="#schritt-2-geopackage-layer-erstellen"><span class="header-section-number">2.3</span> Schritt 2: Geopackage layer erstellen</a></li>
+  <li><a href="#schritt-2-geopackage-tabelle-erstellen" id="toc-schritt-2-geopackage-tabelle-erstellen" class="nav-link" data-scroll-target="#schritt-2-geopackage-tabelle-erstellen"><span class="header-section-number">2.3</span> Schritt 2: Geopackage Tabelle erstellen</a></li>
   <li><a href="#sec-attribute" id="toc-sec-attribute" class="nav-link" data-scroll-target="#sec-attribute"><span class="header-section-number">2.4</span> Schritt 3: Attribute definieren</a></li>
-  <li><a href="#schritt-4-attributeingabe-festlegen" id="toc-schritt-4-attributeingabe-festlegen" class="nav-link" data-scroll-target="#schritt-4-attributeingabe-festlegen"><span class="header-section-number">2.5</span> Schritt 4: Attributeingabe festlegen</a></li>
+  <li><a href="#schritt-4-attributeingabe-festlegen" id="toc-schritt-4-attributeingabe-festlegen" class="nav-link" data-scroll-target="#schritt-4-attributeingabe-festlegen"><span class="header-section-number">2.5</span> Schritt 4: Attributeingabe festlegen</a>
+  <ul class="collapse">
+  <li><a href="#warum" id="toc-warum" class="nav-link" data-scroll-target="#warum">Warum?</a></li>
+  <li><a href="#wie" id="toc-wie" class="nav-link" data-scroll-target="#wie">Wie?</a></li>
+  <li><a href="#beispiel-vegetation-ch" id="toc-beispiel-vegetation-ch" class="nav-link" data-scroll-target="#beispiel-vegetation-ch">Beispiel <em>Vegetation-CH</em></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -188,7 +193,6 @@ Hinweis
 <p>Um die Anleitung etwas verständlicher zu machen, spielen wir ein Beispiel durch. In diesem Beispiel werden verschiedene Vegetationstrukturen erfasst:</p>
 <ul>
 <li>Wiesen und Weiden (Flächenhafte ausprägung)</li>
-<li>Hecken (Linienstrukturen)</li>
 <li>Einzelbäume und Sträucher (Punkte)</li>
 </ul>
 <section id="sec-project-erstellen" class="level2" data-number="2.1">
@@ -206,14 +210,19 @@ Hinweis
 <img src="images/new-geopackage.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-new-geopackage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;2.1: Der Speicherort des neu erstellten Geopackages ist indentisch mit dem Projektspeicherort (<a href="#sec-project-erstellen" class="quarto-xref"><span>Kapitel 2.1</span></a>)
+Abbildung&nbsp;2.1: Der Speicherort des neu erstellten Geopackages ist indentisch mit dem Projekt-Speicherort, welchen wir in <a href="#sec-project-erstellen" class="quarto-xref"><span>Kapitel 2.1</span></a> definiert haben.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="schritt-2-geopackage-layer-erstellen" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="schritt-2-geopackage-layer-erstellen"><span class="header-section-number">2.3</span> Schritt 2: Geopackage layer erstellen</h2>
-<p>Für jeden Datentyp (Punkte, Linien, Polygone), der Erfasst werden soll, wird ein Geopackage Layer erstellt. Dafür klickt man mit Rechts auf das <span class="menu">Geopackage → New Table</span>. Nun muss ein Layer Name (<em>Name</em>), ein Geometrietyp (<em>Geometry Type</em>) sowie ein Koordinatenbezugssystem (<em>CRS</em>) ausgewählt werden (siehe <a href="#fig-new-layer" class="quarto-xref">Abbildung&nbsp;<span>2.2</span></a>). Für die Schweiz wird das CRS <code>CH1903+ LV95</code> mit dem EPSG Code <em>2056</em> empfohlen.</p>
+<section id="schritt-2-geopackage-tabelle-erstellen" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="schritt-2-geopackage-tabelle-erstellen"><span class="header-section-number">2.3</span> Schritt 2: Geopackage Tabelle erstellen</h2>
+<p>Für jeden Datentyp (Punkte, Linien, Polygone), der Erfasst werden soll, wird eine “Tabelle” in der Geopackage erstellt. Dafür klickt man mit Rechts auf das Geopackage <span class="menu">→ New Table</span>. Für die Tabelle muss nun ein Name (<span class="menu">Name</span>), ein Geometrietyp (<span class="menu">Geometry Type</span>) sowie ein Koordinatenbezugssystem (<span class="menu">CRS</span>) ausgewählt werden (siehe <a href="#fig-new-layer" class="quarto-xref">Abbildung&nbsp;<span>2.2</span></a>).</p>
+<ul>
+<li>Für Erhebungen in der Schweiz empfehlen wir CRS <code>CH1903+ LV95</code> (EPSG Code <code>2056</code>).</li>
+<li>Für Erhebungen ausserhalb der Schweiz in einem kleinen Gebiet empfehlen wir die jeweilige UTM Zone (<a href="https://mangomap.com/robertyoung/maps/69585/what-utm-zone-am-i-in-#">hier auswählen</a>)</li>
+<li>Für globale Erhebungen empfehlen wir WGS84 (EPSG Code <code>4326</code>)</li>
+</ul>
 <div id="fig-new-layer" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-new-layer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -224,35 +233,30 @@ Abbildung&nbsp;2.2: Minimal müssen pro Tabelle der Name, der Geometrietyp sowie
 </figcaption>
 </figure>
 </div>
-<p>Für unsere Datentypen verwenden wir die Layer Namen und Geometrietypen wie in <a href="#tbl-layers" class="quarto-xref">Tabelle&nbsp;<span>2.1</span></a> beschreiben. Beachtet, dass die Layernamen weder Umlaute, Sonderzeichen oder Leerzeichen enthalten sollen.</p>
+<p>Für unsere Datentypen verwenden wir die Tabellen-Namen und Geometrietypen wie in <a href="#tbl-layers" class="quarto-xref">Tabelle&nbsp;<span>2.1</span></a> beschreiben. Beachtet, dass die Tabellen-Namen weder Umlaute, Sonderzeichen oder Leerzeichen enthalten sollen.</p>
 <div id="tbl-layers" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabelle&nbsp;2.1: Layernamen und Geometrietypen für das fiktive Projekt <em>Vegetation-CH</em>.
+Tabelle&nbsp;2.1: Tabellen-Namen und Geometrietypen für das fiktive Projekt <em>Vegetation-CH</em>. Wir empfehlen alles konsistent klein zu schreiben, Leerzeichen mit <code>_</code> zu ersetzen und Umlaute zu vermeiden (z.B. <code>a</code> statt <code>ä</code>) .
 </figcaption>
 <div aria-describedby="tbl-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Beschreibung</th>
-<th style="text-align: left;">Layer Name</th>
+<th style="text-align: left;">Tabellen-Name</th>
 <th style="text-align: left;">Geometry Type</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Wiesen &amp; Weiden</td>
-<td style="text-align: left;"><code>Wiesen_Weiden</code></td>
-<td style="text-align: left;">Polygon</td>
+<td style="text-align: left;"><code>wiesen_weiden</code></td>
+<td style="text-align: left;">MultiPolygon</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Hecken</td>
-<td style="text-align: left;"><code>Hecken</code></td>
-<td style="text-align: left;">LineString</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Einzelbäume &amp; Sträucher</td>
-<td style="text-align: left;"><code>Baume_Straucher</code></td>
+<td style="text-align: left;"><code>baume_straucher</code></td>
 <td style="text-align: left;">Point</td>
 </tr>
 </tbody>
@@ -260,49 +264,93 @@ Tabelle&nbsp;2.1: Layernamen und Geometrietypen für das fiktive Projekt <em>Veg
 </div>
 </figure>
 </div>
-<p>Wir verwenden in unserem Beispiel (<a href="#tbl-layers" class="quarto-xref">Tabelle&nbsp;<span>2.1</span></a>) <em>einfache</em> Point / LineString / Polygon. Zu diesen Geometrietypen stehen noch <em>MultiPoint</em>, <em>MultiLineString</em> und <em>MultiPolygon</em> zur Verfügung. Diese werden dann verwendet, wenn <strong>sich mehrere Objekte alle Attribute teilen</strong>. Mehr zu Attributen im nächsten Unterkapitel.</p>
+<p>Wir verwenden in unserem Beispiel (<a href="#tbl-layers" class="quarto-xref">Tabelle&nbsp;<span>2.1</span></a>) <code>Point</code> für die Einzelbäume und <code>MultiPolygon</code> für die Wiesen &amp; Weiden. Der Grund ist der folgende:</p>
+<ul>
+<li>Eine Wiese oder eine Weide kann aus verschiedenen, voneinander getrennten Teilstücken bestehen. In diesem Fall wollen wir alle Teilstücke “in einem Zug” erfassen können und dabei die Attribute (mehr zu Attributen in <a href="#sec-attribute" class="quarto-xref"><span>Kapitel 2.4</span></a>) nur einmalig eingeben. Deshalb verwenden wir <code>MultiPolygon</code> statt <code>Polygon</code>.</li>
+<li>Bei Bäumen und Sträucher ist das anders: Hier verpflichten wir uns, jeden Baum und jeder Strauch einzeln zu erfassen, weil beispielsweise die Wuchshöhe für jedes Objekt einzeln angegeben werden muss. Deshalb verwenden wir <code>Point</code> statt <code>MultiPoint</code>.</li>
+</ul>
 </section>
 <section id="sec-attribute" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="sec-attribute"><span class="header-section-number">2.4</span> Schritt 3: Attribute definieren</h2>
-<p>Damit wir die Beobachtungen, die wir im Feld machen auch festhalten können, brauchen wir Spalten (sog. Attribute). Diese Attribute (engl: <em>Fields</em>) werden pro Layer separat erstellt. Für jede Spalte wird ein Datentyp ausgewählt, wobei folgende Datentypen am häufigsten sind:</p>
+<p>Damit wir die Beobachtungen, die wir im Feld machen auch festhalten können, brauchen wir Spalten (sog. Attribute). Diese Attribute (engl: <em>Fields</em>) werden pro Tabelle separat erstellt. Für jede Spalte wird ein Datentyp ausgewählt, wobei folgende Datentypen am häufigsten sind:</p>
 <ul>
 <li>Nummerische Werte (mit / ohne Nachkommastellen)</li>
 <li>Text</li>
 <li>Datum (mit / ohne Uhrzeit)</li>
 <li>Bilder</li>
 </ul>
-<p>Spalten können entweder direkt während der Erstellung des Layers (siehe <a href="#fig-new-layer" class="quarto-xref">Abbildung&nbsp;<span>2.2</span></a>) oder auch nachträglich hinzugefügt werden. Für ein nachträgliches Hinzufügen von Spalten muss der Layer dem Projekt hinzugefügt werden (<span class="menu">Rechtscklick → Add Layer to Project</span>).</p>
-<p>Danach im <em>Layers</em> Panel mit Rechtsklick auf den <span class="menu">Layer → Properties → Fields</span>. Nach Klick auf <span class="menu">🖉 Toggle Editing Mode</span> können witere Spalten hinzugefügt werden.</p>
-<p>Wir erstellen pro Layer die nachstehenden Spalten. Die <em>Namen</em> der Felder sollten keine Umlaute, Leerschläge oder Sonderzeichen enthalten. Allerdings kann pro Feld ein <em>Alias</em> definiert werden: Dabei handelt es sich um eine alternative Bezeichnung, bei dem diese Regeln nicht gelten.</p>
-<div id="tbl-spalten-wiesen-hecken" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spalten-wiesen-hecken-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabelle&nbsp;2.2: Spalten für <em>Wiesen_Weiden</em> sowie <em>Hecken</em>
+<p>Spalten können entweder direkt während der Erstellung der Tabelle (siehe <a href="#fig-new-layer" class="quarto-xref">Abbildung&nbsp;<span>2.2</span></a>) oder auch nachträglich hinzugefügt werden. Für ein nachträgliches erfassen muss man im <span class="menu">Browser Panel</span> das Geopackage “ausklappen”, so dass die <span class="menu">Fields</span> sichtbar sind (siehe <a href="#fig-add-field-1" class="quarto-xref">Abbildung&nbsp;<span>2.3 (a)</span></a>). Mit Rechtsklick auf <span class="menu">Fields → Add New Field</span> können weitere Spalten hinzugefügt werden, mit Rechtsklick auf eine bestehendes “Field” kann dieses editiert (z.B. umbenannt) werden.</p>
+<div id="fig-add-field" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-add-field-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-add-field" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-add-field-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-add-field-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/add-field.png" class="img-fluid figure-img" data-ref-parent="fig-add-field">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-add-field-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Im Browser Panel können Geopackages nachträglich editiert werden.
 </figcaption>
-<div aria-describedby="tbl-spalten-wiesen-hecken-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-add-field" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-add-field-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-add-field-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/add-field-2.png" class="img-fluid figure-img" data-ref-parent="fig-add-field">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-add-field-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Für jedes Field muss ein Name und ein Datentyp definiert werden. Ein Alias sowie ein Kommentar helfen das Attribut besser zu beschreiben
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-add-field-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;2.3
+</figcaption>
+</figure>
+</div>
+<p>Die Spalten für für die Tabelle <code>wiesen_weiden</code> sind in <a href="#tbl-spalten-wiesen" class="quarto-xref">Tabelle&nbsp;<span>2.2</span></a> beschreiben. Die Spalten für die Tabelle <code>baume_straucher</code> sind in <a href="#tbl-spalten-einzelbaeume" class="quarto-xref">Tabelle&nbsp;<span>2.3</span></a> dargestellt.</p>
+<p>Die <em>Namen</em> der Felder sollten keine Umlaute, Leerschläge oder Sonderzeichen enthalten. Allerdings kann pro Feld ein <em>Alias</em> definiert werden: Dabei handelt es sich um eine alternative Bezeichnung, bei dem diese Regeln nicht gelten.</p>
+<div id="tbl-spalten-wiesen" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spalten-wiesen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabelle&nbsp;2.2: Spalten für <em>wiesen_weiden</em>
+</figcaption>
+<div aria-describedby="tbl-spalten-wiesen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 47%">
+<col style="width: 23%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Bezeichnung / Alias</th>
-<th>Datentyp</th>
-<th>Spaltenname</th>
+<th style="text-align: left;">Bezeichnung / Alias</th>
+<th style="text-align: left;">Datentyp</th>
+<th style="text-align: left;">Spaltenname</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Erfassungsdatum</td>
-<td><code>Date</code></td>
-<td>erfassungsdatum</td>
+<td style="text-align: left;">Erfassungsdatum</td>
+<td style="text-align: left;"><code>Date</code></td>
+<td style="text-align: left;">erfassungsdatum</td>
 </tr>
 <tr class="even">
-<td>Typ</td>
-<td><code>Text (String)</code> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
-<td>typ</td>
+<td style="text-align: left;">Typ</td>
+<td style="text-align: left;"><code>Text (String)</code> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
+<td style="text-align: left;">typ</td>
 </tr>
 <tr class="odd">
-<td>Anzahl Arten</td>
-<td><code>Integer (32 Bit)</code> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></td>
-<td>anzahl_arten</td>
+<td style="text-align: left;">Anzahl Arten</td>
+<td style="text-align: left;"><code>Integer (32 Bit)</code> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></td>
+<td style="text-align: left;">anzahl_arten</td>
 </tr>
 </tbody>
 </table>
@@ -312,7 +360,7 @@ Tabelle&nbsp;2.2: Spalten für <em>Wiesen_Weiden</em> sowie <em>Hecken</em>
 <div id="tbl-spalten-einzelbaeume" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spalten-einzelbaeume-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabelle&nbsp;2.3: Spalten für <em>Wiesen_Weiden</em> sowie <em>Hecken</em>
+Tabelle&nbsp;2.3: Spalten für <em>baume_straucher</em>
 </figcaption>
 <div aria-describedby="tbl-spalten-einzelbaeume-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -323,31 +371,31 @@ Tabelle&nbsp;2.3: Spalten für <em>Wiesen_Weiden</em> sowie <em>Hecken</em>
 </colgroup>
 <thead>
 <tr class="header">
-<th>Bezeichnung / Alias</th>
-<th>Datentyp</th>
-<th>Spaltenname</th>
+<th style="text-align: left;">Bezeichnung / Alias</th>
+<th style="text-align: left;">Datentyp</th>
+<th style="text-align: left;">Spaltenname</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Erfassungsdatum</td>
-<td><code>Date</code></td>
-<td>erfassungsdatum</td>
+<td style="text-align: left;">Erfassungsdatum</td>
+<td style="text-align: left;"><code>Date</code></td>
+<td style="text-align: left;">erfassungsdatum</td>
 </tr>
 <tr class="even">
-<td>Art</td>
-<td><code>Text (String)</code></td>
-<td>art</td>
+<td style="text-align: left;">Art</td>
+<td style="text-align: left;"><code>Text (String)</code></td>
+<td style="text-align: left;">art</td>
 </tr>
 <tr class="odd">
-<td>Wuchshöhe</td>
-<td><code>Decimal Number (real)</code> <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></td>
-<td>wuchshohe</td>
+<td style="text-align: left;">Wuchshöhe</td>
+<td style="text-align: left;"><code>Decimal Number (real)</code> <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></td>
+<td style="text-align: left;">wuchshohe</td>
 </tr>
 <tr class="even">
-<td>Bemerkung</td>
-<td><code>Text (String)</code></td>
-<td>bemerkung</td>
+<td style="text-align: left;">Bemerkung</td>
+<td style="text-align: left;"><code>Text (String)</code></td>
+<td style="text-align: left;">bemerkung</td>
 </tr>
 </tbody>
 </table>
@@ -356,8 +404,10 @@ Tabelle&nbsp;2.3: Spalten für <em>Wiesen_Weiden</em> sowie <em>Hecken</em>
 </div>
 <p>Detailliertere Informationen zu den Datentypen in Geopackages findet ihr in <a href="anhang.html#tbl-geopackage-datatypes" class="quarto-xref">Tabelle&nbsp;<span>3.1</span></a></p>
 </section>
-<section id="schritt-4-attributeingabe-festlegen" class="level2" data-number="2.5">
+<section id="schritt-4-attributeingabe-festlegen" class="level2 page-columns page-full" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="schritt-4-attributeingabe-festlegen"><span class="header-section-number">2.5</span> Schritt 4: Attributeingabe festlegen</h2>
+<section id="warum" class="level3">
+<h3 class="anchored" data-anchor-id="warum">Warum?</h3>
 <p>Um den Input von Attribute zu vereinfachen, können Eingabefelder festgelegt werden. Beispielsweise für solche Vereinfachungen:</p>
 <ul>
 <li>Eingabe von numerischen Werten via einem Slider (zum Beispiel wenn sich der Wert nur in einem bestimmten Bereich bewegen kann)</li>
@@ -372,26 +422,88 @@ Tabelle&nbsp;2.3: Spalten für <em>Wiesen_Weiden</em> sowie <em>Hecken</em>
 <li>Ein Feld wird automatisch ausgefüllt und darf <em>nicht</em> editiert werden (zum Beispiel <code>fid</code>)</li>
 </ul>
 <p>Weiter können auch kleinere Erleichterungen eingebaut werden. Beispielsweise, dass der Defaultwert eines Feldes der letzten Eingabe entspricht. Dies kann sinnvoll sein, wenn absehbar ist, dass oft die gleichen Attribute nacheinander eingetragen werden müssen (z.B. <em>Erfassungsdatum</em>.)</p>
-<p>Diese Aspekte werden im <span class="q">qgis</span> Projekt festgehalten. Rechtsklick auf den Layer <span class="menu">Properties → Attribute Form</span></p>
+</section>
+<section id="wie" class="level3">
+<h3 class="anchored" data-anchor-id="wie">Wie?</h3>
+<p>Um die Attributeingabe festzulegen, müssen die Tabellen erstmal dem QGIS Projekt hinzugefügt werden. Dazu im <span class="menu">Browser Panel</span> den jeweiligen doppelklicken oder Rechtsklick <span class="menu">Add Layer to Project</span>. Danach im <span class="menu">Layers Panel</span> rechtsklick auf den Layer <span class="menu">Properties → Attribute Form</span> (siehe <a href="#fig-attribute-form" class="quarto-xref">Abbildung&nbsp;<span>2.5</span></a>).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Alle Einstellungen an den Attributeingaben sind teil des <span class="q">qgis</span> <em>Projektes</em> und müssen neu festgelegt werden, wenn ein neues QGIS Projekt erstellt wird.</p>
+</div>
+</div>
+<div id="fig-attribute-form" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-attribute-form-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/attribute-form.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-attribute-form-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;2.4: In den Layer Properties können die Eingaben definiert werden
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="beispiel-vegetation-ch" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="beispiel-vegetation-ch">Beispiel <em>Vegetation-CH</em></h3>
 <p>In unserem Fiktiven Beispiel können wir folgende Formulareingaben festhalten:</p>
+<p><em>Wiesen_Weiden</em></p>
 <ul>
-<li><em>Wiesen_Weiden</em> sowie <em>Hecken</em>
+<li><strong>Datum</strong>:
 <ul>
-<li>Datum:
-<ul>
-<li>Folgende Standarteinstellungen für Datumsfelder sind bereits ausreichend (<span class="menu">Widget Type: Date/Time</span>, <span class="menu">🗹 Calender Popup</span>)</li>
-<li>Um die letzte Eingabe als Defaultwert für neue Objekte zu machen, setzen wir noch <span class="menu">🗹 Reuse last entered value</span></li>
+<li>QGIS verwendet für Datumsfelder per Default den <span class="menu">Widget Type: Date/Time</span> sowie, <span class="menu">🗹 Calender Popup</span>. Dies ist auch für unsere Anwendung sinnvoll</li>
+<li>Es ist absehbar, dass wir am gleichen Tag mehrere Objekte erfassen, deshalb setzen wir noch <span class="menu">🗹 Reuse last entered value</span></li>
 </ul></li>
-<li>Typ:
-<ul>
-<li>Hier hätten wir gerne eine Dropdownliste verschiedener Wiesen/Weiden bzw. Heckentypen. Für Wiesen/Weiden: soll es nur zwei mögliche Einträge geben: <em>Wiese</em> sowie <em>Weide</em></li>
-</ul></li>
-<li>Anzahl Arten</li>
-<li>Bemerkung</li>
-</ul></li>
+<li><strong>Typ</strong>: Hier hätten wir gerne eine Dropdownliste mit zwei Einträgen: Wiese sowie Weide. Zu diesem Zweck verwenden wir das <span class="menu">Widget Type: Value Map</span> und erfassen unsere Liste möglicher Werte in der dazu verfügung stehender Tabelle (siehe <a href="#fig-value-map" class="quarto-xref">Abbildung&nbsp;<span>2.5 (a)</span></a>)</li>
+<li><strong>Anzahl Arten</strong>: Hier setzen wir den minimum Wert auf 0 und den maximalwert auf 100 und nutzen die Eingabe <span class="menu">Slider</span></li>
+<li><strong>Bemerkung</strong>: Hier belassen wir die Default Einstellungen</li>
 </ul>
+<div class="page-columns page-full">
+<div id="fig-attribute-form" class="quarto-layout-panel page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-attribute-form-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
+<div class="quarto-layout-row column-page">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-attribute-form" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-value-map" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-value-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/value-map.png" class="img-fluid figure-img" data-ref-parent="fig-attribute-form">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-value-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Value map
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-attribute-form" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-slider" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-slider-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/slider.png" class="img-fluid figure-img" data-ref-parent="fig-attribute-form">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-slider-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Slider
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-attribute-form-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;2.5: Verschiedene Attribut Form optionen
+</figcaption>
+</figure>
+</div>
+</div>
 
 
+</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
