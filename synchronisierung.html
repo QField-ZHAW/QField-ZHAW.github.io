@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Erfassen von Geodaten im Feld mit qfield und qfield Cloud - 4&nbsp; Anhang</title>
+<title>Erfassen von Geodaten im Feld mit qfield und qfield Cloud - 3&nbsp; Projekt via QField Cloud synchronisieren</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./synchronisierung.html" rel="prev">
+<link href="./anhang.html" rel="next">
+<link href="./projekt.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -67,6 +68,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Suchen"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="style.css">
@@ -81,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./anhang.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Anhang</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./synchronisierung.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Projekt via QField Cloud synchronisieren</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -126,13 +130,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./synchronisierung.html" class="sidebar-item-text sidebar-link">
+  <a href="./synchronisierung.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Projekt via QField Cloud synchronisieren</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./anhang.html" class="sidebar-item-text sidebar-link active">
+  <a href="./anhang.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Anhang</span></span></a>
   </div>
 </li>
@@ -142,14 +146,26 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#lokeals-qfield-projekt-erstellen" id="toc-lokeals-qfield-projekt-erstellen" class="nav-link active" data-scroll-target="#lokeals-qfield-projekt-erstellen"><span class="header-section-number">3.1</span> Lokeals QField Projekt erstellen</a></li>
+  <li><a href="#qfield-auf-dem-mobilen-gerät-synchronisierung-mit-cloud" id="toc-qfield-auf-dem-mobilen-gerät-synchronisierung-mit-cloud" class="nav-link" data-scroll-target="#qfield-auf-dem-mobilen-gerät-synchronisierung-mit-cloud"><span class="header-section-number">3.2</span> QField auf dem mobilen Gerät, Synchronisierung mit Cloud</a>
+  <ul class="collapse">
+  <li><a href="#öffnen-des-projektes" id="toc-öffnen-des-projektes" class="nav-link" data-scroll-target="#öffnen-des-projektes">Öffnen des Projektes</a></li>
+  <li><a href="#synchronisierung-mit-cloud" id="toc-synchronisierung-mit-cloud" class="nav-link" data-scroll-target="#synchronisierung-mit-cloud">Synchronisierung mit Cloud</a></li>
+  </ul></li>
+  <li><a href="#synchronisierung-zwischen-lokalem-qfield-projekt-und-mobilen-gerät" id="toc-synchronisierung-zwischen-lokalem-qfield-projekt-und-mobilen-gerät" class="nav-link" data-scroll-target="#synchronisierung-zwischen-lokalem-qfield-projekt-und-mobilen-gerät"><span class="header-section-number">3.3</span> Synchronisierung zwischen lokalem QField Projekt und mobilen Gerät</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Anhang</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Projekt via QField Cloud synchronisieren</span></h1>
 </div>
 
 
@@ -166,59 +182,117 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div id="tbl-geopackage-datatypes" class="quarto-float anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-geopackage-datatypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabelle&nbsp;4.1: Geopackage Data Types. Quelle: <a href="https://www.geopackage.org/spec140/index.html">geopackage.org</a>
-</figcaption>
-<div aria-describedby="tbl-geopackage-datatypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 4%">
-<col style="width: 95%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Data Type</th>
-<th style="text-align: left;">Size and Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">INTEGER 32 bit</td>
-<td style="text-align: left;">32-bit signed two’s complement integer. Stored as SQLite INTEGER with values in the range [-2147483648, 2147483647].</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">INTEGER 64 bit</td>
-<td style="text-align: left;">64-bit signed two’s complement integer. Stored as SQLite INTEGER with values in the range [-9223372036854775808, 9223372036854775807].</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">REAL</td>
-<td style="text-align: left;">64-bit IEEE floating point number. Stored as SQLite REAL.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">TEXT{(maxchar_count)}</td>
-<td style="text-align: left;">Variable length string encoded in either UTF-8 or UTF-16. The optional maxchar_count defines the maximum number of characters in the string. If not specified, the length is unbounded. Stored as SQLite TEXT.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">BLOB{(max_size)}</td>
-<td style="text-align: left;">Variable length binary data. The optional max_size defines the maximum number of bytes in the blob. If not specified, the length is unbounded.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">DATE</td>
-<td style="text-align: left;">ISO 8601 date string in the form YYYY-MM-DD encoded in either UTF-8 or UTF-16. Stored as SQLite TEXT (see TEXT above).</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">DATETIME</td>
-<td style="text-align: left;">ISO-8601 date/time string in the form YYYY-MM-DDTHH:MM:SS.SSSZ with T separator character and Z suffix for coordinated universal time (UTC) encoded in either UTF-8 or UTF-16. Stored as SQLite TEXT (see TEXT above).</td>
-</tr>
-</tbody>
-</table>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A[lokales &lt;br&gt; QGIS Projekt] --&gt;|Umwandlung &lt;br&gt; QField Projekt| B[lokales &lt;br&gt; QField Projekt]
+  B &lt;--&gt; |Sync| C[QField Cloud]
+  C &lt;--&gt; |Sync| D[QField auf &lt;br&gt; mobilem Gerät]
+  style C fill:#80cc28,stroke:#333,stroke-width:2px,color:#fff
+</pre>
 </div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Übersicht: Erstellung lokales QGIS Projekt wie in der Anleitung vorher</p>
+<section id="lokeals-qfield-projekt-erstellen" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="lokeals-qfield-projekt-erstellen"><span class="header-section-number">3.1</span> Lokeals QField Projekt erstellen</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/create_local_qfieldcloud_project1.png" class="img-fluid figure-img"></p>
+<figcaption>Schritt 1</figcaption>
 </figure>
 </div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/create_local_qfieldcloud_project2.png" class="img-fluid figure-img"></p>
+<figcaption>Schritt 2</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/create_local_qfieldcloud_project3.png" class="img-fluid figure-img"></p>
+<figcaption>Schritt 3</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Danach wird das Projekt automatisch in/mit der Cloud synchronisiert</p>
+</section>
+<section id="qfield-auf-dem-mobilen-gerät-synchronisierung-mit-cloud" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="qfield-auf-dem-mobilen-gerät-synchronisierung-mit-cloud"><span class="header-section-number">3.2</span> QField auf dem mobilen Gerät, Synchronisierung mit Cloud</h2>
+<section id="öffnen-des-projektes" class="level3">
+<h3 class="anchored" data-anchor-id="öffnen-des-projektes">Öffnen des Projektes</h3>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-nrow="1">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="images/open_project_mobile1.PNG" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="images/open_project_mobile2.PNG" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="synchronisierung-mit-cloud" class="level3">
+<h3 class="anchored" data-anchor-id="synchronisierung-mit-cloud">Synchronisierung mit Cloud</h3>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-nrow="1">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="images/synchronize_mobile1.PNG" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="images/synchronize_mobile2.PNG" class="img-fluid"></p>
+</div>
+</div>
+</div>
+<p>Entweder nur die gemachten Features mit Cloud updaten (push changes) oder ganzes Projekt synchronisieren</p>
+</section>
+</section>
+<section id="synchronisierung-zwischen-lokalem-qfield-projekt-und-mobilen-gerät" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="synchronisierung-zwischen-lokalem-qfield-projekt-und-mobilen-gerät"><span class="header-section-number">3.3</span> Synchronisierung zwischen lokalem QField Projekt und mobilen Gerät</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img src="images/synchronize_cloud1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img src="images/synchronize_cloud2.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+<p>Actions werden meist richtig erkannt Aber hier ist vorsicht geboten, was aktualisiert werden muss</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -632,11 +706,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./synchronisierung.html" class="pagination-link" aria-label="Projekt via QField Cloud synchronisieren">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Projekt via QField Cloud synchronisieren</span></span>
+      <a href="./projekt.html" class="pagination-link" aria-label="Projekt aufsetzen">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Projekt aufsetzen</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./anhang.html" class="pagination-link" aria-label="Anhang">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Anhang</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

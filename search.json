@@ -50,11 +50,21 @@
     ]
   },
   {
+    "objectID": "installation.html#schritt-3-qfield-cloud-account-erstellen",
+    "href": "installation.html#schritt-3-qfield-cloud-account-erstellen",
+    "title": "1  System aufsetzen",
+    "section": "1.4 Schritt 3: qfield Cloud Account erstellen",
+    "text": "1.4 Schritt 3: qfield Cloud Account erstellen\n\n\n\n\n\n\nTODO\n\n\n\n\nAnleitung für das Erstellen eines Cloud Accountes https://app.qfield.cloud/accounts/signup/\nFreischalten des Accountes auf der ZHAW Organization (was bringt das?)\nEinloggen",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>System aufsetzen</span>"
+    ]
+  },
+  {
     "objectID": "projekt.html",
     "href": "projekt.html",
     "title": "2  Projekt aufsetzen",
     "section": "",
-    "text": "2.1 Schritt 1: qgis Projekt erstellen\nUm die Anleitung etwas verständlicher zu machen, spielen wir ein Beispiel durch. In diesem Beispiel werden verschiedene Vegetationstrukturen erfasst:\nAls erster Schritt wird mit qgis Desktop ein Projekt erstellt (Project → New). Wir speichern das Projekt mit dem Namen Vegetation-CH an einem sinnvollen Ort auf unserem Computer ab (Project → Save As).",
+    "text": "2.1 Schritt 1: qgis Projekt erstellen\nAls erster Schritt wird mit qgis Desktop ein Projekt erstellt (Project → New). Wir speichern das Projekt mit dem Namen Vegetation-CH an einem sinnvollen Ort auf unserem Computer ab (Project → Save As).",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Projekt aufsetzen</span>"
     ]
@@ -84,7 +94,7 @@
     "href": "projekt.html#sec-attribute",
     "title": "2  Projekt aufsetzen",
     "section": "2.4 Schritt 3: Attribute definieren",
-    "text": "2.4 Schritt 3: Attribute definieren\nDamit wir die Beobachtungen, die wir im Feld machen auch festhalten können, brauchen wir Spalten (sog. Attribute). Diese Attribute (engl: Fields) werden pro Tabelle separat erstellt. Für jede Spalte wird ein Datentyp ausgewählt, wobei folgende Datentypen am häufigsten sind:\n\nNummerische Werte (mit / ohne Nachkommastellen)\nText\nDatum (mit / ohne Uhrzeit)\nBilder\n\nSpalten können entweder direkt während der Erstellung der Tabelle (siehe Abbildung 2.2) oder auch nachträglich hinzugefügt werden. Für ein nachträgliches erfassen muss man im Browser Panel das Geopackage “ausklappen”, so dass die Fields sichtbar sind (siehe Abbildung 2.3 (a)). Mit Rechtsklick auf Fields → Add New Field können weitere Spalten hinzugefügt werden, mit Rechtsklick auf eine bestehendes “Field” kann dieses editiert (z.B. umbenannt) werden.\n\n\n\n\n\n\n\n\n\n\n\n(a) Im Browser Panel können Geopackages nachträglich editiert werden.\n\n\n\n\n\n\n\n\n\n\n\n(b) Für jedes Field muss ein Name und ein Datentyp definiert werden. Ein Alias sowie ein Kommentar helfen das Attribut besser zu beschreiben\n\n\n\n\n\n\n\nAbbildung 2.3\n\n\n\nDie Spalten für für die Tabelle wiesen_weiden sind in Tabelle 2.2 beschreiben. Die Spalten für die Tabelle baume_straucher sind in Tabelle 2.3 dargestellt.\nDie Namen der Felder sollten keine Umlaute, Leerschläge oder Sonderzeichen enthalten. Allerdings kann pro Feld ein Alias definiert werden: Dabei handelt es sich um eine alternative Bezeichnung, bei dem diese Regeln nicht gelten.\n\n\n\nTabelle 2.2: Spalten für wiesen_weiden\n\n\n\n\n\n\n\n\n\n\nBezeichnung / Alias\nDatentyp\nSpaltenname\n\n\n\n\nErfassungsdatum\nDate\nerfassungsdatum\n\n\nTyp\nText (String) 1\ntyp\n\n\nAnzahl Arten\nInteger (32 Bit) 2\nanzahl_arten\n\n\n\n\n\n\n\n\n\nTabelle 2.3: Spalten für baume_straucher\n\n\n\n\n\n\n\n\n\n\nBezeichnung / Alias\nDatentyp\nSpaltenname\n\n\n\n\nErfassungsdatum\nDate\nerfassungsdatum\n\n\nArt\nText (String)\nart\n\n\nWuchshöhe\nDecimal Number (real) 3\nwuchshohe\n\n\nBemerkung\nText (String)\nbemerkung\n\n\n\n\n\n\nDetailliertere Informationen zu den Datentypen in Geopackages findet ihr in Tabelle 3.1",
+    "text": "2.4 Schritt 3: Attribute definieren\nDamit wir die Beobachtungen, die wir im Feld machen auch festhalten können, brauchen wir Spalten (sog. Attribute). Diese Attribute (engl: Fields) werden pro Tabelle separat erstellt. Für jede Spalte wird ein Datentyp ausgewählt, wobei folgende Datentypen am häufigsten sind:\n\nNummerische Werte (mit / ohne Nachkommastellen)\nText\nDatum (mit / ohne Uhrzeit)\nBilder\n\nSpalten können entweder direkt während der Erstellung der Tabelle (siehe Abbildung 2.2) oder auch nachträglich hinzugefügt werden. Für ein nachträgliches erfassen muss man im Browser Panel das Geopackage “ausklappen”, so dass die Fields sichtbar sind (siehe Abbildung 2.3 (a)). Mit Rechtsklick auf Fields → Add New Field können weitere Spalten hinzugefügt werden, mit Rechtsklick auf eine bestehendes “Field” kann dieses editiert (z.B. umbenannt) werden.\n\n\n\n\n\n\n\n\n\n\n\n(a) Im Browser Panel können Geopackages nachträglich editiert werden.\n\n\n\n\n\n\n\n\n\n\n\n(b) Für jedes Field muss ein Name und ein Datentyp definiert werden. Ein Alias sowie ein Kommentar helfen das Attribut besser zu beschreiben\n\n\n\n\n\n\n\nAbbildung 2.3\n\n\n\nDie Spalten für für die Tabelle wiesen_weiden sind in Tabelle 2.2 beschreiben. Die Spalten für die Tabelle baume_straucher sind in Tabelle 2.3 dargestellt.\nDie Namen der Felder sollten keine Umlaute, Leerschläge oder Sonderzeichen enthalten. Allerdings kann pro Feld ein Alias definiert werden: Dabei handelt es sich um eine alternative Bezeichnung, bei dem diese Regeln nicht gelten.\n\n\n\nTabelle 2.2: Spalten für wiesen_weiden\n\n\n\n\n\n\n\n\n\n\nBezeichnung / Alias\nDatentyp\nSpaltenname\n\n\n\n\nErfassungsdatum\nDate\nerfassungsdatum\n\n\nTyp\nText (String) 1\ntyp\n\n\nAnzahl Arten\nInteger (32 Bit) 2\nanzahl_arten\n\n\n\n\n\n\n\n\n\nTabelle 2.3: Spalten für baume_straucher\n\n\n\n\n\n\n\n\n\n\nBezeichnung / Alias\nDatentyp\nSpaltenname\n\n\n\n\nErfassungsdatum\nDate\nerfassungsdatum\n\n\nArt\nText (String)\nart\n\n\nWuchshöhe\nDecimal Number (real) 3\nwuchshohe\n\n\nBemerkung\nText (String)\nbemerkung\n\n\n\n\n\n\nDetailliertere Informationen zu den Datentypen in Geopackages findet ihr in Tabelle 4.1",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Projekt aufsetzen</span>"
     ]
@@ -94,7 +104,27 @@
     "href": "projekt.html#schritt-4-attributeingabe-festlegen",
     "title": "2  Projekt aufsetzen",
     "section": "2.5 Schritt 4: Attributeingabe festlegen",
-    "text": "2.5 Schritt 4: Attributeingabe festlegen\n\nWarum?\nUm den Input von Attribute zu vereinfachen, können Eingabefelder festgelegt werden. Beispielsweise für solche Vereinfachungen:\n\nEingabe von numerischen Werten via einem Slider (zum Beispiel wenn sich der Wert nur in einem bestimmten Bereich bewegen kann)\nEingabe von Ja/Nein mittels Checkbox\nEingabe von Text über ein Dropdown Menü (wenn es eine festgelegte beschränkte Liste von Optionen gibt)\nEingabe von Datum via einem Kalender\n\nZudem können Datenqualitätsaspekte festgelegt werden. Beispielsweise:\n\nEin Feld darf nicht leer sein (zwingende Eingabe)\nJeder Wert darf nur 1x vorkommen (Eindeutige Werte)\nEin Feld wird automatisch ausgefüllt und darf nicht editiert werden (zum Beispiel fid)\n\nWeiter können auch kleinere Erleichterungen eingebaut werden. Beispielsweise, dass der Defaultwert eines Feldes der letzten Eingabe entspricht. Dies kann sinnvoll sein, wenn absehbar ist, dass oft die gleichen Attribute nacheinander eingetragen werden müssen (z.B. Erfassungsdatum.)\n\n\nWie?\nUm die Attributeingabe festzulegen, müssen die Tabellen erstmal dem QGIS Projekt hinzugefügt werden. Dazu im Browser Panel den jeweiligen doppelklicken oder Rechtsklick Add Layer to Project. Danach im Layers Panel rechtsklick auf den Layer Properties → Attribute Form (siehe Abbildung 2.5).\n\n\n\n\n\n\nHinweis\n\n\n\nAlle Einstellungen an den Attributeingaben sind teil des qgis Projektes und müssen neu festgelegt werden, wenn ein neues QGIS Projekt erstellt wird.\n\n\n\n\n\n\n\n\nAbbildung 2.4: In den Layer Properties können die Eingaben definiert werden\n\n\n\n\n\nBeispiel Vegetation-CH\nIn unserem Fiktiven Beispiel können wir folgende Formulareingaben festhalten:\nWiesen_Weiden\n\nDatum:\n\nQGIS verwendet für Datumsfelder per Default den Widget Type: Date/Time sowie, 🗹 Calender Popup. Dies ist auch für unsere Anwendung sinnvoll\nEs ist absehbar, dass wir am gleichen Tag mehrere Objekte erfassen, deshalb setzen wir noch 🗹 Reuse last entered value\n\nTyp: Hier hätten wir gerne eine Dropdownliste mit zwei Einträgen: Wiese sowie Weide. Zu diesem Zweck verwenden wir das Widget Type: Value Map und erfassen unsere Liste möglicher Werte in der dazu verfügung stehender Tabelle (siehe Abbildung 2.5 (a))\nAnzahl Arten: Hier setzen wir den minimum Wert auf 0 und den maximalwert auf 100 und nutzen die Eingabe Slider\nBemerkung: Hier belassen wir die Default Einstellungen\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Value map\n\n\n\n\n\n\n\n\n\n\n\n(b) Slider\n\n\n\n\n\n\n\nAbbildung 2.5: Verschiedene Attribut Form optionen",
+    "text": "2.5 Schritt 4: Attributeingabe festlegen\n\nWarum?\nUm den Input von Attribute zu vereinfachen, können Eingabefelder festgelegt werden. Beispielsweise für solche Vereinfachungen:\n\nEingabe von numerischen Werten via einem Slider (zum Beispiel wenn sich der Wert nur in einem bestimmten Bereich bewegen kann)\nEingabe von Ja/Nein mittels Checkbox\nEingabe von Text über ein Dropdown Menü (wenn es eine festgelegte beschränkte Liste von Optionen gibt)\nEingabe von Datum via einem Kalender\n\nZudem können Datenqualitätsaspekte festgelegt werden. Beispielsweise:\n\nEin Feld darf nicht leer sein (zwingende Eingabe)\nJeder Wert darf nur 1x vorkommen (Eindeutige Werte)\nEin Feld wird automatisch ausgefüllt und darf nicht editiert werden (zum Beispiel fid)\n\nWeiter können auch kleinere Erleichterungen eingebaut werden. Beispielsweise, dass der Defaultwert eines Feldes der letzten Eingabe entspricht. Dies kann sinnvoll sein, wenn absehbar ist, dass oft die gleichen Attribute nacheinander eingetragen werden müssen (z.B. Erfassungsdatum.)\n\n\nWie?\nUm die Attributeingabe festzulegen, müssen die Tabellen erstmal dem QGIS Projekt hinzugefügt werden. Dazu im Browser Panel den jeweiligen doppelklicken oder Rechtsklick Add Layer to Project. Danach im Layers Panel rechtsklick auf den Layer Properties → Attribute Form (siehe Abbildung 2.5).\n\n\n\n\n\n\nHinweis\n\n\n\nAlle Einstellungen an den Attributeingaben sind teil des qgis Projektes. Die Einstellungen aus Kapitel 2.4 hingegen waren Teil des Geopackage.\n\n\n\n\n\n\n\n\nAbbildung 2.4: In den Layer Properties können die Eingaben definiert werden\n\n\n\n\n\nBeispiel Vegetation-CH\nIn unserem Fiktiven Beispiel können wir folgende Formulareingaben festhalten:\nWiesen_Weiden\n\nDatum:\n\nQGIS verwendet für Datumsfelder per Default den Widget Type: Date/Time sowie, 🗹 Calender Popup. Dies ist auch für unsere Anwendung sinnvoll\nEs ist absehbar, dass wir am gleichen Tag mehrere Objekte erfassen, deshalb setzen wir noch 🗹 Reuse last entered value\n\nTyp: Hier hätten wir gerne eine Dropdownliste mit zwei Einträgen: Wiese sowie Weide. Zu diesem Zweck verwenden wir das Widget Type: Value Map und erfassen unsere Liste möglicher Werte in der dazu verfügung stehender Tabelle (siehe Abbildung 2.5 (a))\nAnzahl Arten: Hier setzen wir den minimum Wert auf 0 und den maximalwert auf 100 und nutzen die Eingabe Slider\nBemerkung: Hier belassen wir die Default Einstellungen\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Value map\n\n\n\n\n\n\n\n\n\n\n\n(b) Slider\n\n\n\n\n\n\n\nAbbildung 2.5: Verschiedene Attribut-Formular Optionen",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Projekt aufsetzen</span>"
+    ]
+  },
+  {
+    "objectID": "projekt.html#schritt-5-qgis-projekt-in-qfield-projekt-umwandeln",
+    "href": "projekt.html#schritt-5-qgis-projekt-in-qfield-projekt-umwandeln",
+    "title": "2  Projekt aufsetzen",
+    "section": "2.6 Schritt 5: QGIS Projekt in → QFIELD Projekt umwandeln",
+    "text": "2.6 Schritt 5: QGIS Projekt in → QFIELD Projekt umwandeln\n\n\n\n\n\n\nTodo\n\n\n\n\nLayerspezifische Einstellungen\nBasemaps",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Projekt aufsetzen</span>"
+    ]
+  },
+  {
+    "objectID": "projekt.html#schritt-6-qfield-projekt-mit-der-cloud-synchronisieren",
+    "href": "projekt.html#schritt-6-qfield-projekt-mit-der-cloud-synchronisieren",
+    "title": "2  Projekt aufsetzen",
+    "section": "2.7 Schritt 6: QField Projekt mit der Cloud Synchronisieren",
+    "text": "2.7 Schritt 6: QField Projekt mit der Cloud Synchronisieren",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Projekt aufsetzen</span>"
     ]
@@ -110,13 +140,53 @@
     ]
   },
   {
+    "objectID": "synchronisierung.html",
+    "href": "synchronisierung.html",
+    "title": "3  Projekt via QField Cloud synchronisieren",
+    "section": "",
+    "text": "3.1 Lokeals QField Projekt erstellen\nDanach wird das Projekt automatisch in/mit der Cloud synchronisiert",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Projekt via QField Cloud synchronisieren</span>"
+    ]
+  },
+  {
+    "objectID": "synchronisierung.html#lokeals-qfield-projekt-erstellen",
+    "href": "synchronisierung.html#lokeals-qfield-projekt-erstellen",
+    "title": "3  Projekt via QField Cloud synchronisieren",
+    "section": "",
+    "text": "Schritt 1\n\n\n\n\n\n\n\nSchritt 2\n\n\n\n\n\n\n\n\n\nSchritt 3",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Projekt via QField Cloud synchronisieren</span>"
+    ]
+  },
+  {
+    "objectID": "synchronisierung.html#qfield-auf-dem-mobilen-gerät-synchronisierung-mit-cloud",
+    "href": "synchronisierung.html#qfield-auf-dem-mobilen-gerät-synchronisierung-mit-cloud",
+    "title": "3  Projekt via QField Cloud synchronisieren",
+    "section": "3.2 QField auf dem mobilen Gerät, Synchronisierung mit Cloud",
+    "text": "3.2 QField auf dem mobilen Gerät, Synchronisierung mit Cloud\n\nÖffnen des Projektes\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSynchronisierung mit Cloud\n\n\n\n\n\n\n\n\n\n\n\n\n\nEntweder nur die gemachten Features mit Cloud updaten (push changes) oder ganzes Projekt synchronisieren",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Projekt via QField Cloud synchronisieren</span>"
+    ]
+  },
+  {
+    "objectID": "synchronisierung.html#synchronisierung-zwischen-lokalem-qfield-projekt-und-mobilen-gerät",
+    "href": "synchronisierung.html#synchronisierung-zwischen-lokalem-qfield-projekt-und-mobilen-gerät",
+    "title": "3  Projekt via QField Cloud synchronisieren",
+    "section": "3.3 Synchronisierung zwischen lokalem QField Projekt und mobilen Gerät",
+    "text": "3.3 Synchronisierung zwischen lokalem QField Projekt und mobilen Gerät\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nActions werden meist richtig erkannt Aber hier ist vorsicht geboten, was aktualisiert werden muss",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Projekt via QField Cloud synchronisieren</span>"
+    ]
+  },
+  {
     "objectID": "anhang.html",
     "href": "anhang.html",
-    "title": "3  Anhang",
+    "title": "4  Anhang",
     "section": "",
-    "text": "Tabelle 3.1: Geopackage Data Types. Quelle: geopackage.org\n\n\n\n\n\n\n\n\n\nData Type\nSize and Description\n\n\n\n\nINTEGER 32 bit\n32-bit signed two’s complement integer. Stored as SQLite INTEGER with values in the range [-2147483648, 2147483647].\n\n\nINTEGER 64 bit\n64-bit signed two’s complement integer. Stored as SQLite INTEGER with values in the range [-9223372036854775808, 9223372036854775807].\n\n\nREAL\n64-bit IEEE floating point number. Stored as SQLite REAL.\n\n\nTEXT{(maxchar_count)}\nVariable length string encoded in either UTF-8 or UTF-16. The optional maxchar_count defines the maximum number of characters in the string. If not specified, the length is unbounded. Stored as SQLite TEXT.\n\n\nBLOB{(max_size)}\nVariable length binary data. The optional max_size defines the maximum number of bytes in the blob. If not specified, the length is unbounded.\n\n\nDATE\nISO 8601 date string in the form YYYY-MM-DD encoded in either UTF-8 or UTF-16. Stored as SQLite TEXT (see TEXT above).\n\n\nDATETIME\nISO-8601 date/time string in the form YYYY-MM-DDTHH:MM:SS.SSSZ with T separator character and Z suffix for coordinated universal time (UTC) encoded in either UTF-8 or UTF-16. Stored as SQLite TEXT (see TEXT above).",
+    "text": "Tabelle 4.1: Geopackage Data Types. Quelle: geopackage.org\n\n\n\n\n\n\n\n\n\nData Type\nSize and Description\n\n\n\n\nINTEGER 32 bit\n32-bit signed two’s complement integer. Stored as SQLite INTEGER with values in the range [-2147483648, 2147483647].\n\n\nINTEGER 64 bit\n64-bit signed two’s complement integer. Stored as SQLite INTEGER with values in the range [-9223372036854775808, 9223372036854775807].\n\n\nREAL\n64-bit IEEE floating point number. Stored as SQLite REAL.\n\n\nTEXT{(maxchar_count)}\nVariable length string encoded in either UTF-8 or UTF-16. The optional maxchar_count defines the maximum number of characters in the string. If not specified, the length is unbounded. Stored as SQLite TEXT.\n\n\nBLOB{(max_size)}\nVariable length binary data. The optional max_size defines the maximum number of bytes in the blob. If not specified, the length is unbounded.\n\n\nDATE\nISO 8601 date string in the form YYYY-MM-DD encoded in either UTF-8 or UTF-16. Stored as SQLite TEXT (see TEXT above).\n\n\nDATETIME\nISO-8601 date/time string in the form YYYY-MM-DDTHH:MM:SS.SSSZ with T separator character and Z suffix for coordinated universal time (UTC) encoded in either UTF-8 or UTF-16. Stored as SQLite TEXT (see TEXT above).",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Anhang</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Anhang</span>"
     ]
   }
 ]

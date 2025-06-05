@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.13">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Projekt aufsetzen – Erfassen von Geodaten im Feld mit [qfield]{.q} und [qfield]{.q} Cloud</title>
+<title>Erfassen von Geodaten im Feld mit qfield und qfield Cloud - 2&nbsp; Projekt aufsetzen</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,18 +30,17 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./anhang.html" rel="next">
+<link href="./synchronisierung.html" rel="next">
 <link href="./installation.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-66ab7fd5e73b7f0a764e0d49b3e29ab1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e6054d741114aecf273fcc43dc7bfa58.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -80,13 +79,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./projekt.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Projekt aufsetzen</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -128,8 +127,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./synchronisierung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Projekt via QField Cloud synchronisieren</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./anhang.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anhang</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Anhang</span></span></a>
   </div>
 </li>
     </ul>
@@ -152,6 +157,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#wie" id="toc-wie" class="nav-link" data-scroll-target="#wie">Wie?</a></li>
   <li><a href="#beispiel-vegetation-ch" id="toc-beispiel-vegetation-ch" class="nav-link" data-scroll-target="#beispiel-vegetation-ch">Beispiel <em>Vegetation-CH</em></a></li>
   </ul></li>
+  <li><a href="#schritt-5-qgis-projekt-in-qfield-projekt-umwandeln" id="toc-schritt-5-qgis-projekt-in-qfield-projekt-umwandeln" class="nav-link" data-scroll-target="#schritt-5-qgis-projekt-in-qfield-projekt-umwandeln"><span class="header-section-number">2.6</span> Schritt 5: QGIS Projekt in → QFIELD Projekt umwandeln</a></li>
+  <li><a href="#schritt-6-qfield-projekt-mit-der-cloud-synchronisieren" id="toc-schritt-6-qfield-projekt-mit-der-cloud-synchronisieren" class="nav-link" data-scroll-target="#schritt-6-qfield-projekt-mit-der-cloud-synchronisieren"><span class="header-section-number">2.7</span> Schritt 6: QField Projekt mit der Cloud Synchronisieren</a></li>
   </ul>
 </nav>
     </div>
@@ -204,7 +211,7 @@ Hinweis
 <p>Sämtliche Vektordaten werden in <span class="q">qfield</span> in sogenannten <em>Geopackages</em> erfasst. Geopackages sind alternativen zu <em>Shapefiles</em> und <em>ESRI Geodatabases</em>.</p>
 <p>Um ein Geopackage zu erstellen, rechtsklick auf <span class="menu">Browser Panel → Project Home</span> und danach <span class="menu">New → Geopackage</span>. Beachtet, dass <em>Project Home</em> ist nur sichtbar ist, wenn das <span class="q">qgis</span> Projekt abgespeichert wurde.</p>
 <p>Das Geopackage erscheint mit dem Namen <em>New Geopackage.gpkg</em> unter <em>Project Home</em> (siehe <a href="#fig-new-geopackage" class="quarto-xref">Abbildung&nbsp;<span>2.1</span></a>). Wir benennen das File in <em>Felderhebung.gpkg</em> um (<span class="menu">Rechtsklick → Manage → Rename..</span>).</p>
-<div id="fig-new-geopackage" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-new-geopackage" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-new-geopackage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/new-geopackage.png" class="img-fluid figure-img">
@@ -223,7 +230,7 @@ Abbildung&nbsp;2.1: Der Speicherort des neu erstellten Geopackages ist indentisc
 <li>Für Erhebungen ausserhalb der Schweiz in einem kleinen Gebiet empfehlen wir die jeweilige UTM Zone (<a href="https://mangomap.com/robertyoung/maps/69585/what-utm-zone-am-i-in-#">hier auswählen</a>)</li>
 <li>Für globale Erhebungen empfehlen wir WGS84 (EPSG Code <code>4326</code>)</li>
 </ul>
-<div id="fig-new-layer" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-new-layer" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-new-layer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/new-layer.png" class="img-fluid figure-img">
@@ -234,7 +241,7 @@ Abbildung&nbsp;2.2: Minimal müssen pro Tabelle der Name, der Geometrietyp sowie
 </figure>
 </div>
 <p>Für unsere Datentypen verwenden wir die Tabellen-Namen und Geometrietypen wie in <a href="#tbl-layers" class="quarto-xref">Tabelle&nbsp;<span>2.1</span></a> beschreiben. Beachtet, dass die Tabellen-Namen weder Umlaute, Sonderzeichen oder Leerzeichen enthalten sollen.</p>
-<div id="tbl-layers" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="tbl-layers" class="quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Tabelle&nbsp;2.1: Tabellen-Namen und Geometrietypen für das fiktive Projekt <em>Vegetation-CH</em>. Wir empfehlen alles konsistent klein zu schreiben, Leerzeichen mit <code>_</code> zu ersetzen und Umlaute zu vermeiden (z.B. <code>a</code> statt <code>ä</code>) .
@@ -285,7 +292,7 @@ Tabelle&nbsp;2.1: Tabellen-Namen und Geometrietypen für das fiktive Projekt <em
 <div aria-describedby="fig-add-field-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-add-field" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-add-field-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-add-field-1" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-add-field-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/add-field.png" class="img-fluid figure-img" data-ref-parent="fig-add-field">
@@ -297,7 +304,7 @@ Tabelle&nbsp;2.1: Tabellen-Namen und Geometrietypen für das fiktive Projekt <em
 </div>
 </div>
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-add-field" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-add-field-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-add-field-2" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-add-field-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/add-field-2.png" class="img-fluid figure-img" data-ref-parent="fig-add-field">
@@ -317,7 +324,7 @@ Abbildung&nbsp;2.3
 </div>
 <p>Die Spalten für für die Tabelle <code>wiesen_weiden</code> sind in <a href="#tbl-spalten-wiesen" class="quarto-xref">Tabelle&nbsp;<span>2.2</span></a> beschreiben. Die Spalten für die Tabelle <code>baume_straucher</code> sind in <a href="#tbl-spalten-einzelbaeume" class="quarto-xref">Tabelle&nbsp;<span>2.3</span></a> dargestellt.</p>
 <p>Die <em>Namen</em> der Felder sollten keine Umlaute, Leerschläge oder Sonderzeichen enthalten. Allerdings kann pro Feld ein <em>Alias</em> definiert werden: Dabei handelt es sich um eine alternative Bezeichnung, bei dem diese Regeln nicht gelten.</p>
-<div id="tbl-spalten-wiesen" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="tbl-spalten-wiesen" class="quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spalten-wiesen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Tabelle&nbsp;2.2: Spalten für <em>wiesen_weiden</em>
@@ -357,7 +364,7 @@ Tabelle&nbsp;2.2: Spalten für <em>wiesen_weiden</em>
 </div>
 </figure>
 </div>
-<div id="tbl-spalten-einzelbaeume" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="tbl-spalten-einzelbaeume" class="quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spalten-einzelbaeume-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Tabelle&nbsp;2.3: Spalten für <em>baume_straucher</em>
@@ -402,7 +409,7 @@ Tabelle&nbsp;2.3: Spalten für <em>baume_straucher</em>
 </div>
 </figure>
 </div>
-<p>Detailliertere Informationen zu den Datentypen in Geopackages findet ihr in <a href="anhang.html#tbl-geopackage-datatypes" class="quarto-xref">Tabelle&nbsp;<span>3.1</span></a></p>
+<p>Detailliertere Informationen zu den Datentypen in Geopackages findet ihr in <a href="anhang.html#tbl-geopackage-datatypes" class="quarto-xref">Tabelle&nbsp;<span>4.1</span></a></p>
 </section>
 <section id="schritt-4-attributeingabe-festlegen" class="level2 page-columns page-full" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="schritt-4-attributeingabe-festlegen"><span class="header-section-number">2.5</span> Schritt 4: Attributeingabe festlegen</h2>
@@ -436,10 +443,10 @@ Hinweis
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Alle Einstellungen an den Attributeingaben sind teil des <span class="q">qgis</span> <em>Projektes</em> und müssen neu festgelegt werden, wenn ein neues QGIS Projekt erstellt wird.</p>
+<p>Alle Einstellungen an den Attributeingaben sind teil des <span class="q">qgis</span> <em>Projektes</em>. Die Einstellungen aus <a href="#sec-attribute" class="quarto-xref"><span>Kapitel 2.4</span></a> hingegen waren Teil des <em>Geopackage</em>.</p>
 </div>
 </div>
-<div id="fig-attribute-form" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-attribute-form" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-attribute-form-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/attribute-form.png" class="img-fluid figure-img">
@@ -470,7 +477,7 @@ Abbildung&nbsp;2.4: In den Layer Properties können die Eingaben definiert werde
 <div aria-describedby="fig-attribute-form-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
 <div class="quarto-layout-row column-page">
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-attribute-form" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-value-map" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-value-map" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-value-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/value-map.png" class="img-fluid figure-img" data-ref-parent="fig-attribute-form">
@@ -482,7 +489,7 @@ Abbildung&nbsp;2.4: In den Layer Properties können die Eingaben definiert werde
 </div>
 </div>
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-attribute-form" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-slider" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-slider" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-slider-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/slider.png" class="img-fluid figure-img" data-ref-parent="fig-attribute-form">
@@ -496,14 +503,36 @@ Abbildung&nbsp;2.4: In den Layer Properties können die Eingaben definiert werde
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-attribute-form-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;2.5: Verschiedene Attribut Form optionen
+Abbildung&nbsp;2.5: Verschiedene Attribut-Formular Optionen
 </figcaption>
 </figure>
 </div>
 </div>
-
-
 </section>
+</section>
+<section id="schritt-5-qgis-projekt-in-qfield-projekt-umwandeln" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="schritt-5-qgis-projekt-in-qfield-projekt-umwandeln"><span class="header-section-number">2.6</span> Schritt 5: QGIS Projekt in → QFIELD Projekt umwandeln</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Todo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Layerspezifische Einstellungen</li>
+<li>Basemaps</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="schritt-6-qfield-projekt-mit-der-cloud-synchronisieren" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="schritt-6-qfield-projekt-mit-der-cloud-synchronisieren"><span class="header-section-number">2.7</span> Schritt 6: QField Projekt mit der Cloud Synchronisieren</h2>
+
+
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
@@ -550,7 +579,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -582,27 +622,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -610,7 +630,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -707,6 +727,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -939,8 +960,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./anhang.html" class="pagination-link" aria-label="Anhang">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anhang</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./synchronisierung.html" class="pagination-link" aria-label="Projekt via QField Cloud synchronisieren">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Projekt via QField Cloud synchronisieren</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
