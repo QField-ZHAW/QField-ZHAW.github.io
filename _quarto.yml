@@ -8,6 +8,7 @@ book:
     - index.qmd
     - installation.qmd
     - projekt.qmd
+    - synchronisierung.qmd
     - anhang.qmd
 
 bibliography: references.bib

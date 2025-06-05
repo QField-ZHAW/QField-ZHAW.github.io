@@ -1,0 +1,58 @@
+
+# Projekt via QField Cloud synchronisieren
+
+
+```{mermaid}
+flowchart LR
+  A[lokales <br> QGIS Projekt] -->|Umwandlung <br> QField Projekt| B[lokales <br> QField Projekt]
+  B <--> |Sync| C[QField Cloud]
+  C <--> |Sync| D[QField auf <br> mobilem Gerät]
+  style C fill:#80cc28,stroke:#333,stroke-width:2px,color:#fff
+```
+
+Übersicht: Erstellung lokales QGIS Projekt wie in der Anleitung vorher
+
+
+## Lokeals QField Projekt erstellen
+
+::: {layout-nrow=2}
+![Schritt 1](images/create_local_qfieldcloud_project1.png)
+
+![Schritt 2](images/create_local_qfieldcloud_project2.png)
+
+![Schritt 3](images/create_local_qfieldcloud_project3.png)
+:::
+
+Danach wird das Projekt automatisch in/mit der Cloud synchronisiert
+
+## QField auf dem mobilen Gerät, Synchronisierung mit Cloud
+
+### Öffnen des Projektes
+
+::: {layout-nrow=1}
+![](images/open_project_mobile1.PNG)
+
+![](images/open_project_mobile2.PNG)
+:::
+
+### Synchronisierung mit Cloud
+
+::: {layout-nrow=1}
+![](images/synchronize_mobile1.PNG)
+
+![](images/synchronize_mobile2.PNG)
+:::
+
+Entweder nur die gemachten Features mit Cloud updaten (push changes) oder ganzes Projekt synchronisieren
+
+## Synchronisierung zwischen lokalem QField Projekt und mobilen Gerät
+
+
+::: {layout-nrow=2}
+![](images/synchronize_cloud1.png)
+
+![](images/synchronize_cloud2.png)
+:::
+
+Actions werden meist richtig erkannt
+Aber hier ist vorsicht geboten, was aktualisiert werden muss
