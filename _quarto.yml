@@ -9,7 +9,11 @@ book:
     - installation.qmd
     - projekt.qmd
     - synchronisierung.qmd
-    - anhang.qmd
+    - qfield-cloud-management.qmd
+    - part: Anhang
+      chapters:
+      - anhang-1.qmd
+      - anhang-2.qmd
 
 bibliography: references.bib
 lang: de
@@ -18,6 +22,8 @@ format:
     toc: true
     css: style.css
     number-depth: 2
+    mermaid:
+      theme: neutral
 
 
 

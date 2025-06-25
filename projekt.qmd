@@ -183,17 +183,5 @@ Verschiedene Attribut-Formular Optionen
 
 
 
-## Schritt 5: QGIS Projekt in → QFIELD Projekt umwandeln
-
-:::{.callout-warning}
-
-## Todo
-
-- Layerspezifische Einstellungen
-- Basemaps
-
-:::
-
-## Schritt 6: QField Projekt mit der Cloud Synchronisieren
 
 

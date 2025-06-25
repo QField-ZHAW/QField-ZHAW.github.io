@@ -1,31 +1,62 @@
 
-# Projekt via QField Cloud synchronisieren
+# Projekt Synchronisieren
+
+Wenn das System aufgesetzt ist (siehe @sec-installation) und das QGIS Projekt vorbereitet (siehe @sec-projekt) sind die Voraussetzungen gegeben mit QField Mobile zu Synchronisieren. Um ein Lokales QGIS Projekt mit QField Mobile zu Synchronisieren braucht es zwei Zwischentstationen:
+
+1. Das QGIS Projekt wird zuerst in ein lokales QField Projekt konvertiert
+2. Das lokale QField Projekt wird mit QField Cloud Synchronisiert
+
+Siehe @fig-flow für eine Visualisierung dieses Workflows.
 
 
 ```{mermaid}
+%%| label: fig-flow
+%%| fig-cap: "Grundsätzlicher Workflow und das Zusammenspiel von Laptop, Cloud und Mobile"
 flowchart LR
-  A[lokales <br> QGIS Projekt] -->|Umwandlung <br> QField Projekt| B[lokales <br> QField Projekt]
-  B <--> |Sync| C[QField Cloud]
-  C <--> |Sync| D[QField auf <br> mobilem Gerät]
-  style C fill:#80cc28,stroke:#333,stroke-width:2px,color:#fff
+ subgraph lokal["lokal (laptop)"]
+        B["QField Projekt"]
+        A["QGIS Projekt"]
+  end
+ subgraph mobile["Mobile Geräte"]
+        D["QField Mobile 1"]
+        E["QField Mobile 2"]
+  end
+ subgraph cloud["cloud"]
+        C["QField Cloud"]
+  end
+    A -- Konvertierung --> B
+    B <-- Sync --> C
+    C <-- Sync --> D
+    C <-- Sync --> E
+    style C fill:#80cc28,stroke:#333,stroke-width:2px,color:#fff
 ```
 
-Übersicht: Erstellung lokales QGIS Projekt wie in der Anleitung vorher
+Diese Schritte werden im nachfolgenden Unterkapiteln beschrieben.
+
+## Konvertierung QGIS → QField Project
 
 
-## Lokeals QField Projekt erstellen
+:::{#konvertierung layout-nrow=1  layout-valign="bottom"}
+![Schritt 1: Klick auf QField Cloud Projects Overview im QField Plugin Panel](images/create_local_qfieldcloud_project1.png)
 
-::: {layout-nrow=2}
-![Schritt 1](images/create_local_qfieldcloud_project1.png)
+![Schritt 2: Klick auf "Create New Project" um ein neues QField Projekt zu erstellen](images/create_local_qfieldcloud_project2.png)
 
-![Schritt 2](images/create_local_qfieldcloud_project2.png)
-
-![Schritt 3](images/create_local_qfieldcloud_project3.png)
+![Schritt 3: "Convert currently open project..." auswählen und mit "Next" bestätigen](images/create_local_qfieldcloud_project3.png)
 :::
+
+:::{.callout-warning}
+
+## Todo
+
+- Layerspezifische Einstellungen
+- Basemaps
+
+:::
+
 
 Danach wird das Projekt automatisch in/mit der Cloud synchronisiert
 
-## QField auf dem mobilen Gerät, Synchronisierung mit Cloud
+## QField mobile ↔ QField Cloud
 
 ### Öffnen des Projektes
 
@@ -45,7 +76,7 @@ Danach wird das Projekt automatisch in/mit der Cloud synchronisiert
 
 Entweder nur die gemachten Features mit Cloud updaten (push changes) oder ganzes Projekt synchronisieren
 
-## Synchronisierung zwischen lokalem QField Projekt und mobilen Gerät
+## QField Projekt ↔ QField Cloud
 
 
 ::: {layout-nrow=2}

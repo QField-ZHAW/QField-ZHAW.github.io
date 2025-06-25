@@ -1,0 +1,38 @@
+
+
+# QField Cloud Management
+
+## Organisationsmitglieder
+
+Wir können Mitglieder zu [unserer QField-Cloud Organisation](https://app.qfield.cloud/a/ZHAW/) via ihrer Emailadresse oder ihrem Nutzernamen hinzufügen. Falls *kein* QField-Cloud Account unter der angegebenen Emailadresse registriert ist, wird eine Einladung zur Registrierung an die angegebene Mailadresse verschickt. 
+
+Einzelne Nutzer können via *Members* hinzugefügt werden: <https://app.qfield.cloud/settings/ZHAW/members>
+
+
+
+## Projektmitglieder {#sec-project-collaborators}
+
+Zu einem Projekt auf QField Cloud können weitere Teammitglieder (sogenannte *Collaborators*) hinzugefügt werden. Dafür gibt es verschiedene Rollen mit unterschiedlichen Berechtigungen . Diese sind in @tbl-roles zusammengefasst. Mehr Infos dazu sind [hier](https://docs.qfield.org/reference/qfieldcloud/permissions/) zu finden.
+
+| 🠃 Privileges  \\ Role  →  | Reader  | Reporter  | Editor  | Manager  | Admin  | Owner  |
+|:---------------------------|---------|-----------|---------|----------|--------|--------|
+| Read data                  | ✅      | ✅        | ✅      | ✅       | ✅     | ✅     |
+| Insert data [^insert]      |         | ✅        | ✅      | ✅       | ✅     | ✅     |
+| Edit data [^edit]          |         |           | ✅      | ✅       | ✅     | ✅     |
+| Add / remove collaborators |         |           |         | ✅       | ✅     | ✅     |
+| Rename / delete project    |         |           |         |          | ✅     | ✅     |
+| Transfer ownership         |         |           |         |          |        | ✅     |
+
+: Unterschiedliche Rollen (*roles*) und ihre Berechtigungen (*privileges*) auf QField Cloud {#tbl-roles}
+
+[^insert]: Inserting does *not* include updating and deleting data.
+[^edit]: Editing includes updating and deleting data.
+
+
+## Organization teams
+
+Teams ermöglichen es Organisationsmitgliedern mit *Owner* oder *Admin* Rolle, auf einfache Weise Berechtigungen für mehrere Benutzer gleichzeitig zu vergeben (z.B. eine Forschungsgruppe oder Klasse von Studenten).
+
+Ein Team besteht aus mehreren Nutzer der Organisation. Wenn einem Team eine Rolle in einem Projekt zugewiesen wird, haben alle Teammitglieder automatisch auch diese Rolle (siehe @sec-project-collaborators). Ein Nutzer kann an mehreren Teams beteiligt sein. 
+
+
