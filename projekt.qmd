@@ -4,7 +4,10 @@
 
 ## Todo terz
 
-- Kannst du das noch mehr in Worte fassen / beschreiben?
+Kannst du diese Schritte mal ausführen und:
+
+- Überprüfen ob die Beschreibung nachvollziehbar ist (ggf. verbessern)?
+- Die resultierenden Geopackages sowie das QGIS Projekt auf Github hochladen und in der Anleitung zum Download anbieten?
 
 :::
 
