@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Erfassen von Geodaten im Feld mit qfield und qfield Cloud</title>
+<title>4&nbsp; QField Cloud Management – Erfassen von Geodaten im Feld mit [qfield]{.q} und [qfield]{.q} Cloud</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./installation.html" rel="next">
+<link href="./anhang.html" rel="next">
+<link href="./synchronisierung.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -73,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="nav-sidebar floating fullcontent quarto-light">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -82,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Einleitung</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./qfield-cloud-management.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">QField Cloud Management</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
@@ -109,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Einleitung</span></a>
   </div>
 </li>
@@ -133,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qfield-cloud-management.html" class="sidebar-item-text sidebar-link">
+  <a href="./qfield-cloud-management.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">QField Cloud Management</span></span></a>
   </div>
 </li>
@@ -148,13 +149,23 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#organisationsmitglieder-hinzufügen" id="toc-organisationsmitglieder-hinzufügen" class="nav-link active" data-scroll-target="#organisationsmitglieder-hinzufügen"><span class="header-section-number">4.1</span> Organisationsmitglieder hinzufügen</a></li>
+  <li><a href="#sec-project-collaborators" id="toc-sec-project-collaborators" class="nav-link" data-scroll-target="#sec-project-collaborators"><span class="header-section-number">4.2</span> Projektmitglieder hinzufügen</a></li>
+  <li><a href="#organization-teams" id="toc-organization-teams" class="nav-link" data-scroll-target="#organization-teams"><span class="header-section-number">4.3</span> Organization Teams</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Erfassen von Geodaten im Feld mit <span class="q">qfield</span> und <span class="q">qfield</span> Cloud</h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">QField Cloud Management</span></h1>
 </div>
 
 
@@ -162,12 +173,6 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">20. Mai 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -177,15 +182,147 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="einleitung" class="level1 unnumbered unlisted">
-<h1 class="unnumbered unlisted">Einleitung</h1>
-<p>Die nachstehende Anleitung dient dazu, Geodaten im Feld mittels <span class="q">qfield</span> und <span class="q">qfield cloud</span> durchzuführen.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Todo terz
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Dieses Kapitel ist vielmehr an unsere FG gerichtet, während die anderen Kapitel auch für Studis relvant sein könnte</p>
 <ul>
-<li>In <a href="installation.html" class="quarto-xref"><span>1&nbsp; System aufsetzen</span></a> beschreiben wir die installation der notwenigen Software und Plugins. Das ist einmalig nötig und kann übersprungen werden, wenn die notwendige Software bereits installiert ist</li>
-<li>In <a href="projekt.html" class="quarto-xref"><span>2&nbsp; Projekt aufsetzen</span></a> geht es darum, ein <span class="q">qfield</span> Projekt mittels <span class="q">qgis</span> aufzusetzen. Um die Schritte zu veranschaulichen, spielen wir ein fikitves Projekt mit dem Namen <em>Vegetation-CH</em> durch</li>
+<li>Kannst du überprüfen, ob hier noch was fehlt?</li>
+<li>Fällt dir noch was ein, was ich nicht angesprochen habe?</li>
+<li>Sollte man ggf. auch ein Fallbeispiel (z.B. für die Rollen) machen?</li>
 </ul>
+</div>
+</div>
+<p>Wir haben an der ZHAW eine QField Cloud <em>Organization</em> mit <em>Acacemic pricing</em>. Dies beinhaltet unter anderem folgendes (siehe auch <a href="https://qfield.cloud/pricing.html">hier</a> bzw. <a href="https://qfield.cloud/academia">hier</a>):</p>
+<ul>
+<li>Unlimitierte Anzahl von Projekten (<em>private</em> und <em>public</em>)</li>
+<li>Unlimitierte Anzahl von Nutzern</li>
+<li>50 GB Speicherplatz (mehr auf Anfrage / Mehrkosten)</li>
+<li><em>Permium Support</em> bei Anfragen</li>
+<li>Pro features wie Versionierung und Offline PostGIS layers</li>
+</ul>
+<p>Unsere Organisation heisst <strong>ZHAW</strong>, die URL für unsere Organisation lautet:</p>
+<p><a href="https://app.qfield.cloud/a/ZHAW/" class="center">https://app.qfield.cloud/a/ZHAW/</a></p>
+<section id="organisationsmitglieder-hinzufügen" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="organisationsmitglieder-hinzufügen"><span class="header-section-number">4.1</span> Organisationsmitglieder hinzufügen</h2>
+<p>Wir können Mitglieder zu Organisation via Emailadresse oder Benutzernamen hinzufügen.</p>
+<p>Bei Hinzufügen via Email: Falls kein QField-Cloud Account unter der angegebenen Emailadresse registriert ist, wird eine Einladung zur Registrierung an die angegebene Mailadresse verschickt.</p>
+<ul>
+<li>Einzelne Nutzer können via dem Browserinterface hinzugefügt werden, siehe <a href="https://app.qfield.cloud/settings/ZHAW/members" class="uri">https://app.qfield.cloud/settings/ZHAW/members</a>.</li>
+<li>Mehrere Nutzer (z.B. eine ganze Schulklasse oder alle IUNR Mitarbeiter) können via der <em>QField Cloud API</em> hinzugefügt werden, siehe dazu <a href="anhang.html#sec-python-sdk" class="quarto-xref"><span>Kapitel 5.2</span></a></li>
+</ul>
+</section>
+<section id="sec-project-collaborators" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="sec-project-collaborators"><span class="header-section-number">4.2</span> Projektmitglieder hinzufügen</h2>
+<p>Um gemeinsam an einem QField Projekt zu arbeiten, müssen die Projektmitglieder (sogenannte <em>Collaborators</em>) dem Projekt hinzugefügt werden. Um die Berechtigung der einzelnen Mitglieder zu steuern gibt es verschiedene <em>Rollen</em>. Diese sind in <a href="#tbl-roles" class="quarto-xref">Tabelle&nbsp;<span>4.1</span></a> zusammengefasst. Mehr Infos dazu sind <a href="https://docs.qfield.org/reference/qfieldcloud/permissions/">hier</a> zu finden.</p>
+<div id="tbl-roles" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-roles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabelle&nbsp;4.1: Unterschiedliche Rollen (<em>roles</em>) und ihre Berechtigungen (<em>privileges</em>) auf einem QField Cloud Projekt
+</figcaption>
+<div aria-describedby="tbl-roles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 10%">
+<col style="width: 13%">
+<col style="width: 10%">
+<col style="width: 12%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">🠃 Privileges \ Role →</th>
+<th>Reader</th>
+<th>Reporter</th>
+<th>Editor</th>
+<th>Manager</th>
+<th>Admin</th>
+<th>Owner</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Read data</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Insert data <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
+<td></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Edit data <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></td>
+<td></td>
+<td></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Add / remove collaborators</td>
+<td></td>
+<td></td>
+<td></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rename / delete project</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Transfer ownership</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="organization-teams" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="organization-teams"><span class="header-section-number">4.3</span> Organization Teams</h2>
+<p>Teams ermöglichen es, auf einfache Weise Berechtigungen für mehrere Benutzer gleichzeitig zu vergeben (z.B. eine Forschungsgruppe oder Klasse von Studenten).</p>
+<p>Ein Team besteht aus mehreren Nutzer der Organisation. Wenn einem Team eine Rolle in einem Projekt zugewiesen wird, haben alle Teammitglieder automatisch auch diese Rolle (siehe <a href="#sec-project-collaborators" class="quarto-xref"><span>Kapitel 4.2</span></a>). Ein Nutzer kann an mehreren Teams beteiligt sein.</p>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Inserting does <em>not</em> include updating and deleting data.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Editing includes updating and deleting data.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -590,10 +727,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./synchronisierung.html" class="pagination-link" aria-label="Projekt Synchronisieren">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Projekt Synchronisieren</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./installation.html" class="pagination-link" aria-label="System aufsetzen">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">System aufsetzen</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./anhang.html" class="pagination-link" aria-label="Anhang">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Anhang</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

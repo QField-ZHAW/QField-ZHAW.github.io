@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Erfassen von Geodaten im Feld mit qfield und qfield Cloud</title>
+<title>5&nbsp; Anhang – Erfassen von Geodaten im Feld mit [qfield]{.q} und [qfield]{.q} Cloud</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,7 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./installation.html" rel="next">
+<link href="./anhang-2.html" rel="next">
+<link href="./qfield-cloud-management.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -73,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="nav-sidebar floating fullcontent quarto-light">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -82,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Einleitung</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./anhang-1.html">Anhang</a></li><li class="breadcrumb-item"><a href="./anhang-1.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Anhang</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
@@ -109,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Einleitung</span></a>
   </div>
 </li>
@@ -137,24 +173,54 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">QField Cloud Management</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Anhang</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./anhang.html" class="sidebar-item-text sidebar-link">
+  <a href="./anhang-1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Anhang</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./anhang-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anhang 2</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#anhang-1" id="toc-anhang-1" class="nav-link active" data-scroll-target="#anhang-1"><span class="header-section-number">5.1</span> Anhang 1</a></li>
+  <li><a href="#sec-python-sdk" id="toc-sec-python-sdk" class="nav-link" data-scroll-target="#sec-python-sdk"><span class="header-section-number">5.2</span> Anhang 2</a>
+  <ul class="collapse">
+  <li><a href="#ein-einzelner-nutzer-der-organisation-hinzufügen" id="toc-ein-einzelner-nutzer-der-organisation-hinzufügen" class="nav-link" data-scroll-target="#ein-einzelner-nutzer-der-organisation-hinzufügen">Ein einzelner Nutzer der Organisation hinzufügen</a></li>
+  <li><a href="#mehrere-nutzer-der-organisation-hinzufügen" id="toc-mehrere-nutzer-der-organisation-hinzufügen" class="nav-link" data-scroll-target="#mehrere-nutzer-der-organisation-hinzufügen">Mehrere Nutzer der Organisation hinzufügen</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./anhang-1.html">Anhang</a></li><li class="breadcrumb-item"><a href="./anhang-1.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Anhang</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Erfassen von Geodaten im Feld mit <span class="q">qfield</span> und <span class="q">qfield</span> Cloud</h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Anhang</span></h1>
 </div>
 
 
@@ -162,12 +228,6 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">20. Mai 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -177,15 +237,123 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="einleitung" class="level1 unnumbered unlisted">
-<h1 class="unnumbered unlisted">Einleitung</h1>
-<p>Die nachstehende Anleitung dient dazu, Geodaten im Feld mittels <span class="q">qfield</span> und <span class="q">qfield cloud</span> durchzuführen.</p>
-<ul>
-<li>In <a href="installation.html" class="quarto-xref"><span>1&nbsp; System aufsetzen</span></a> beschreiben wir die installation der notwenigen Software und Plugins. Das ist einmalig nötig und kann übersprungen werden, wenn die notwendige Software bereits installiert ist</li>
-<li>In <a href="projekt.html" class="quarto-xref"><span>2&nbsp; Projekt aufsetzen</span></a> geht es darum, ein <span class="q">qfield</span> Projekt mittels <span class="q">qgis</span> aufzusetzen. Um die Schritte zu veranschaulichen, spielen wir ein fikitves Projekt mit dem Namen <em>Vegetation-CH</em> durch</li>
-</ul>
+<section id="anhang-1" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="anhang-1"><span class="header-section-number">5.1</span> Anhang 1</h2>
+<div id="tbl-geopackage-datatypes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-geopackage-datatypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabelle&nbsp;5.1: Geopackage Data Types. Quelle: <a href="https://www.geopackage.org/spec140/index.html">geopackage.org</a>
+</figcaption>
+<div aria-describedby="tbl-geopackage-datatypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 95%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Data Type</th>
+<th style="text-align: left;">Size and Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">INTEGER 32 bit</td>
+<td style="text-align: left;">32-bit signed two’s complement integer. Stored as SQLite INTEGER with values in the range [-2147483648, 2147483647].</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">INTEGER 64 bit</td>
+<td style="text-align: left;">64-bit signed two’s complement integer. Stored as SQLite INTEGER with values in the range [-9223372036854775808, 9223372036854775807].</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">REAL</td>
+<td style="text-align: left;">64-bit IEEE floating point number. Stored as SQLite REAL.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TEXT{(maxchar_count)}</td>
+<td style="text-align: left;">Variable length string encoded in either UTF-8 or UTF-16. The optional maxchar_count defines the maximum number of characters in the string. If not specified, the length is unbounded. Stored as SQLite TEXT.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BLOB{(max_size)}</td>
+<td style="text-align: left;">Variable length binary data. The optional max_size defines the maximum number of bytes in the blob. If not specified, the length is unbounded.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DATE</td>
+<td style="text-align: left;">ISO 8601 date string in the form YYYY-MM-DD encoded in either UTF-8 or UTF-16. Stored as SQLite TEXT (see TEXT above).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DATETIME</td>
+<td style="text-align: left;">ISO-8601 date/time string in the form YYYY-MM-DDTHH:MM:SS.SSSZ with T separator character and Z suffix for coordinated universal time (UTC) encoded in either UTF-8 or UTF-16. Stored as SQLite TEXT (see TEXT above).</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-python-sdk" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="sec-python-sdk"><span class="header-section-number">5.2</span> Anhang 2</h2>
+<p>Einzelne Nutzer können können sehr gut via dem Webinterface von QField Cloud hinzugefügt werden. Um <em>mehrere</em> Nutzer zu importieren, können wir die QFieldCloud API verwenden. Diese API kann man auf verschiedene Arten benutzen:</p>
+<ol type="1">
+<li>QFieldCloud SDK via Python (<a href="https://opengisch.github.io/qfieldcloud-sdk-python/">Dokumentation</a>)</li>
+<li>QFieldCloud SDK via Kommandozeile (<a href="https://opengisch.github.io/qfieldcloud-sdk-python/%3E">Dokumentation</a>)</li>
+<li>(RestAPI von der Kommandozeile (<a href="https://docs.qfield.org/reference/qfieldcloud/api/%3E">Dokumentation</a>))</li>
+</ol>
+<p>In den Beispielen verwenden wir die SDK via Python. Installation: <code>pip install qfieldcloud-sdk</code></p>
+<section id="ein-einzelner-nutzer-der-organisation-hinzufügen" class="level3">
+<h3 class="anchored" data-anchor-id="ein-einzelner-nutzer-der-organisation-hinzufügen">Ein einzelner Nutzer der Organisation hinzufügen</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> getpass</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qfieldcloud_sdk <span class="im">import</span> sdk</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>user <span class="op">=</span> getpass.getpass(<span class="st">"Username:"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>passwd <span class="op">=</span> getpass.getpass(<span class="st">"Password for "</span> <span class="op">+</span> user <span class="op">+</span> <span class="st">":"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> sdk.Client(url<span class="op">=</span><span class="st">"https://app.qfield.cloud/api/v1/"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>client.login(user, passwd)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Der Nutzer "BENUTZERNAME" muss bereits existieren!</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>client.add_organization_member(<span class="st">"ZHAW"</span>, <span class="st">"BENUTZERNAME"</span>, sdk.OrganizationMemberRole.MEMBER, <span class="va">False</span>) </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="mehrere-nutzer-der-organisation-hinzufügen" class="level3">
+<h3 class="anchored" data-anchor-id="mehrere-nutzer-der-organisation-hinzufügen">Mehrere Nutzer der Organisation hinzufügen</h3>
+<p>Um mehrere Mitglieder unserer Organisation hinzuzufügen, braucht es eine CSV Datei mit folgender Struktur:</p>
+<pre class="text"><code>username,org_role,proj_role
+ninja_1,member,reader
+ninja_2,member,editor
+ninja_3,admin,manager
+ninja_4,member,reporter</code></pre>
+<p>Hier der Python code für das Importieren via CSV:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests, csv</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qfieldcloud_sdk <span class="im">import</span> sdk</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> sdk.Client(</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    url<span class="op">=</span><span class="st">"https://app.qfield.cloud/api/v1/"</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>client.login(username<span class="op">=</span><span class="st">'myuser'</span>, password<span class="op">=</span><span class="st">'mypassword'</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> read_csv(csv_path: <span class="bu">str</span>, organization: <span class="bu">str</span>, project_id: <span class="bu">str</span>, is_public: <span class="bu">bool</span>):</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(csv_path, mode<span class="op">=</span><span class="st">"r"</span>, newline<span class="op">=</span><span class="st">""</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> csvfile:</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        reader <span class="op">=</span> csv.DictReader(csvfile)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> user <span class="kw">in</span> reader:</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">try</span>:</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>                client.add_organization_member(</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>                    organization, user[<span class="st">"username"</span>], user[<span class="st">"org_role"</span>], is_public</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>                    <span class="ss">f"Added member </span><span class="sc">{</span>user[<span class="st">'username'</span>]<span class="sc">}</span><span class="ss"> with role </span><span class="sc">{</span>user[<span class="st">'org_role'</span>]<span class="sc">}</span><span class="ss"> in </span><span class="sc">{</span>organization<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">except</span> requests.exceptions.RequestException:</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="st">"Oops!"</span>)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    organization <span class="op">=</span> <span class="st">"ZHAW"</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    is_public <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    csv_path <span class="op">=</span> <span class="st">'path/to/files/surveyors.csv'</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    read_csv(csv_path, organization, project_id, is_public)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -590,10 +758,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./qfield-cloud-management.html" class="pagination-link" aria-label="QField Cloud Management">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">QField Cloud Management</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./installation.html" class="pagination-link" aria-label="System aufsetzen">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">System aufsetzen</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./anhang-2.html" class="pagination-link" aria-label="Anhang 2">
+        <span class="nav-page-text">Anhang 2</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
