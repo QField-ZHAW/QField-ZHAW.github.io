@@ -51,11 +51,10 @@ Damit ein [qgis]{.q} Projekt in [qfield]{.q} verwendet werden kann, braucht es d
 
 :::{.callout-warning}
 
-## TODO
+## Todo Terz
 
-- Anleitung für das Erstellen eines Cloud Accountes <https://app.qfield.cloud/accounts/signup/>
-- Freischalten des Accountes auf der ZHAW Organization (was bringt das?)
-- Einloggen
-
+- Kurzer Anleitung für das Erstellen eines Cloud Accountes via <https://app.qfield.cloud/accounts/signup/> erstellen
+- Kurzer Hinweis, dass der Account von der FG GeoI der Organisation ZHAW hinzugefügt werden muss (damit mit anderen Kollaboriert werden kann), also Mail an <info.geoinformatik@zhaw.ch> schicken
+- Kurzer Hinweis, wie man sich mit dem Plugin Einlogged
 
 :::

@@ -2,17 +2,44 @@
 
 # QField Cloud Management
 
-## Organisationsmitglieder
 
-Wir können Mitglieder zu [unserer QField-Cloud Organisation](https://app.qfield.cloud/a/ZHAW/) via ihrer Emailadresse oder ihrem Nutzernamen hinzufügen. Falls *kein* QField-Cloud Account unter der angegebenen Emailadresse registriert ist, wird eine Einladung zur Registrierung an die angegebene Mailadresse verschickt. 
+:::{.callout-warning}
 
-Einzelne Nutzer können via *Members* hinzugefügt werden: <https://app.qfield.cloud/settings/ZHAW/members>
+## Todo terz
+
+Dieses Kapitel ist vielmehr an unsere FG gerichtet, während die anderen Kapitel auch für Studis relvant sein könnte
+
+- Kannst du überprüfen, ob hier noch was fehlt? 
+- Fällt dir noch was ein, was ich nicht angesprochen habe? 
+- Sollte man ggf. auch ein Fallbeispiel (z.B. für die Rollen) machen?
+
+:::
+
+Wir haben an der ZHAW eine QField Cloud *Organization* mit *Acacemic pricing*. Dies beinhaltet unter anderem folgendes (siehe auch [hier](https://qfield.cloud/pricing.html) bzw. [hier](https://qfield.cloud/academia)):
+
+- Unlimitierte Anzahl von Projekten (*private* und *public*)
+- Unlimitierte Anzahl von Nutzern
+- 50 GB Speicherplatz (mehr auf Anfrage / Mehrkosten)
+- *Permium Support* bei Anfragen
+- Pro features wie Versionierung und Offline PostGIS layers
+
+Unsere Organisation heisst **ZHAW**, die URL für unsere Organisation lautet:
+
+<https://app.qfield.cloud/a/ZHAW/>{.center}
+
+## Organisationsmitglieder hinzufügen
+
+Wir können Mitglieder zu Organisation via Emailadresse oder Benutzernamen hinzufügen. 
+
+Bei Hinzufügen via Email: Falls kein QField-Cloud Account unter der angegebenen Emailadresse registriert ist, wird eine Einladung zur Registrierung an die angegebene Mailadresse verschickt. 
+
+- Einzelne Nutzer können via dem Browserinterface hinzugefügt werden, siehe <https://app.qfield.cloud/settings/ZHAW/members>. 
+- Mehrere Nutzer (z.B. eine ganze Schulklasse oder alle IUNR Mitarbeiter) können via der *QField Cloud API* hinzugefügt werden, siehe dazu @sec-python-sdk
 
 
+## Projektmitglieder hinzufügen {#sec-project-collaborators}
 
-## Projektmitglieder {#sec-project-collaborators}
-
-Zu einem Projekt auf QField Cloud können weitere Teammitglieder (sogenannte *Collaborators*) hinzugefügt werden. Dafür gibt es verschiedene Rollen mit unterschiedlichen Berechtigungen . Diese sind in @tbl-roles zusammengefasst. Mehr Infos dazu sind [hier](https://docs.qfield.org/reference/qfieldcloud/permissions/) zu finden.
+Um gemeinsam an einem QField Projekt zu arbeiten, müssen die Projektmitglieder (sogenannte *Collaborators*) dem Projekt hinzugefügt werden. Um die Berechtigung der einzelnen Mitglieder zu steuern gibt es verschiedene *Rollen*. Diese sind in @tbl-roles zusammengefasst. Mehr Infos dazu sind [hier](https://docs.qfield.org/reference/qfieldcloud/permissions/) zu finden.
 
 | 🠃 Privileges  \\ Role  →  | Reader  | Reporter  | Editor  | Manager  | Admin  | Owner  |
 |:---------------------------|---------|-----------|---------|----------|--------|--------|
@@ -23,15 +50,16 @@ Zu einem Projekt auf QField Cloud können weitere Teammitglieder (sogenannte *Co
 | Rename / delete project    |         |           |         |          | ✅     | ✅     |
 | Transfer ownership         |         |           |         |          |        | ✅     |
 
-: Unterschiedliche Rollen (*roles*) und ihre Berechtigungen (*privileges*) auf QField Cloud {#tbl-roles}
+: Unterschiedliche Rollen (*roles*) und ihre Berechtigungen (*privileges*) auf einem QField Cloud Projekt {#tbl-roles}
 
 [^insert]: Inserting does *not* include updating and deleting data.
 [^edit]: Editing includes updating and deleting data.
 
 
-## Organization teams
+## Organization Teams
 
-Teams ermöglichen es Organisationsmitgliedern mit *Owner* oder *Admin* Rolle, auf einfache Weise Berechtigungen für mehrere Benutzer gleichzeitig zu vergeben (z.B. eine Forschungsgruppe oder Klasse von Studenten).
+
+Teams ermöglichen es, auf einfache Weise Berechtigungen für mehrere Benutzer gleichzeitig zu vergeben (z.B. eine Forschungsgruppe oder Klasse von Studenten).
 
 Ein Team besteht aus mehreren Nutzer der Organisation. Wenn einem Team eine Rolle in einem Projekt zugewiesen wird, haben alle Teammitglieder automatisch auch diese Rolle (siehe @sec-project-collaborators). Ein Nutzer kann an mehreren Teams beteiligt sein. 
 

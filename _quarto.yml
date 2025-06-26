@@ -10,10 +10,7 @@ book:
     - projekt.qmd
     - synchronisierung.qmd
     - qfield-cloud-management.qmd
-    - part: Anhang
-      chapters:
-      - anhang-1.qmd
-      - anhang-2.qmd
+    - anhang.qmd
 
 bibliography: references.bib
 lang: de

@@ -1,5 +1,13 @@
 # Projekt aufsetzen {#sec-projekt}
 
+:::{.callout-warning}
+
+## Todo terz
+
+- Kannst du das noch mehr in Worte fassen / beschreiben?
+
+:::
+
 :::{.callout-note}
 
 Die nachfolgenden Schritte müssen *pro Projekt* gemacht werden. 

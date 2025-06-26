@@ -1,12 +1,11 @@
 
 # Projekt Synchronisieren
 
-Wenn das System aufgesetzt ist (siehe @sec-installation) und das QGIS Projekt vorbereitet (siehe @sec-projekt) sind die Voraussetzungen gegeben mit QField Mobile zu Synchronisieren. Um ein Lokales QGIS Projekt mit QField Mobile zu Synchronisieren braucht es zwei Zwischentstationen:
+Wenn das System aufgesetzt ist (siehe @sec-installation) und das QGIS Projekt vorbereitet (siehe @sec-projekt) sind die Voraussetzungen gegeben mit QField Mobile zu Synchronisieren. Um ein Lokales QGIS Projekt mit QField Mobile zu Synchronisieren braucht es zwei Zwischentschritte:
 
-1. Das QGIS Projekt wird zuerst in ein lokales QField Projekt konvertiert
-2. Das lokale QField Projekt wird mit QField Cloud Synchronisiert
+1. Das QGIS Projekt wird zuerst in ein lokales QField Projekt konvertiert (Schritt "Konvertierung" in @fig-flow )
+2. Das lokale QField Projekt wird mit QField Cloud Synchronisiert (Schritt "Sync" zwischen QField Projekt und QField Cloud in @fig-flow)
 
-Siehe @fig-flow für eine Visualisierung dieses Workflows.
 
 
 ```{mermaid}
@@ -14,8 +13,8 @@ Siehe @fig-flow für eine Visualisierung dieses Workflows.
 %%| fig-cap: "Grundsätzlicher Workflow und das Zusammenspiel von Laptop, Cloud und Mobile"
 flowchart LR
  subgraph lokal["lokal (laptop)"]
-        B["QField Projekt"]
-        A["QGIS Projekt"]
+        A["QGIS Projekt (.qgz)"]
+        B["QField Projekt (.qgs)"]
   end
  subgraph mobile["Mobile Geräte"]
         D["QField Mobile 1"]
@@ -31,7 +30,24 @@ flowchart LR
     style C fill:#80cc28,stroke:#333,stroke-width:2px,color:#fff
 ```
 
-Diese Schritte werden im nachfolgenden Unterkapiteln beschrieben.
+
+:::{.callout-warning}
+
+## Todo terz
+
+- Was passiert eigentlich, wenn man im **QGIS Projekt** (nicht im **QField Projekt**) ein neues Feature hinzufügt und das auf Qfield Cloud bringen möchte. Geht das oder kommt es zu Konflikten?
+- Wo können wir den Hinweis platzieren, dass sämtliche QField Projekte sich kaum von QGIS Projekten unterscheiden, aber Zentral gelagert (bei mir in `home/rata/QField/clooud/`, wo auf Windows?) werden. Wodurch unterscheiden sich eigentlich QField und QGIS Projekte?
+- 
+
+:::
+
+
+Die Schritte "Konvertierung" und "Sync" werden im nachfolgenden Unterkapiteln beschrieben.
+
+
+
+
+
 
 ## Konvertierung QGIS → QField Project
 
@@ -46,19 +62,32 @@ Diese Schritte werden im nachfolgenden Unterkapiteln beschrieben.
 
 :::{.callout-warning}
 
-## Todo
+## Todo terz
 
-- Layerspezifische Einstellungen
-- Basemaps
+- Wie integriere ich (offline) basemaps?
+- Layerspezifische Einstellungen ← hier weiss ich nicht mehr, was ich gemeint habe
 
 :::
+
+
 
 
 Danach wird das Projekt automatisch in/mit der Cloud synchronisiert
 
 ## QField mobile ↔ QField Cloud
 
+
+
 ### Öffnen des Projektes
+
+
+:::{.callout-warning}
+
+## Todo terz
+
+- Kannst du das noch mehr in Worte fassen / beschreiben?
+
+:::
 
 ::: {layout-nrow=1}
 ![](images/open_project_mobile1.PNG)
@@ -67,6 +96,14 @@ Danach wird das Projekt automatisch in/mit der Cloud synchronisiert
 :::
 
 ### Synchronisierung mit Cloud
+
+:::{.callout-warning}
+
+## Todo terz
+
+- Kannst du das noch mehr in Worte fassen / beschreiben?
+
+:::
 
 ::: {layout-nrow=1}
 ![](images/synchronize_mobile1.PNG)
@@ -77,6 +114,14 @@ Danach wird das Projekt automatisch in/mit der Cloud synchronisiert
 Entweder nur die gemachten Features mit Cloud updaten (push changes) oder ganzes Projekt synchronisieren
 
 ## QField Projekt ↔ QField Cloud
+
+:::{.callout-warning}
+
+## Todo terz
+
+- Kannst du das noch mehr in Worte fassen / beschreiben?
+
+:::
 
 
 ::: {layout-nrow=2}

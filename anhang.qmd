@@ -1,7 +1,7 @@
 
+# Anhang
 
-
-## Anhang 1 {.appendix}
+## Anhang 1
 
 
 | Data Type             | Size and Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
@@ -14,3 +14,86 @@
 | DATE                  | ISO 8601 date string in the form YYYY-MM-DD encoded in either UTF-8 or UTF-16. Stored as SQLite TEXT (see TEXT above).                                                                                                                                                                                                                                                                                                                                                                                             |
 | DATETIME              | ISO-8601  date/time string in the form YYYY-MM-DDTHH:MM:SS.SSSZ with T separator  character and Z suffix for coordinated universal time (UTC) encoded in  either UTF-8 or UTF-16. Stored as SQLite TEXT (see TEXT above).                                                                                                                                                                                                                                                                                                |
 : Geopackage Data Types. Quelle: [geopackage.org](https://www.geopackage.org/spec140/index.html) {#tbl-geopackage-datatypes}
+
+
+
+## Anhang 2  {#sec-python-sdk}
+
+Einzelne Nutzer können können sehr gut via dem Webinterface von QField Cloud hinzugefügt werden. Um *mehrere* Nutzer zu importieren, können wir die QFieldCloud API verwenden. Diese API kann man auf verschiedene Arten benutzen:
+
+1. QFieldCloud SDK via Python ([Dokumentation](https://opengisch.github.io/qfieldcloud-sdk-python/))
+2. QFieldCloud SDK via Kommandozeile ([Dokumentation](https://opengisch.github.io/qfieldcloud-sdk-python/>))
+3. (RestAPI von der Kommandozeile ([Dokumentation](https://docs.qfield.org/reference/qfieldcloud/api/>)))
+
+
+In den Beispielen verwenden wir die SDK via Python. Installation: `pip install qfieldcloud-sdk`
+
+
+### Ein einzelner Nutzer der Organisation hinzufügen
+
+```{.python}
+import getpass
+from qfieldcloud_sdk import sdk
+
+user = getpass.getpass("Username:")
+passwd = getpass.getpass("Password:")
+
+client = sdk.Client(url="https://app.qfield.cloud/api/v1/")
+client.login(user, passwd)
+
+# Der Nutzer "BENUTZERNAME" muss bereits existieren!
+# "BENUTZERNAME" darf keine Emailadresse sein :-(
+client.add_organization_member("ZHAW", "BENUTZERNAME", "member", False) 
+```
+
+
+### Mehrere Nutzer der Organisation hinzufügen
+
+
+Um mehrere Mitglieder unserer Organisation hinzuzufügen, braucht es eine CSV Datei mit folgender Struktur:
+
+```{.text}
+username,org_role,proj_role
+ninja_1,member,reader
+ninja_2,member,editor
+ninja_3,admin,manager
+ninja_4,member,reporter
+```
+
+Hier der Python code für das Importieren via CSV:
+
+
+```{.python}
+import requests, csv
+from qfieldcloud_sdk import sdk
+
+client = sdk.Client(
+    url="https://app.qfield.cloud/api/v1/"
+)
+client.login(username='myuser', password='mypassword')
+
+def read_csv(csv_path: str, organization: str, project_id: str, is_public: bool):
+    with open(csv_path, mode="r", newline="", encoding="utf-8") as csvfile:
+        reader = csv.DictReader(csvfile)
+        for user in reader:
+            try:
+                client.add_organization_member(
+                    organization, user["username"], user["org_role"], is_public
+                )
+                print(
+                    f"Added member {user['username']} with role {user['org_role']} in {organization}"
+                )
+            except requests.exceptions.RequestException:
+                print("Oops!")
+
+
+if __name__ == "__main__":
+    organization = "ZHAW"
+    is_public = False
+    csv_path = 'path/to/files/surveyors.csv'
+    read_csv(csv_path, organization, project_id, is_public)
+
+```
+
+
+
