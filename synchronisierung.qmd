@@ -1,10 +1,10 @@
 
-# Projekt Synchronisieren
+# Projekt synchronisieren
 
-Wenn das System aufgesetzt ist (siehe @sec-installation) und das QGIS Projekt vorbereitet (siehe @sec-projekt) sind die Voraussetzungen gegeben mit QField Mobile zu Synchronisieren. Um ein Lokales QGIS Projekt mit QField Mobile zu Synchronisieren braucht es zwei Zwischentschritte:
+Wenn das System aufgesetzt ist (siehe @sec-installation) und das QGIS Projekt vorbereitet (siehe @sec-projekt) ist, sind die Voraussetzungen gegeben, mit QField Mobile zu synchronisieren. Um ein lokales QGIS Projekt mit QField Mobile zu synchronisieren, braucht es zwei Zwischentschritte:
 
 1. Das QGIS Projekt wird zuerst in ein lokales QField Projekt konvertiert (Schritt "Konvertierung" in @fig-flow )
-2. Das lokale QField Projekt wird mit QField Cloud Synchronisiert (Schritt "Sync" zwischen QField Projekt und QField Cloud in @fig-flow)
+2. Das lokale QField Projekt wird mit QField Cloud synchronisiert (Schritt "Sync" zwischen QField Projekt und QField Cloud in @fig-flow)
 
 
 
@@ -27,7 +27,11 @@ flowchart LR
     B <-- Sync --> C
     C <-- Sync --> D
     C <-- Sync --> E
-    style C fill:#80cc28,stroke:#333,stroke-width:2px,color:#fff
+    style A fill:#80cc28,stroke:#333,stroke-width:2px,color:#fff
+    style B fill:#80cc28,stroke:#333,stroke-width:2px,color:#fff
+    style C fill:#4a6fae,stroke:#333,stroke-width:2px,color:#fff
+    style D fill:#80cc28,stroke:#333,stroke-width:2px,color:#fff
+    style E fill:#80cc28,stroke:#333,stroke-width:2px,color:#fff
 ```
 
 
@@ -35,21 +39,18 @@ flowchart LR
 
 ## Todo terz
 
-- Was passiert eigentlich, wenn man im **QGIS Projekt** (nicht im **QField Projekt**) ein neues Feature hinzufügt und das auf Qfield Cloud bringen möchte. Geht das oder kommt es zu Konflikten?
+- Was passiert eigentlich, wenn man im **QGIS Projekt** (nicht im **QField Projekt**) ein neues Feature hinzufügt und das auf Qfield Cloud bringen möchte. Geht das oder kommt es zu Konflikten? -> würde behaupten, es passiert nichts, da das QGIS Projekt nicht synchronisiert wird
 - Wo können wir den Hinweis platzieren, dass sämtliche QField Projekte sich kaum von QGIS Projekten unterscheiden, aber Zentral gelagert (bei mir in `home/rata/QField/clooud/`, wo auf Windows?) werden. Wodurch unterscheiden sich eigentlich QField und QGIS Projekte?
-- 
-
 :::
 
 
-Die Schritte "Konvertierung" und "Sync" werden im nachfolgenden Unterkapiteln beschrieben.
+Die Schritte **Konvertierung** und **Sync** werden im nachfolgenden Unterkapiteln beschrieben.
 
 
 
+## Konvertierung QGIS Projekt → QField Projekt {#sec-konvertierung}
 
-
-
-## Konvertierung QGIS → QField Project
+QGIS Projekte (.qgz) können (leider) nicht direkt mit QField Cloud synchronisiert werden. Dazu braucht es ein lokal gespeichertes QField Projekt (.qgs). Vorgehen sollte man wie folgt:
 
 
 :::{#konvertierung layout-nrow=1  layout-valign="bottom"}
@@ -60,69 +61,12 @@ Die Schritte "Konvertierung" und "Sync" werden im nachfolgenden Unterkapiteln be
 ![Schritt 3: "Convert currently open project..." auswählen und mit "Next" bestätigen](images/create_local_qfieldcloud_project3.png)
 :::
 
-:::{.callout-warning}
+Per Default wird das QField Projekt in Windows unter `C:\Users\xy\QField\cloud` gespeichert (Linux: `home/xy/QField/clooud/`). Nach Drücken des Knopfes *create* sollte die Meldung kommen, dass das QGield Projekt automatisch in/mit der Cloud synchronisiert wird.
 
-## Todo terz
-
-- Wie integriere ich (offline) basemaps?
-- Layerspezifische Einstellungen ← hier weiss ich nicht mehr, was ich gemeint habe
-
-:::
-
-
-
-
-Danach wird das Projekt automatisch in/mit der Cloud synchronisiert
-
-## QField mobile ↔ QField Cloud
-
-
-
-### Öffnen des Projektes
-
-
-:::{.callout-warning}
-
-## Todo terz
-
-- Kannst du das noch mehr in Worte fassen / beschreiben?
-
-:::
-
-::: {layout-nrow=1}
-![](images/open_project_mobile1.PNG)
-
-![](images/open_project_mobile2.PNG)
-:::
-
-### Synchronisierung mit Cloud
-
-:::{.callout-warning}
-
-## Todo terz
-
-- Kannst du das noch mehr in Worte fassen / beschreiben?
-
-:::
-
-::: {layout-nrow=1}
-![](images/synchronize_mobile1.PNG)
-
-![](images/synchronize_mobile2.PNG)
-:::
-
-Entweder nur die gemachten Features mit Cloud updaten (push changes) oder ganzes Projekt synchronisieren
 
 ## QField Projekt ↔ QField Cloud
 
-:::{.callout-warning}
-
-## Todo terz
-
-- Kannst du das noch mehr in Worte fassen / beschreiben?
-
-:::
-
+Mit dem Vorgehen in @sec-konvertierung konnte sichergestellt werden, dass ein Projekt in der Cloud erstellt und mit dem QField Projekt synchronisiert wird. Synchronisierungen zwischen dem lokalen QField Projekt und der Cloud müssen jedoch manuell vorgenommen werden.
 
 ::: {layout-nrow=2}
 ![](images/synchronize_cloud1.png)
@@ -130,5 +74,34 @@ Entweder nur die gemachten Features mit Cloud updaten (push changes) oder ganzes
 ![](images/synchronize_cloud2.png)
 :::
 
-Actions werden meist richtig erkannt
-Aber hier ist vorsicht geboten, was aktualisiert werden muss
+Vor jeder Synchronisierung muss beachtet werden, ob die lokalen Daten oder die Daten in der Cloud die aktuelle Version beinhaltet. Dementsprechend muss die *Action* richtig ausgewählt werden (replace file on the cloud or replace local).
+
+
+## QField mobile ↔ QField Cloud
+
+
+### Öffnen des Projektes
+
+Bevor mit der Bearbeitung und Erfassung von Daten im Feld begonnen werden kann, muss das Projekt von der Cloud auf das mobile Gerät geholt werden.
+Nach Einloggen mit dem Cloud-Account werden unter *QField Cloud projects* alle Projekte angezeigt. Jenes Projekt, welches bearbeitet werden möchte, kann 
+dann angeklickt werden.
+
+::: {layout-nrow=1}
+![](images/open_project_mobile1.PNG)
+
+![](images/open_project_mobile2.PNG)
+:::
+
+
+### Synchronisierung mit Cloud
+
+Änderungen der Daten und des Projektes, welche auf dem mobilen Gerät vorgenommen wurden, müssen "mauell" synchronisiert werden. Entweder können nur die geänderten Daten (*Push changes*) oder ein ganzes Projekt (*Synchronize*) mit der Cloud synchronisiert werden.
+
+::: {layout-nrow=1}
+![](images/synchronize_mobile1.PNG)
+
+![](images/synchronize_mobile2.PNG)
+:::
+
+
+

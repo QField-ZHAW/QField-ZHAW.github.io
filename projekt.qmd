@@ -19,7 +19,7 @@ Die nachfolgenden Schritte müssen *pro Projekt* gemacht werden.
 
 Um die Anleitung etwas verständlicher zu machen, spielen wir ein Beispiel durch. In diesem Beispiel werden verschiedene Vegetationstrukturen erfasst: 
 
-- Wiesen und Weiden (Flächenhafte ausprägung)
+- Wiesen und Weiden (flächenhafte Ausprägung)
 - Einzelbäume und Sträucher (Punkte)
 
 ## Schritt 1: [qgis]{.q} Projekt erstellen {#sec-project-erstellen}
@@ -56,7 +56,7 @@ Für unsere Datentypen verwenden wir die Tabellen-Namen und Geometrietypen wie i
 | Beschreibung            | Tabellen-Name     | Geometry Type |
 |:------------------------|:------------------|:--------------|
 | Wiesen & Weiden         | `wiesen_weiden`   | MultiPolygon  |
-| Einzelbäume & Sträucher | `baume_straucher` | Point         |
+| Einzelbäume & Sträucher | `baeume_straeucher` | Point         |
 
 : Tabellen-Namen und Geometrietypen für das fiktive Projekt *Vegetation-CH*. Wir empfehlen alles konsistent klein zu schreiben, Leerzeichen mit `_` zu ersetzen und Umlaute zu vermeiden (z.B. `a` statt `ä`) . {#tbl-layers}
 
@@ -89,7 +89,7 @@ Spalten können entweder direkt während der Erstellung der Tabelle (siehe @fig-
 
 :::
 
-Die Spalten für für die Tabelle `wiesen_weiden` sind in @tbl-spalten-wiesen beschreiben. Die Spalten für die Tabelle `baume_straucher` sind in @tbl-spalten-einzelbaeume dargestellt.
+Die Spalten für für die Tabelle `wiesen_weiden` sind in @tbl-spalten-wiesen beschreiben. Die Spalten für die Tabelle `baeume_straeucher` sind in @tbl-spalten-einzelbaeume dargestellt.
 
 Die _Namen_ der Felder sollten keine Umlaute, Leerschläge oder Sonderzeichen enthalten. Allerdings kann pro Feld ein _Alias_ definiert werden: Dabei handelt es sich um eine alternative Bezeichnung, bei dem diese Regeln nicht gelten.
 
@@ -106,10 +106,10 @@ Die _Namen_ der Felder sollten keine Umlaute, Leerschläge oder Sonderzeichen en
 |:--------------------|:---------------------------------|:----------------|
 | Erfassungsdatum     | `Date`                           | erfassungsdatum |
 | Art                 | `Text (String)`                  | art             |
-| Wuchshöhe           | `Decimal Number (real)` [^real]  | wuchshohe       |
+| Wuchshöhe           | `Decimal Number (real)` [^real]  | wuchshoehe       |
 | Bemerkung           | `Text (String)`                  | bemerkung       |
 
-: Spalten für _baume_straucher_ {#tbl-spalten-einzelbaeume}
+: Spalten für _baeume_straeucher_ {#tbl-spalten-einzelbaeume}
 
 
   
@@ -192,6 +192,19 @@ Verschiedene Attribut-Formular Optionen
 
 ::::
 
+
+## Schritt 5: Basemap konfigurieren
+
+
+## Schritt 6: Layerspezifische Konfigurierungen für Synchronisierung
+
+:::{.callout-warning}
+
+## Todo terz
+
+- Wie integriere ich (offline) basemaps?
+- Layerspezifische Einstellungen (Synch Einstellungen?)
+:::
 
 
 
