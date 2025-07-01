@@ -89,10 +89,11 @@ Danach wird das Projekt automatisch in/mit der Cloud synchronisiert
 
 :::
 
-::: {layout-nrow=1}
-![](images/open_project_mobile1.PNG)
 
-![](images/open_project_mobile2.PNG)
+::: {layout-nrow=1}
+![](images/open_project_mobile1.PNG){.smartphone}
+
+![](images/open_project_mobile2.PNG){.smartphone}
 :::
 
 ### Synchronisierung mit Cloud
@@ -106,9 +107,9 @@ Danach wird das Projekt automatisch in/mit der Cloud synchronisiert
 :::
 
 ::: {layout-nrow=1}
-![](images/synchronize_mobile1.PNG)
+![](images/synchronize_mobile1.PNG){.smartphone}
 
-![](images/synchronize_mobile2.PNG)
+![](images/synchronize_mobile2.PNG){.smartphone}
 :::
 
 Entweder nur die gemachten Features mit Cloud updaten (push changes) oder ganzes Projekt synchronisieren
