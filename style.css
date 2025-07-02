@@ -10,3 +10,37 @@
 }
 
 
+
+
+/* >>> Single class that transforms any image into a smartphone */
+.smartphone {
+  width: 300px;
+  height: 600px;
+  object-fit: contain;
+  border-radius: 25px;
+  padding: 25px 15px;
+  background: 
+      /* Speaker notch */
+      radial-gradient(circle at 50% 12px, transparent 3px, #333 3px, #333 6px, transparent 6px),
+      /* Home indicator */
+      linear-gradient(to right, transparent calc(50% - 20px), #555 calc(50% - 20px), #555 calc(50% + 20px), transparent calc(50% + 20px)),
+      /* Main phone body */
+      #333;
+  background-size: 
+      100% 20px,
+      100% 6px,
+      100% 100%;
+  background-position: 
+      top,
+      bottom,
+      center;
+  background-repeat: no-repeat;
+  box-shadow: 
+      0 0 0 2px #222,
+      0 0 0 4px #666,
+      0 20px 40px rgba(0,0,0,0.4),
+      inset 0 0 0 2px #444;
+  display: block;
+  
+}
+/* <<< Single class that transforms any image into a smartphone */
