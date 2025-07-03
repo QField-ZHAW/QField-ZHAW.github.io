@@ -5,17 +5,11 @@
 
 :::{.callout-warning}
 
-## Todo terz
-
-Dieses Kapitel ist vielmehr an unsere FG gerichtet, während die anderen Kapitel auch für Studis relvant sein könnte
-
-- Kannst du überprüfen, ob hier noch was fehlt? 
-- Fällt dir noch was ein, was ich nicht angesprochen habe? 
-- Sollte man ggf. auch ein Fallbeispiel (z.B. für die Rollen) machen?
+<https://github.com/QField-ZHAW/QField-ZHAW.github.io/issues/3> 
 
 :::
 
-Wir haben an der ZHAW eine QField Cloud *Organization* mit *Acacemic pricing*. Dies beinhaltet unter anderem folgendes (siehe auch [hier](https://qfield.cloud/pricing.html) bzw. [hier](https://qfield.cloud/academia)):
+Wir haben an der ZHAW eine QField Cloud *Organization* mit *Academic pricing*. Dies beinhaltet unter anderem folgendes (siehe auch [hier](https://qfield.cloud/pricing.html) bzw. [hier](https://qfield.cloud/academia)):
 
 - Unlimitierte Anzahl von Projekten (*private* und *public*)
 - Unlimitierte Anzahl von Nutzern

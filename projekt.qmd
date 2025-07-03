@@ -1,16 +1,5 @@
 # Projekt aufsetzen {#sec-projekt}
 
-:::{.callout-warning}
-
-## Todo terz
-
-Kannst du diese Schritte mal ausführen und:
-
-- Überprüfen ob die Beschreibung nachvollziehbar ist (ggf. verbessern)?
-- Die resultierenden Geopackages sowie das QGIS Projekt auf Github hochladen und in der Anleitung zum Download anbieten?
-
-:::
-
 :::{.callout-note}
 
 Die nachfolgenden Schritte müssen *pro Projekt* gemacht werden. 
@@ -38,19 +27,14 @@ Das Geopackage erscheint mit dem Namen _New Geopackage.gpkg_ unter _Project Home
 
 ## Schritt 2: Geopackage Tabelle erstellen
 
-Für jeden Datentyp (Punkte, Linien, Polygone), der Erfasst werden soll, wird eine "Tabelle" in der Geopackage erstellt. Dafür klickt man mit Rechts auf das Geopackage [→ New Table]{.menu}. Für die Tabelle muss nun ein Name ([Name]{.menu}), ein Geometrietyp ([Geometry Type]{.menu}) sowie ein Koordinatenbezugssystem ([CRS]{.menu}) ausgewählt werden (siehe @fig-new-layer). 
-
-- Für Erhebungen in der Schweiz empfehlen wir CRS `CH1903+ LV95` (EPSG Code `2056`). 
-- Für Erhebungen ausserhalb der Schweiz in einem kleinen Gebiet empfehlen wir die jeweilige UTM Zone ([hier auswählen](https://mangomap.com/robertyoung/maps/69585/what-utm-zone-am-i-in-#))
-- Für globale Erhebungen empfehlen wir WGS84 (EPSG Code `4326`)
-
-
+Für jeden Datentyp (Punkte, Linien, Polygone), der Erfasst werden soll, wird eine "Tabelle" in der Geopackage erstellt. Dafür klickt man mit Rechts auf das Geopackage [→ New Table]{.menu}. Dabei erscheint ein Fester wie in @fig-new-layer ersichtlich.
 
 ![Minimal müssen pro Tabelle der Name, der Geometrietyp sowie das CRS festgelegt werden. Optional können hier bereits Felder / Fields erfasst werden, dazu mehr in @sec-attribute](images/new-layer.png){#fig-new-layer}
 
 
-Für unsere Datentypen verwenden wir die Tabellen-Namen und Geometrietypen wie in @tbl-layers beschreiben. Beachtet, dass die Tabellen-Namen weder Umlaute, Sonderzeichen oder Leerzeichen enthalten sollen.
+### Name / Geometry Type
 
+Für die Tabelle muss nun ein [Name]{.menu} und ein Geometrietyp ([Geometry Type]{.menu}) ausgewählt werden. Für unser Beispiel verwenden die Namen / Geometrietypen wie in @tbl-layers beschreiben. Beachtet, dass die Tabellen-Namen weder Umlaute, Sonderzeichen oder Leerzeichen enthalten sollen.
 
 
 | Beschreibung            | Tabellen-Name     | Geometry Type |
@@ -65,6 +49,17 @@ Wir verwenden in unserem Beispiel (@tbl-layers) `Point` für die Einzelbäume un
 
 - Eine Wiese oder eine Weide kann aus verschiedenen, voneinander getrennten Teilstücken bestehen. In diesem Fall wollen wir alle Teilstücke "in einem Zug" erfassen können und dabei die Attribute (mehr zu Attributen in @sec-attribute) nur einmalig eingeben. Deshalb verwenden wir `MultiPolygon` statt `Polygon`.
 - Bei Bäumen und Sträucher ist das anders: Hier verpflichten wir uns, jeden Baum und jeder Strauch einzeln zu erfassen, weil beispielsweise die Wuchshöhe für jedes Objekt einzeln angegeben werden muss. Deshalb verwenden wir `Point` statt `MultiPoint`.
+
+
+### CRS
+
+Zudem muss ein ein Koordinatenbezugssystem ([CRS]{.menu}) ausgewählt werden. 
+
+- Für Erhebungen in der Schweiz empfehlen wir CRS `CH1903+ LV95` (EPSG Code `2056`). 
+- Für Erhebungen ausserhalb der Schweiz in einem kleinen Gebiet empfehlen wir die jeweilige UTM Zone ([hier auswählen](https://mangomap.com/robertyoung/maps/69585/what-utm-zone-am-i-in-#))
+- Für globale Erhebungen empfehlen wir WGS84 (EPSG Code `4326`)
+
+
 
 
 ## Schritt 3: Attribute definieren {#sec-attribute}
@@ -94,23 +89,24 @@ Die Spalten für für die Tabelle `wiesen_weiden` sind in @tbl-spalten-wiesen be
 Die _Namen_ der Felder sollten keine Umlaute, Leerschläge oder Sonderzeichen enthalten. Allerdings kann pro Feld ein _Alias_ definiert werden: Dabei handelt es sich um eine alternative Bezeichnung, bei dem diese Regeln nicht gelten.
 
 
-| Bezeichnung / Alias | Datentyp                         | Spaltenname     |
-|:--------------------|:---------------------------------|:----------------|
-| Erfassungsdatum     | `Date`                           | erfassungsdatum |
-| Typ                 | `Text (String)` [^text]          | typ             |
-| Anzahl Arten        | `Integer (32 Bit)` [^int32]      | anzahl_arten    |
+| Bezeichnung / Alias | Datentyp                         | Spaltenname     | Eigenschaften    |
+|:--------------------|:---------------------------------|:----------------|:-----------------|
+| Erfassungsdatum     | `Date`                           | erfassungsdatum |                  |
+| Typ                 | `Text (String)` [^text]          | typ             | Length: 0[^len]  |
+| Anzahl Arten        | `Integer (32 Bit)` [^int32]      | anzahl_arten    |                  |
 
 : Spalten für _wiesen_weiden_ {#tbl-spalten-wiesen}
 
-| Bezeichnung / Alias | Datentyp                         | Spaltenname     |
-|:--------------------|:---------------------------------|:----------------|
-| Erfassungsdatum     | `Date`                           | erfassungsdatum |
-| Art                 | `Text (String)`                  | art             |
-| Wuchshöhe           | `Decimal Number (real)` [^real]  | wuchshoehe       |
-| Bemerkung           | `Text (String)`                  | bemerkung       |
+| Bezeichnung / Alias | Datentyp                         | Spaltenname     | Eigenschaften    |
+|:--------------------|:---------------------------------|:----------------|:-----------------|
+| Erfassungsdatum     | `Date`                           | erfassungsdatum |                  |
+| Art                 | `Text (String)`                  | art             | Length: 0        |
+| Wuchshöhe           | `Decimal Number (real)` [^real]  | wuchshoehe      |                  |
+| Bemerkung           | `Text (String)`                  | bemerkung       | Length: 0        |
 
 : Spalten für _baeume_straeucher_ {#tbl-spalten-einzelbaeume}
 
+[^len]: Eine Länge von 0 bedeutet, dass beliebig viele Zeichen eingegeben werden können.
 
   
 Detailliertere Informationen zu den Datentypen in Geopackages findet ihr in @tbl-geopackage-datatypes
@@ -158,7 +154,7 @@ Alle Einstellungen an den Attributeingaben sind teil des [qgis]{.q} *Projektes*.
 :::
 
 
-![In den Layer Properties können die Eingaben definiert werden](images/attribute-form.png){#fig-attribute-form} 
+![In den Layer Properties können die Eingaben definiert werden](images/attribute-form.png){#fig-attribute-form .column-page} 
 
 
 
@@ -180,11 +176,11 @@ _Wiesen_Weiden_
 
 ::::{.column-page}
 
-:::{#fig-attribute-form layout-ncol=2}
+:::{#fig-attribute-form layout-ncol=1}
 
-![Value map](images/value-map.png){#fig-value-map}
+![_Value map_ für die Eingabe von "Typ"](images/value-map.png){#fig-value-map}
 
-![Slider](images/slider.png){#fig-slider}
+![_Slider_ für die Eingabe von "Anzahl Arten"](images/slider.png){#fig-slider}
 
 Verschiedene Attribut-Formular Optionen
 
@@ -200,10 +196,9 @@ Verschiedene Attribut-Formular Optionen
 
 :::{.callout-warning}
 
-## Todo terz
+## Todo
 
-- Wie integriere ich (offline) basemaps?
-- Layerspezifische Einstellungen (Synch Einstellungen?)
+<https://github.com/QField-ZHAW/QField-ZHAW.github.io/issues/1>
 :::
 
 

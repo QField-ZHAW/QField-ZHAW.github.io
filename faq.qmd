@@ -1,0 +1,75 @@
+# FAQ
+
+## Warum muss das QGIS Projekt zuerst in ein QField Projekt konvertiert werden?
+
+**💡 Kurzantwort:**
+
+Weil QField **nicht direkt mit einem normalen QGIS-Projekt arbeiten kann** – es braucht eine speziell vorbereitete, mobile-kompatible Version des Projekts.
+
+**🧠 Etwas ausführlicher:**
+
+Ein typisches QGIS-Projekt auf dem Desktop enthält:
+
+* Verlinkte Daten (z. B. Pfade zu Dateien auf deiner Festplatte)
+* Große Raster- oder Vektorlayer
+* Formate, die QField nicht direkt unterstützt (z. B. CSVs, Layer mit relativen Pfaden, komplexe Datenbanken)
+* Styling, das für den mobilen Einsatz nicht optimiert ist
+
+🔄 Beim Konvertieren in ein QField-Projekt passiert:
+
+1. **Kopieren aller notwendigen Daten**
+   – Alle Layer, die du brauchst, werden **lokal zusammengeführt** (also z. B. von `/home/user/mydata/layer.shp` → in den zentralen QField-Ordner)
+
+2. **Anpassung von Pfaden**
+   – QField kann keine absoluten Pfade lesen – also werden Pfade in deinem Projekt **relativ** gemacht
+
+3. **Optimierung von Layern**
+   – große Dateien werden ggf. geklont, vereinfacht oder zugeschnitten (z. B. Rasterschnitt auf Projektgebiet)
+
+4. **Anpassung der Formularlogik und Offline-Funktionalität**
+   – z. B. vorbereitete Eingabemasken, Offline-Modus für Geopackages etc.
+
+**📦 Ergebnis:**
+
+Ein **QField-kompatibles Paket**, das:
+
+* auf einem Android-/iOS-Gerät funktioniert
+* alle Daten enthält
+* bereit ist für Upload zu **QFieldCloud** oder für manuellen Export auf ein Gerät
+
+**📌 Fazit:**
+
+Das Konvertieren ist nötig, um sicherzustellen, dass **alle Daten** und **Projekteinstellungen** korrekt und **kompatibel** mit der mobilen Umgebung von QField sind.
+
+
+
+## Kann ich das QGIS Projekt nach der Konvertierung löschen und einfach mit dem QField projekt weiterarbeiten?
+
+
+**Nein, du solltest das ursprüngliche QGIS-Projekt nicht löschen.**
+
+**🧠 Warum nicht?**
+
+Das **QField-Projekt ist nur eine Kopie**, die für den Feldeinsatz vorbereitet wurde. Es ist **nicht dafür gedacht**, dauerhaft dein Hauptprojekt zu ersetzen oder weiterentwickelt zu werden.
+
+Hier sind die wichtigsten Gründe:
+
+- **1. Das QField-Projekt ist technisch gesehen keine vollwertige Entwicklungsumgebung.**
+  * Es enthält **nur das Nötigste für die mobile Nutzung**.
+  * Es fehlen evtl. Hintergrunddaten, externe Ressourcen, komplexe Layer oder Plugins.
+  * QField-Projekte sind darauf ausgelegt, **nur Felddaten zu erfassen**, nicht das Projektkonzept weiterzuentwickeln.
+- **2. Änderungen aus QField sollen in das Original-QGIS-Projekt zurückfließen.**
+  * Du arbeitest im Feld (QField), **synchronisierst zurück** in dein QGIS-Projekt.
+  * Wenn du das QGIS-Projekt gelöscht hast, **gibt es keinen Ort mehr**, an den du die Änderungen sauber zurückspielen kannst.
+- **3. Nur in QGIS kannst du das Projekt vollständig bearbeiten.**
+  * Neue Layer hinzufügen
+  * Styling ändern
+  * Analysen durchführen
+  * Kartenlayouts gestalten
+- **4. Gefahr von Versionskonflikten und Datenverlust**
+  * Wenn du das QGIS-Projekt löscht und nur noch mit dem QField-Projekt arbeitest, verlierst du:
+    * Deinen Arbeitsstand
+    * Deine Projektstruktur
+    * Möglicherweise deine Datenquellen
+
+

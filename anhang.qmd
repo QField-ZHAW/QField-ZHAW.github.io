@@ -29,6 +29,13 @@ Einzelne Nutzer können können sehr gut via dem Webinterface von QField Cloud h
 In den Beispielen verwenden wir die SDK via Python. Installation: `pip install qfieldcloud-sdk`
 
 
+:::{.callout-note}
+
+Aktuell können nur _bereits existierende_ QField Cloud Nutzer via der API unserer Organisation hinzugefügt werden. Das Hinzufügen funktioniert nur via Benutzername, nicht via Emailadresse. `rata` hat am 26.06.2025 einen Feature request gemacht, welches das Hinzufügen via Emailadresse ermöglichen soll. Bis dieses Feature implementiert ist, müssen die Studenten zuerst QField Cloud Accounts erstellen und uns im Anschluss die Benutzernamen mitteilen.
+
+
+:::
+
 ### Ein einzelner Nutzer der Organisation hinzufügen
 
 ```{.python}

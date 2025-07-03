@@ -1,106 +1,116 @@
 
 # Projekt synchronisieren
 
-Wenn das System aufgesetzt ist (siehe @sec-installation) und das QGIS Projekt vorbereitet (siehe @sec-projekt) ist, sind die Voraussetzungen gegeben, mit QField Mobile zu synchronisieren. Um ein lokales QGIS Projekt mit QField Mobile zu synchronisieren, braucht es zwei Zwischentschritte:
+Wenn das System aufgesetzt ist (siehe @sec-installation) und das QGIS Projekt vorbereitet (siehe @sec-projekt) ist, sind die Voraussetzungen gegeben, mit QField Mobile zu synchronisieren. Um ein lokales QGIS Projekt mit QField Mobile zu synchronisieren, braucht folgende Schritte:
 
-1. Das QGIS Projekt wird zuerst in ein lokales QField Projekt konvertiert (Schritt "Konvertierung" in @fig-flow )
-2. Das lokale QField Projekt wird mit QField Cloud synchronisiert (Schritt "Sync" zwischen QField Projekt und QField Cloud in @fig-flow)
+- **Schritt A**: Das QGIS Projekt wird zuerst für QField in ein _QField Projekt_ verpackt. Dieses Projekt befindet sich auf dem Laptop in einem Standartverzeichnis[^clouddir]
+- **Schritt B**: Das QField Projekt wird mit QField Cloud synchronisiert.
+- **Schritt C**: Die QField Cloud wird mit den mobilen Geräten Synchronisiert.
 
-
+[^clouddir]:  Windows: `C:\Users\xy\QField\cloud`
 
 ```{mermaid}
 %%| label: fig-flow
-%%| fig-cap: "Grundsätzlicher Workflow und das Zusammenspiel von Laptop, Cloud und Mobile"
+%%| column: page
+%%| fig-cap: 'Grundsätzlicher Workflow und das Zusammenspiel von Laptop, Cloud und Mobile. Der Schritt A wird in @sec-konvertierung behandelt, Schritt B in  @sec-project2cloud und Schritt C in @sec-mobile2cloud'
+
+---
+config:
+  theme: 'base'
+  themeVariables:
+    primaryColor: '#80cc28'
+    edgeLabelBackground: '#f4f4f4FF'
+    tertiaryColor: '#f4f4f4'
+  flowchart:
+    htmlLabels: false
+---
 flowchart LR
- subgraph lokal["lokal (laptop)"]
-        A["QGIS Projekt (.qgz)"]
+ subgraph lokal["Laptop"]
+        A["`QGIS Projekt (.qgz)`"]
         B["QField Projekt (.qgs)"]
   end
  subgraph mobile["Mobile Geräte"]
         D["QField Mobile 1"]
         E["QField Mobile 2"]
   end
- subgraph cloud["cloud"]
+ subgraph cloud["Cloud"]
         C["QField Cloud"]
   end
-    A -- Konvertierung --> B
-    B <-- Sync --> C
-    C <-- Sync --> D
-    C <-- Sync --> E
-    style A fill:#80cc28,stroke:#333,stroke-width:2px,color:#fff
-    style B fill:#80cc28,stroke:#333,stroke-width:2px,color:#fff
+    A -- "Konvertierung (Schritt A)" --> B
+    B <-- "Sync (Schritt B)" --> C
+    C <-- "Sync (Schritt C)" --> D
+    C <-- "Sync (Schritt C)" --> E
     style C fill:#4a6fae,stroke:#333,stroke-width:2px,color:#fff
-    style D fill:#80cc28,stroke:#333,stroke-width:2px,color:#fff
-    style E fill:#80cc28,stroke:#333,stroke-width:2px,color:#fff
+
 ```
-
-
-:::{.callout-warning}
-
-## Todo terz
-
-- Was passiert eigentlich, wenn man im **QGIS Projekt** (nicht im **QField Projekt**) ein neues Feature hinzufügt und das auf Qfield Cloud bringen möchte. Geht das oder kommt es zu Konflikten? -> würde behaupten, es passiert nichts, da das QGIS Projekt nicht synchronisiert wird
-- Wo können wir den Hinweis platzieren, dass sämtliche QField Projekte sich kaum von QGIS Projekten unterscheiden, aber Zentral gelagert (bei mir in `home/rata/QField/clooud/`, wo auf Windows?) werden. Wodurch unterscheiden sich eigentlich QField und QGIS Projekte?
-:::
 
 
 Die Schritte **Konvertierung** und **Sync** werden im nachfolgenden Unterkapiteln beschrieben.
 
 
 
-## Konvertierung QGIS Projekt → QField Projekt {#sec-konvertierung}
+## Schritt A: QGIS Projekt → QField Projekt {#sec-konvertierung}
 
-QGIS Projekte (.qgz) können (leider) nicht direkt mit QField Cloud synchronisiert werden. Dazu braucht es ein lokal gespeichertes QField Projekt (.qgs). Vorgehen sollte man wie folgt:
+QGIS Projekte (.qgz) können (leider) nicht direkt mit QField Cloud synchronisiert werden. Dazu braucht es zuerst ein gespeichertes QField Projekt (.qgs). Vorgehen sollte man wie folgt:
 
 
 :::{#konvertierung layout-nrow=1  layout-valign="bottom"}
-![Schritt 1: Klick auf QField Cloud Projects Overview im QField Plugin Panel](images/create_local_qfieldcloud_project1.png)
+![Schritt 1: Klick auf _QField Cloud Projects Overview_ im QField Plugin Panel](images/create_local_qfieldcloud_project1.png)
 
 ![Schritt 2: Klick auf "Create New Project" um ein neues QField Projekt zu erstellen](images/create_local_qfieldcloud_project2.png)
 
 ![Schritt 3: "Convert currently open project..." auswählen und mit "Next" bestätigen](images/create_local_qfieldcloud_project3.png)
 :::
 
-Per Default wird das QField Projekt in Windows unter `C:\Users\xy\QField\cloud` gespeichert (Linux: `home/xy/QField/clooud/`). Nach Drücken des Knopfes *create* sollte die Meldung kommen, dass das QGield Projekt automatisch in/mit der Cloud synchronisiert wird.
+Per Default wird das QField Projekt in Windows unter `C:\Users\xy\QField\cloud` gespeichert (Linux: `home/xy/QField/cloud/`). Nach Drücken des Knopfes *create* sollte die Meldung kommen, dass das QField Projekt automatisch mit der Cloud synchronisiert wird.
 
 
-## QField Projekt ↔ QField Cloud
+## Schritt B: QField Projekt ↔ QField Cloud {#sec-project2cloud}
 
 Mit dem Vorgehen in @sec-konvertierung konnte sichergestellt werden, dass ein Projekt in der Cloud erstellt und mit dem QField Projekt synchronisiert wird. Synchronisierungen zwischen dem lokalen QField Projekt und der Cloud müssen jedoch manuell vorgenommen werden.
 
 ::: {layout-nrow=2}
-![](images/synchronize_cloud1.png)
+![Klick auf _Synchronize current cloud project_](images/synchronize_cloud1.png)
 
-![](images/synchronize_cloud2.png)
+![Auswahl der richtigen _Action_](images/synchronize_cloud2.png)
 :::
 
 Vor jeder Synchronisierung muss beachtet werden, ob die lokalen Daten oder die Daten in der Cloud die aktuelle Version beinhaltet. Dementsprechend muss die *Action* richtig ausgewählt werden (replace file on the cloud or replace local).
 
 
-## QField mobile ↔ QField Cloud
+## Schritt C: QField mobile ↔ QField Cloud {#sec-mobile2cloud}
 
 
 ### Öffnen des Projektes
 
 Bevor mit der Bearbeitung und Erfassung von Daten im Feld begonnen werden kann, muss das Projekt von der Cloud auf das mobile Gerät geholt werden.
-Nach Einloggen mit dem Cloud-Account werden unter *QField Cloud projects* alle Projekte angezeigt. Jenes Projekt, welches bearbeitet werden möchte, kann 
-dann angeklickt werden.
+Nach Einloggen mit dem Cloud-Account werden unter *QField Cloud projects* alle Projekte angezeigt. Jenes Projekt, welches bearbeitet werden möchte, kann dann angeklickt werden.
 
 ::: {layout-nrow=1}
-![](images/open_project_mobile1.PNG){.smartphone}
+![Klick auf _QFieldCloud projects_](images/open_project_mobile1.PNG){.smartphone}
 
-![](images/open_project_mobile2.PNG){.smartphone}
+![Korrektes Projekt auswählen](images/open_project_mobile2.PNG){.smartphone}
 :::
 
 
 ### Synchronisierung mit Cloud
 
-Änderungen der Daten und des Projektes, welche auf dem mobilen Gerät vorgenommen wurden, müssen "mauell" synchronisiert werden. Entweder können nur die geänderten Daten (*Push changes*) oder ein ganzes Projekt (*Synchronize*) mit der Cloud synchronisiert werden.
+Um im Feld erfasste Daten mit der Cloud Synchronisert werden sollen, wird wie folgt vorgegangen:
+
+1. Klick auf den Menu Button (𑁔) oben links
+2. Klick auf das Wolken Symbol ☁️, siehe @fig-synchronize-mobile-1
+3. Wahl des Vorganges:
+   - **⇅ Synchronize**: Das ganze Projekt Synchronisieren (_empfohlen_)
+   - **↑ Push changes**: Nur Änderungen hochladen (ohne Download)
+   - **↶ Revert local changes**: Lokale Änderungen löschen
+
+Entweder können nur die geänderten Daten (*Push changes*) oder ein ganzes Projekt (*Synchronize*) mit der Cloud synchronisiert werden.
 
 ::: {layout-nrow=1}
-![](images/synchronize_mobile1.PNG){.smartphone}
+![Klick auf den ☁️ Button](images/synchronize_mobile1.PNG){#fig-synchronize-mobile-1 .smartphone}
 
-![](images/synchronize_mobile2.PNG){.smartphone}
+![Wahl der gewünschten Synchronisation](images/synchronize_mobile2.PNG){#fig-synchronize-mobile-2 
+.smartphone}
 :::
 
 
