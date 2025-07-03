@@ -129,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./synchronisierung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Projekt Synchronisieren</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Projekt synchronisieren</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -140,8 +140,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">FAQ</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./anhang.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Anhang</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Anhang</span></span></a>
   </div>
 </li>
     </ul>
@@ -156,7 +162,11 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#sec-project-erstellen" id="toc-sec-project-erstellen" class="nav-link active" data-scroll-target="#sec-project-erstellen"><span class="header-section-number">2.1</span> Schritt 1: <span class="q">qgis</span> Projekt erstellen</a></li>
   <li><a href="#schritt-2-geopackage-erstellen" id="toc-schritt-2-geopackage-erstellen" class="nav-link" data-scroll-target="#schritt-2-geopackage-erstellen"><span class="header-section-number">2.2</span> Schritt 2: Geopackage erstellen</a></li>
-  <li><a href="#schritt-2-geopackage-tabelle-erstellen" id="toc-schritt-2-geopackage-tabelle-erstellen" class="nav-link" data-scroll-target="#schritt-2-geopackage-tabelle-erstellen"><span class="header-section-number">2.3</span> Schritt 2: Geopackage Tabelle erstellen</a></li>
+  <li><a href="#schritt-2-geopackage-tabelle-erstellen" id="toc-schritt-2-geopackage-tabelle-erstellen" class="nav-link" data-scroll-target="#schritt-2-geopackage-tabelle-erstellen"><span class="header-section-number">2.3</span> Schritt 2: Geopackage Tabelle erstellen</a>
+  <ul class="collapse">
+  <li><a href="#name-geometry-type" id="toc-name-geometry-type" class="nav-link" data-scroll-target="#name-geometry-type">Name / Geometry Type</a></li>
+  <li><a href="#crs" id="toc-crs" class="nav-link" data-scroll-target="#crs">CRS</a></li>
+  </ul></li>
   <li><a href="#sec-attribute" id="toc-sec-attribute" class="nav-link" data-scroll-target="#sec-attribute"><span class="header-section-number">2.4</span> Schritt 3: Attribute definieren</a></li>
   <li><a href="#schritt-4-attributeingabe-festlegen" id="toc-schritt-4-attributeingabe-festlegen" class="nav-link" data-scroll-target="#schritt-4-attributeingabe-festlegen"><span class="header-section-number">2.5</span> Schritt 4: Attributeingabe festlegen</a>
   <ul class="collapse">
@@ -164,6 +174,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#wie" id="toc-wie" class="nav-link" data-scroll-target="#wie">Wie?</a></li>
   <li><a href="#beispiel-vegetation-ch" id="toc-beispiel-vegetation-ch" class="nav-link" data-scroll-target="#beispiel-vegetation-ch">Beispiel <em>Vegetation-CH</em></a></li>
   </ul></li>
+  <li><a href="#schritt-5-basemap-konfigurieren" id="toc-schritt-5-basemap-konfigurieren" class="nav-link" data-scroll-target="#schritt-5-basemap-konfigurieren"><span class="header-section-number">2.6</span> Schritt 5: Basemap konfigurieren</a></li>
+  <li><a href="#schritt-6-layerspezifische-konfigurierungen-für-synchronisierung" id="toc-schritt-6-layerspezifische-konfigurierungen-für-synchronisierung" class="nav-link" data-scroll-target="#schritt-6-layerspezifische-konfigurierungen-für-synchronisierung"><span class="header-section-number">2.7</span> Schritt 6: Layerspezifische Konfigurierungen für Synchronisierung</a></li>
   </ul>
 </nav>
     </div>
@@ -189,23 +201,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Todo terz
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Kannst du diese Schritte mal ausführen und:</p>
-<ul>
-<li>Überprüfen ob die Beschreibung nachvollziehbar ist (ggf. verbessern)?</li>
-<li>Die resultierenden Geopackages sowie das QGIS Projekt auf Github hochladen und in der Anleitung zum Download anbieten?</li>
-</ul>
-</div>
-</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -221,7 +216,7 @@ Hinweis
 </div>
 <p>Um die Anleitung etwas verständlicher zu machen, spielen wir ein Beispiel durch. In diesem Beispiel werden verschiedene Vegetationstrukturen erfasst:</p>
 <ul>
-<li>Wiesen und Weiden (Flächenhafte ausprägung)</li>
+<li>Wiesen und Weiden (flächenhafte Ausprägung)</li>
 <li>Einzelbäume und Sträucher (Punkte)</li>
 </ul>
 <section id="sec-project-erstellen" class="level2" data-number="2.1">
@@ -246,12 +241,7 @@ Abbildung&nbsp;2.1: Der Speicherort des neu erstellten Geopackages ist indentisc
 </section>
 <section id="schritt-2-geopackage-tabelle-erstellen" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="schritt-2-geopackage-tabelle-erstellen"><span class="header-section-number">2.3</span> Schritt 2: Geopackage Tabelle erstellen</h2>
-<p>Für jeden Datentyp (Punkte, Linien, Polygone), der Erfasst werden soll, wird eine “Tabelle” in der Geopackage erstellt. Dafür klickt man mit Rechts auf das Geopackage <span class="menu">→ New Table</span>. Für die Tabelle muss nun ein Name (<span class="menu">Name</span>), ein Geometrietyp (<span class="menu">Geometry Type</span>) sowie ein Koordinatenbezugssystem (<span class="menu">CRS</span>) ausgewählt werden (siehe <a href="#fig-new-layer" class="quarto-xref">Abbildung&nbsp;<span>2.2</span></a>).</p>
-<ul>
-<li>Für Erhebungen in der Schweiz empfehlen wir CRS <code>CH1903+ LV95</code> (EPSG Code <code>2056</code>).</li>
-<li>Für Erhebungen ausserhalb der Schweiz in einem kleinen Gebiet empfehlen wir die jeweilige UTM Zone (<a href="https://mangomap.com/robertyoung/maps/69585/what-utm-zone-am-i-in-#">hier auswählen</a>)</li>
-<li>Für globale Erhebungen empfehlen wir WGS84 (EPSG Code <code>4326</code>)</li>
-</ul>
+<p>Für jeden Datentyp (Punkte, Linien, Polygone), der Erfasst werden soll, wird eine “Tabelle” in der Geopackage erstellt. Dafür klickt man mit Rechts auf das Geopackage <span class="menu">→ New Table</span>. Dabei erscheint ein Fester wie in <a href="#fig-new-layer" class="quarto-xref">Abbildung&nbsp;<span>2.2</span></a> ersichtlich.</p>
 <div id="fig-new-layer" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-new-layer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -262,7 +252,9 @@ Abbildung&nbsp;2.2: Minimal müssen pro Tabelle der Name, der Geometrietyp sowie
 </figcaption>
 </figure>
 </div>
-<p>Für unsere Datentypen verwenden wir die Tabellen-Namen und Geometrietypen wie in <a href="#tbl-layers" class="quarto-xref">Tabelle&nbsp;<span>2.1</span></a> beschreiben. Beachtet, dass die Tabellen-Namen weder Umlaute, Sonderzeichen oder Leerzeichen enthalten sollen.</p>
+<section id="name-geometry-type" class="level3">
+<h3 class="anchored" data-anchor-id="name-geometry-type">Name / Geometry Type</h3>
+<p>Für die Tabelle muss nun ein <span class="menu">Name</span> und ein Geometrietyp (<span class="menu">Geometry Type</span>) ausgewählt werden. Für unser Beispiel verwenden die Namen / Geometrietypen wie in <a href="#tbl-layers" class="quarto-xref">Tabelle&nbsp;<span>2.1</span></a> beschreiben. Beachtet, dass die Tabellen-Namen weder Umlaute, Sonderzeichen oder Leerzeichen enthalten sollen.</p>
 <div id="tbl-layers" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -285,7 +277,7 @@ Tabelle&nbsp;2.1: Tabellen-Namen und Geometrietypen für das fiktive Projekt <em
 </tr>
 <tr class="even">
 <td style="text-align: left;">Einzelbäume &amp; Sträucher</td>
-<td style="text-align: left;"><code>baume_straucher</code></td>
+<td style="text-align: left;"><code>baeume_straeucher</code></td>
 <td style="text-align: left;">Point</td>
 </tr>
 </tbody>
@@ -298,6 +290,16 @@ Tabelle&nbsp;2.1: Tabellen-Namen und Geometrietypen für das fiktive Projekt <em
 <li>Eine Wiese oder eine Weide kann aus verschiedenen, voneinander getrennten Teilstücken bestehen. In diesem Fall wollen wir alle Teilstücke “in einem Zug” erfassen können und dabei die Attribute (mehr zu Attributen in <a href="#sec-attribute" class="quarto-xref"><span>Kapitel 2.4</span></a>) nur einmalig eingeben. Deshalb verwenden wir <code>MultiPolygon</code> statt <code>Polygon</code>.</li>
 <li>Bei Bäumen und Sträucher ist das anders: Hier verpflichten wir uns, jeden Baum und jeder Strauch einzeln zu erfassen, weil beispielsweise die Wuchshöhe für jedes Objekt einzeln angegeben werden muss. Deshalb verwenden wir <code>Point</code> statt <code>MultiPoint</code>.</li>
 </ul>
+</section>
+<section id="crs" class="level3">
+<h3 class="anchored" data-anchor-id="crs">CRS</h3>
+<p>Zudem muss ein ein Koordinatenbezugssystem (<span class="menu">CRS</span>) ausgewählt werden.</p>
+<ul>
+<li>Für Erhebungen in der Schweiz empfehlen wir CRS <code>CH1903+ LV95</code> (EPSG Code <code>2056</code>).</li>
+<li>Für Erhebungen ausserhalb der Schweiz in einem kleinen Gebiet empfehlen wir die jeweilige UTM Zone (<a href="https://mangomap.com/robertyoung/maps/69585/what-utm-zone-am-i-in-#">hier auswählen</a>)</li>
+<li>Für globale Erhebungen empfehlen wir WGS84 (EPSG Code <code>4326</code>)</li>
+</ul>
+</section>
 </section>
 <section id="sec-attribute" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="sec-attribute"><span class="header-section-number">2.4</span> Schritt 3: Attribute definieren</h2>
@@ -344,7 +346,7 @@ Abbildung&nbsp;2.3
 </figcaption>
 </figure>
 </div>
-<p>Die Spalten für für die Tabelle <code>wiesen_weiden</code> sind in <a href="#tbl-spalten-wiesen" class="quarto-xref">Tabelle&nbsp;<span>2.2</span></a> beschreiben. Die Spalten für die Tabelle <code>baume_straucher</code> sind in <a href="#tbl-spalten-einzelbaeume" class="quarto-xref">Tabelle&nbsp;<span>2.3</span></a> dargestellt.</p>
+<p>Die Spalten für für die Tabelle <code>wiesen_weiden</code> sind in <a href="#tbl-spalten-wiesen" class="quarto-xref">Tabelle&nbsp;<span>2.2</span></a> beschreiben. Die Spalten für die Tabelle <code>baeume_straeucher</code> sind in <a href="#tbl-spalten-einzelbaeume" class="quarto-xref">Tabelle&nbsp;<span>2.3</span></a> dargestellt.</p>
 <p>Die <em>Namen</em> der Felder sollten keine Umlaute, Leerschläge oder Sonderzeichen enthalten. Allerdings kann pro Feld ein <em>Alias</em> definiert werden: Dabei handelt es sich um eine alternative Bezeichnung, bei dem diese Regeln nicht gelten.</p>
 <div id="tbl-spalten-wiesen" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -354,15 +356,17 @@ Tabelle&nbsp;2.2: Spalten für <em>wiesen_weiden</em>
 <div aria-describedby="tbl-spalten-wiesen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 29%">
-<col style="width: 47%">
 <col style="width: 23%">
+<col style="width: 37%">
+<col style="width: 18%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Bezeichnung / Alias</th>
 <th style="text-align: left;">Datentyp</th>
 <th style="text-align: left;">Spaltenname</th>
+<th style="text-align: left;">Eigenschaften</th>
 </tr>
 </thead>
 <tbody>
@@ -370,16 +374,19 @@ Tabelle&nbsp;2.2: Spalten für <em>wiesen_weiden</em>
 <td style="text-align: left;">Erfassungsdatum</td>
 <td style="text-align: left;"><code>Date</code></td>
 <td style="text-align: left;">erfassungsdatum</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Typ</td>
 <td style="text-align: left;"><code>Text (String)</code> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
 <td style="text-align: left;">typ</td>
+<td style="text-align: left;">Length: 0<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Anzahl Arten</td>
-<td style="text-align: left;"><code>Integer (32 Bit)</code> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></td>
+<td style="text-align: left;"><code>Integer (32 Bit)</code> <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></td>
 <td style="text-align: left;">anzahl_arten</td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
@@ -389,20 +396,22 @@ Tabelle&nbsp;2.2: Spalten für <em>wiesen_weiden</em>
 <div id="tbl-spalten-einzelbaeume" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spalten-einzelbaeume-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabelle&nbsp;2.3: Spalten für <em>baume_straucher</em>
+Tabelle&nbsp;2.3: Spalten für <em>baeume_straeucher</em>
 </figcaption>
 <div aria-describedby="tbl-spalten-einzelbaeume-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 29%">
-<col style="width: 47%">
 <col style="width: 23%">
+<col style="width: 37%">
+<col style="width: 18%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Bezeichnung / Alias</th>
 <th style="text-align: left;">Datentyp</th>
 <th style="text-align: left;">Spaltenname</th>
+<th style="text-align: left;">Eigenschaften</th>
 </tr>
 </thead>
 <tbody>
@@ -410,28 +419,32 @@ Tabelle&nbsp;2.3: Spalten für <em>baume_straucher</em>
 <td style="text-align: left;">Erfassungsdatum</td>
 <td style="text-align: left;"><code>Date</code></td>
 <td style="text-align: left;">erfassungsdatum</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Art</td>
 <td style="text-align: left;"><code>Text (String)</code></td>
 <td style="text-align: left;">art</td>
+<td style="text-align: left;">Length: 0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Wuchshöhe</td>
-<td style="text-align: left;"><code>Decimal Number (real)</code> <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></td>
-<td style="text-align: left;">wuchshohe</td>
+<td style="text-align: left;"><code>Decimal Number (real)</code> <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></td>
+<td style="text-align: left;">wuchshoehe</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Bemerkung</td>
 <td style="text-align: left;"><code>Text (String)</code></td>
 <td style="text-align: left;">bemerkung</td>
+<td style="text-align: left;">Length: 0</td>
 </tr>
 </tbody>
 </table>
 </div>
 </figure>
 </div>
-<p>Detailliertere Informationen zu den Datentypen in Geopackages findet ihr in <a href="anhang.html#tbl-geopackage-datatypes" class="quarto-xref">Tabelle&nbsp;<span>5.1</span></a></p>
+<p>Detailliertere Informationen zu den Datentypen in Geopackages findet ihr in <a href="anhang.html#tbl-geopackage-datatypes" class="quarto-xref">Tabelle&nbsp;<span>6.1</span></a></p>
 </section>
 <section id="schritt-4-attributeingabe-festlegen" class="level2 page-columns page-full" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="schritt-4-attributeingabe-festlegen"><span class="header-section-number">2.5</span> Schritt 4: Attributeingabe festlegen</h2>
@@ -452,7 +465,7 @@ Tabelle&nbsp;2.3: Spalten für <em>baume_straucher</em>
 </ul>
 <p>Weiter können auch kleinere Erleichterungen eingebaut werden. Beispielsweise, dass der Defaultwert eines Feldes der letzten Eingabe entspricht. Dies kann sinnvoll sein, wenn absehbar ist, dass oft die gleichen Attribute nacheinander eingetragen werden müssen (z.B. <em>Erfassungsdatum</em>.)</p>
 </section>
-<section id="wie" class="level3">
+<section id="wie" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="wie">Wie?</h3>
 <p>Um die Attributeingabe festzulegen, müssen die Tabellen erstmal dem QGIS Projekt hinzugefügt werden. Dazu im <span class="menu">Browser Panel</span> den jeweiligen doppelklicken oder Rechtsklick <span class="menu">Add Layer to Project</span>. Danach im <span class="menu">Layers Panel</span> rechtsklick auf den Layer <span class="menu">Properties → Attribute Form</span> (siehe <a href="#fig-attribute-form" class="quarto-xref">Abbildung&nbsp;<span>2.5</span></a>).</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -468,10 +481,10 @@ Hinweis
 <p>Alle Einstellungen an den Attributeingaben sind teil des <span class="q">qgis</span> <em>Projektes</em>. Die Einstellungen aus <a href="#sec-attribute" class="quarto-xref"><span>Kapitel 2.4</span></a> hingegen waren Teil des <em>Geopackage</em>.</p>
 </div>
 </div>
-<div id="fig-attribute-form" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-attribute-form-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/attribute-form.png" class="img-fluid figure-img">
+<div id="fig-attribute-form" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-attribute-form-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
+<img src="images/attribute-form.png" class="img-fluid figure-img column-page">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-attribute-form-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Abbildung&nbsp;2.4: In den Layer Properties können die Eingaben definiert werden
@@ -493,31 +506,33 @@ Abbildung&nbsp;2.4: In den Layer Properties können die Eingaben definiert werde
 <li><strong>Anzahl Arten</strong>: Hier setzen wir den minimum Wert auf 0 und den maximalwert auf 100 und nutzen die Eingabe <span class="menu">Slider</span></li>
 <li><strong>Bemerkung</strong>: Hier belassen wir die Default Einstellungen</li>
 </ul>
-<div class="page-columns page-full">
-<div id="fig-attribute-form" class="quarto-layout-panel page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
-<div aria-describedby="fig-attribute-form-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
-<div class="quarto-layout-row column-page">
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-attribute-form" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="column-page">
+<div id="fig-attribute-form" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-attribute-form-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-attribute-form" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div id="fig-value-map" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-value-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/value-map.png" class="img-fluid figure-img" data-ref-parent="fig-attribute-form">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-value-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(a) Value map
+(a) <em>Value map</em> für die Eingabe von “Typ”
 </figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-attribute-form" style="flex-basis: 50.0%;justify-content: flex-start;">
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-attribute-form" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div id="fig-slider" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-slider-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/slider.png" class="img-fluid figure-img" data-ref-parent="fig-attribute-form">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-slider-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(b) Slider
+(b) <em>Slider</em> für die Eingabe von “Anzahl Arten”
 </figcaption>
 </figure>
 </div>
@@ -530,16 +545,36 @@ Abbildung&nbsp;2.5: Verschiedene Attribut-Formular Optionen
 </figure>
 </div>
 </div>
-
-
 </section>
+</section>
+<section id="schritt-5-basemap-konfigurieren" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="schritt-5-basemap-konfigurieren"><span class="header-section-number">2.6</span> Schritt 5: Basemap konfigurieren</h2>
+</section>
+<section id="schritt-6-layerspezifische-konfigurierungen-für-synchronisierung" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="schritt-6-layerspezifische-konfigurierungen-für-synchronisierung"><span class="header-section-number">2.7</span> Schritt 6: Layerspezifische Konfigurierungen für Synchronisierung</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Todo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://github.com/QField-ZHAW/QField-ZHAW.github.io/issues/1" class="uri">https://github.com/QField-ZHAW/QField-ZHAW.github.io/issues/1</a></p>
+</div>
+</div>
+
+
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn1"><p>Bei Text kann <em>optional</em> die maximale Textlänge angegeben werden. Der Defaultwert 0 bedeutet “unbeschränkt”<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Zahlen ohne Nachkommastellen im Wertebereich ca. -2.1 bis +2.1 Mio. Für grössere Zahlen <code>64 Bit</code> verwenden<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>eine Fliesskommazahl<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Eine Länge von 0 bedeutet, dass beliebig viele Zeichen eingegeben werden können.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Zahlen ohne Nachkommastellen im Wertebereich ca. -2.1 bis +2.1 Mio. Für grössere Zahlen <code>64 Bit</code> verwenden<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>eine Fliesskommazahl<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -950,8 +985,8 @@ Abbildung&nbsp;2.5: Verschiedene Attribut-Formular Optionen
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./synchronisierung.html" class="pagination-link" aria-label="Projekt Synchronisieren">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Projekt Synchronisieren</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./synchronisierung.html" class="pagination-link" aria-label="Projekt synchronisieren">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Projekt synchronisieren</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

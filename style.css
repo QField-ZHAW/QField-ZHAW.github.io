@@ -13,7 +13,7 @@
 
 
 /* >>> Single class that transforms any image into a smartphone */
-.smartphone {
+figure .smartphone {
   width: 300px;
   height: 600px;
   object-fit: contain;

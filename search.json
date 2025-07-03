@@ -54,7 +54,7 @@
     "href": "installation.html#schritt-3-qfield-cloud-account-erstellen",
     "title": "1  System aufsetzen",
     "section": "1.4 Schritt 3: qfield Cloud Account erstellen",
-    "text": "1.4 Schritt 3: qfield Cloud Account erstellen\n\n\n\n\n\n\nTodo Terz\n\n\n\n\nKurzer Anleitung für das Erstellen eines Cloud Accountes via https://app.qfield.cloud/accounts/signup/ erstellen\nKurzer Hinweis, dass der Account von der FG GeoI der Organisation ZHAW hinzugefügt werden muss (damit mit anderen Kollaboriert werden kann), also Mail an info.geoinformatik@zhaw.ch schicken\nKurzer Hinweis, wie man sich mit dem Plugin Einlogged",
+    "text": "1.4 Schritt 3: qfield Cloud Account erstellen\n\n\n\n\n\n\nWarnung\n\n\n\nhttps://github.com/QField-ZHAW/QField-ZHAW.github.io/issues/2",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>System aufsetzen</span>"
     ]
@@ -84,7 +84,7 @@
     "href": "projekt.html#schritt-2-geopackage-tabelle-erstellen",
     "title": "2  Projekt aufsetzen",
     "section": "2.3 Schritt 2: Geopackage Tabelle erstellen",
-    "text": "2.3 Schritt 2: Geopackage Tabelle erstellen\nFür jeden Datentyp (Punkte, Linien, Polygone), der Erfasst werden soll, wird eine “Tabelle” in der Geopackage erstellt. Dafür klickt man mit Rechts auf das Geopackage → New Table. Für die Tabelle muss nun ein Name (Name), ein Geometrietyp (Geometry Type) sowie ein Koordinatenbezugssystem (CRS) ausgewählt werden (siehe Abbildung 2.2).\n\nFür Erhebungen in der Schweiz empfehlen wir CRS CH1903+ LV95 (EPSG Code 2056).\nFür Erhebungen ausserhalb der Schweiz in einem kleinen Gebiet empfehlen wir die jeweilige UTM Zone (hier auswählen)\nFür globale Erhebungen empfehlen wir WGS84 (EPSG Code 4326)\n\n\n\n\n\n\n\nAbbildung 2.2: Minimal müssen pro Tabelle der Name, der Geometrietyp sowie das CRS festgelegt werden. Optional können hier bereits Felder / Fields erfasst werden, dazu mehr in Kapitel 2.4\n\n\n\nFür unsere Datentypen verwenden wir die Tabellen-Namen und Geometrietypen wie in Tabelle 2.1 beschreiben. Beachtet, dass die Tabellen-Namen weder Umlaute, Sonderzeichen oder Leerzeichen enthalten sollen.\n\n\n\nTabelle 2.1: Tabellen-Namen und Geometrietypen für das fiktive Projekt Vegetation-CH. Wir empfehlen alles konsistent klein zu schreiben, Leerzeichen mit _ zu ersetzen und Umlaute zu vermeiden (z.B. a statt ä) .\n\n\n\n\n\nBeschreibung\nTabellen-Name\nGeometry Type\n\n\n\n\nWiesen & Weiden\nwiesen_weiden\nMultiPolygon\n\n\nEinzelbäume & Sträucher\nbaume_straucher\nPoint\n\n\n\n\n\n\nWir verwenden in unserem Beispiel (Tabelle 2.1) Point für die Einzelbäume und MultiPolygon für die Wiesen & Weiden. Der Grund ist der folgende:\n\nEine Wiese oder eine Weide kann aus verschiedenen, voneinander getrennten Teilstücken bestehen. In diesem Fall wollen wir alle Teilstücke “in einem Zug” erfassen können und dabei die Attribute (mehr zu Attributen in Kapitel 2.4) nur einmalig eingeben. Deshalb verwenden wir MultiPolygon statt Polygon.\nBei Bäumen und Sträucher ist das anders: Hier verpflichten wir uns, jeden Baum und jeder Strauch einzeln zu erfassen, weil beispielsweise die Wuchshöhe für jedes Objekt einzeln angegeben werden muss. Deshalb verwenden wir Point statt MultiPoint.",
+    "text": "2.3 Schritt 2: Geopackage Tabelle erstellen\nFür jeden Datentyp (Punkte, Linien, Polygone), der Erfasst werden soll, wird eine “Tabelle” in der Geopackage erstellt. Dafür klickt man mit Rechts auf das Geopackage → New Table. Dabei erscheint ein Fester wie in Abbildung 2.2 ersichtlich.\n\n\n\n\n\n\nAbbildung 2.2: Minimal müssen pro Tabelle der Name, der Geometrietyp sowie das CRS festgelegt werden. Optional können hier bereits Felder / Fields erfasst werden, dazu mehr in Kapitel 2.4\n\n\n\n\nName / Geometry Type\nFür die Tabelle muss nun ein Name und ein Geometrietyp (Geometry Type) ausgewählt werden. Für unser Beispiel verwenden die Namen / Geometrietypen wie in Tabelle 2.1 beschreiben. Beachtet, dass die Tabellen-Namen weder Umlaute, Sonderzeichen oder Leerzeichen enthalten sollen.\n\n\n\nTabelle 2.1: Tabellen-Namen und Geometrietypen für das fiktive Projekt Vegetation-CH. Wir empfehlen alles konsistent klein zu schreiben, Leerzeichen mit _ zu ersetzen und Umlaute zu vermeiden (z.B. a statt ä) .\n\n\n\n\n\nBeschreibung\nTabellen-Name\nGeometry Type\n\n\n\n\nWiesen & Weiden\nwiesen_weiden\nMultiPolygon\n\n\nEinzelbäume & Sträucher\nbaeume_straeucher\nPoint\n\n\n\n\n\n\nWir verwenden in unserem Beispiel (Tabelle 2.1) Point für die Einzelbäume und MultiPolygon für die Wiesen & Weiden. Der Grund ist der folgende:\n\nEine Wiese oder eine Weide kann aus verschiedenen, voneinander getrennten Teilstücken bestehen. In diesem Fall wollen wir alle Teilstücke “in einem Zug” erfassen können und dabei die Attribute (mehr zu Attributen in Kapitel 2.4) nur einmalig eingeben. Deshalb verwenden wir MultiPolygon statt Polygon.\nBei Bäumen und Sträucher ist das anders: Hier verpflichten wir uns, jeden Baum und jeder Strauch einzeln zu erfassen, weil beispielsweise die Wuchshöhe für jedes Objekt einzeln angegeben werden muss. Deshalb verwenden wir Point statt MultiPoint.\n\n\n\nCRS\nZudem muss ein ein Koordinatenbezugssystem (CRS) ausgewählt werden.\n\nFür Erhebungen in der Schweiz empfehlen wir CRS CH1903+ LV95 (EPSG Code 2056).\nFür Erhebungen ausserhalb der Schweiz in einem kleinen Gebiet empfehlen wir die jeweilige UTM Zone (hier auswählen)\nFür globale Erhebungen empfehlen wir WGS84 (EPSG Code 4326)",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Projekt aufsetzen</span>"
     ]
@@ -94,7 +94,7 @@
     "href": "projekt.html#sec-attribute",
     "title": "2  Projekt aufsetzen",
     "section": "2.4 Schritt 3: Attribute definieren",
-    "text": "2.4 Schritt 3: Attribute definieren\nDamit wir die Beobachtungen, die wir im Feld machen auch festhalten können, brauchen wir Spalten (sog. Attribute). Diese Attribute (engl: Fields) werden pro Tabelle separat erstellt. Für jede Spalte wird ein Datentyp ausgewählt, wobei folgende Datentypen am häufigsten sind:\n\nNummerische Werte (mit / ohne Nachkommastellen)\nText\nDatum (mit / ohne Uhrzeit)\nBilder\n\nSpalten können entweder direkt während der Erstellung der Tabelle (siehe Abbildung 2.2) oder auch nachträglich hinzugefügt werden. Für ein nachträgliches erfassen muss man im Browser Panel das Geopackage “ausklappen”, so dass die Fields sichtbar sind (siehe Abbildung 2.3 (a)). Mit Rechtsklick auf Fields → Add New Field können weitere Spalten hinzugefügt werden, mit Rechtsklick auf eine bestehendes “Field” kann dieses editiert (z.B. umbenannt) werden.\n\n\n\n\n\n\n\n\n\n\n\n(a) Im Browser Panel können Geopackages nachträglich editiert werden.\n\n\n\n\n\n\n\n\n\n\n\n(b) Für jedes Field muss ein Name und ein Datentyp definiert werden. Ein Alias sowie ein Kommentar helfen das Attribut besser zu beschreiben\n\n\n\n\n\n\n\nAbbildung 2.3\n\n\n\nDie Spalten für für die Tabelle wiesen_weiden sind in Tabelle 2.2 beschreiben. Die Spalten für die Tabelle baume_straucher sind in Tabelle 2.3 dargestellt.\nDie Namen der Felder sollten keine Umlaute, Leerschläge oder Sonderzeichen enthalten. Allerdings kann pro Feld ein Alias definiert werden: Dabei handelt es sich um eine alternative Bezeichnung, bei dem diese Regeln nicht gelten.\n\n\n\nTabelle 2.2: Spalten für wiesen_weiden\n\n\n\n\n\n\n\n\n\n\nBezeichnung / Alias\nDatentyp\nSpaltenname\n\n\n\n\nErfassungsdatum\nDate\nerfassungsdatum\n\n\nTyp\nText (String) 1\ntyp\n\n\nAnzahl Arten\nInteger (32 Bit) 2\nanzahl_arten\n\n\n\n\n\n\n\n\n\nTabelle 2.3: Spalten für baume_straucher\n\n\n\n\n\n\n\n\n\n\nBezeichnung / Alias\nDatentyp\nSpaltenname\n\n\n\n\nErfassungsdatum\nDate\nerfassungsdatum\n\n\nArt\nText (String)\nart\n\n\nWuchshöhe\nDecimal Number (real) 3\nwuchshohe\n\n\nBemerkung\nText (String)\nbemerkung\n\n\n\n\n\n\nDetailliertere Informationen zu den Datentypen in Geopackages findet ihr in Tabelle 5.1",
+    "text": "2.4 Schritt 3: Attribute definieren\nDamit wir die Beobachtungen, die wir im Feld machen auch festhalten können, brauchen wir Spalten (sog. Attribute). Diese Attribute (engl: Fields) werden pro Tabelle separat erstellt. Für jede Spalte wird ein Datentyp ausgewählt, wobei folgende Datentypen am häufigsten sind:\n\nNummerische Werte (mit / ohne Nachkommastellen)\nText\nDatum (mit / ohne Uhrzeit)\nBilder\n\nSpalten können entweder direkt während der Erstellung der Tabelle (siehe Abbildung 2.2) oder auch nachträglich hinzugefügt werden. Für ein nachträgliches erfassen muss man im Browser Panel das Geopackage “ausklappen”, so dass die Fields sichtbar sind (siehe Abbildung 2.3 (a)). Mit Rechtsklick auf Fields → Add New Field können weitere Spalten hinzugefügt werden, mit Rechtsklick auf eine bestehendes “Field” kann dieses editiert (z.B. umbenannt) werden.\n\n\n\n\n\n\n\n\n\n\n\n(a) Im Browser Panel können Geopackages nachträglich editiert werden.\n\n\n\n\n\n\n\n\n\n\n\n(b) Für jedes Field muss ein Name und ein Datentyp definiert werden. Ein Alias sowie ein Kommentar helfen das Attribut besser zu beschreiben\n\n\n\n\n\n\n\nAbbildung 2.3\n\n\n\nDie Spalten für für die Tabelle wiesen_weiden sind in Tabelle 2.2 beschreiben. Die Spalten für die Tabelle baeume_straeucher sind in Tabelle 2.3 dargestellt.\nDie Namen der Felder sollten keine Umlaute, Leerschläge oder Sonderzeichen enthalten. Allerdings kann pro Feld ein Alias definiert werden: Dabei handelt es sich um eine alternative Bezeichnung, bei dem diese Regeln nicht gelten.\n\n\n\nTabelle 2.2: Spalten für wiesen_weiden\n\n\n\n\n\n\n\n\n\n\n\nBezeichnung / Alias\nDatentyp\nSpaltenname\nEigenschaften\n\n\n\n\nErfassungsdatum\nDate\nerfassungsdatum\n\n\n\nTyp\nText (String) 1\ntyp\nLength: 02\n\n\nAnzahl Arten\nInteger (32 Bit) 3\nanzahl_arten\n\n\n\n\n\n\n\n\n\n\nTabelle 2.3: Spalten für baeume_straeucher\n\n\n\n\n\n\n\n\n\n\n\nBezeichnung / Alias\nDatentyp\nSpaltenname\nEigenschaften\n\n\n\n\nErfassungsdatum\nDate\nerfassungsdatum\n\n\n\nArt\nText (String)\nart\nLength: 0\n\n\nWuchshöhe\nDecimal Number (real) 4\nwuchshoehe\n\n\n\nBemerkung\nText (String)\nbemerkung\nLength: 0\n\n\n\n\n\n\nDetailliertere Informationen zu den Datentypen in Geopackages findet ihr in Tabelle 6.1",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Projekt aufsetzen</span>"
     ]
@@ -104,7 +104,27 @@
     "href": "projekt.html#schritt-4-attributeingabe-festlegen",
     "title": "2  Projekt aufsetzen",
     "section": "2.5 Schritt 4: Attributeingabe festlegen",
-    "text": "2.5 Schritt 4: Attributeingabe festlegen\n\nWarum?\nUm den Input von Attribute zu vereinfachen, können Eingabefelder festgelegt werden. Beispielsweise für solche Vereinfachungen:\n\nEingabe von numerischen Werten via einem Slider (zum Beispiel wenn sich der Wert nur in einem bestimmten Bereich bewegen kann)\nEingabe von Ja/Nein mittels Checkbox\nEingabe von Text über ein Dropdown Menü (wenn es eine festgelegte beschränkte Liste von Optionen gibt)\nEingabe von Datum via einem Kalender\n\nZudem können Datenqualitätsaspekte festgelegt werden. Beispielsweise:\n\nEin Feld darf nicht leer sein (zwingende Eingabe)\nJeder Wert darf nur 1x vorkommen (Eindeutige Werte)\nEin Feld wird automatisch ausgefüllt und darf nicht editiert werden (zum Beispiel fid)\n\nWeiter können auch kleinere Erleichterungen eingebaut werden. Beispielsweise, dass der Defaultwert eines Feldes der letzten Eingabe entspricht. Dies kann sinnvoll sein, wenn absehbar ist, dass oft die gleichen Attribute nacheinander eingetragen werden müssen (z.B. Erfassungsdatum.)\n\n\nWie?\nUm die Attributeingabe festzulegen, müssen die Tabellen erstmal dem QGIS Projekt hinzugefügt werden. Dazu im Browser Panel den jeweiligen doppelklicken oder Rechtsklick Add Layer to Project. Danach im Layers Panel rechtsklick auf den Layer Properties → Attribute Form (siehe Abbildung 2.5).\n\n\n\n\n\n\nHinweis\n\n\n\nAlle Einstellungen an den Attributeingaben sind teil des qgis Projektes. Die Einstellungen aus Kapitel 2.4 hingegen waren Teil des Geopackage.\n\n\n\n\n\n\n\n\nAbbildung 2.4: In den Layer Properties können die Eingaben definiert werden\n\n\n\n\n\nBeispiel Vegetation-CH\nIn unserem Fiktiven Beispiel können wir folgende Formulareingaben festhalten:\nWiesen_Weiden\n\nDatum:\n\nQGIS verwendet für Datumsfelder per Default den Widget Type: Date/Time sowie, 🗹 Calender Popup. Dies ist auch für unsere Anwendung sinnvoll\nEs ist absehbar, dass wir am gleichen Tag mehrere Objekte erfassen, deshalb setzen wir noch 🗹 Reuse last entered value\n\nTyp: Hier hätten wir gerne eine Dropdownliste mit zwei Einträgen: Wiese sowie Weide. Zu diesem Zweck verwenden wir das Widget Type: Value Map und erfassen unsere Liste möglicher Werte in der dazu verfügung stehender Tabelle (siehe Abbildung 2.5 (a))\nAnzahl Arten: Hier setzen wir den minimum Wert auf 0 und den maximalwert auf 100 und nutzen die Eingabe Slider\nBemerkung: Hier belassen wir die Default Einstellungen\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Value map\n\n\n\n\n\n\n\n\n\n\n\n(b) Slider\n\n\n\n\n\n\n\nAbbildung 2.5: Verschiedene Attribut-Formular Optionen",
+    "text": "2.5 Schritt 4: Attributeingabe festlegen\n\nWarum?\nUm den Input von Attribute zu vereinfachen, können Eingabefelder festgelegt werden. Beispielsweise für solche Vereinfachungen:\n\nEingabe von numerischen Werten via einem Slider (zum Beispiel wenn sich der Wert nur in einem bestimmten Bereich bewegen kann)\nEingabe von Ja/Nein mittels Checkbox\nEingabe von Text über ein Dropdown Menü (wenn es eine festgelegte beschränkte Liste von Optionen gibt)\nEingabe von Datum via einem Kalender\n\nZudem können Datenqualitätsaspekte festgelegt werden. Beispielsweise:\n\nEin Feld darf nicht leer sein (zwingende Eingabe)\nJeder Wert darf nur 1x vorkommen (Eindeutige Werte)\nEin Feld wird automatisch ausgefüllt und darf nicht editiert werden (zum Beispiel fid)\n\nWeiter können auch kleinere Erleichterungen eingebaut werden. Beispielsweise, dass der Defaultwert eines Feldes der letzten Eingabe entspricht. Dies kann sinnvoll sein, wenn absehbar ist, dass oft die gleichen Attribute nacheinander eingetragen werden müssen (z.B. Erfassungsdatum.)\n\n\nWie?\nUm die Attributeingabe festzulegen, müssen die Tabellen erstmal dem QGIS Projekt hinzugefügt werden. Dazu im Browser Panel den jeweiligen doppelklicken oder Rechtsklick Add Layer to Project. Danach im Layers Panel rechtsklick auf den Layer Properties → Attribute Form (siehe Abbildung 2.5).\n\n\n\n\n\n\nHinweis\n\n\n\nAlle Einstellungen an den Attributeingaben sind teil des qgis Projektes. Die Einstellungen aus Kapitel 2.4 hingegen waren Teil des Geopackage.\n\n\n\n\n\n\n\n\nAbbildung 2.4: In den Layer Properties können die Eingaben definiert werden\n\n\n\n\n\nBeispiel Vegetation-CH\nIn unserem Fiktiven Beispiel können wir folgende Formulareingaben festhalten:\nWiesen_Weiden\n\nDatum:\n\nQGIS verwendet für Datumsfelder per Default den Widget Type: Date/Time sowie, 🗹 Calender Popup. Dies ist auch für unsere Anwendung sinnvoll\nEs ist absehbar, dass wir am gleichen Tag mehrere Objekte erfassen, deshalb setzen wir noch 🗹 Reuse last entered value\n\nTyp: Hier hätten wir gerne eine Dropdownliste mit zwei Einträgen: Wiese sowie Weide. Zu diesem Zweck verwenden wir das Widget Type: Value Map und erfassen unsere Liste möglicher Werte in der dazu verfügung stehender Tabelle (siehe Abbildung 2.5 (a))\nAnzahl Arten: Hier setzen wir den minimum Wert auf 0 und den maximalwert auf 100 und nutzen die Eingabe Slider\nBemerkung: Hier belassen wir die Default Einstellungen\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Value map für die Eingabe von “Typ”\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) Slider für die Eingabe von “Anzahl Arten”\n\n\n\n\n\n\n\nAbbildung 2.5: Verschiedene Attribut-Formular Optionen",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Projekt aufsetzen</span>"
+    ]
+  },
+  {
+    "objectID": "projekt.html#schritt-5-basemap-konfigurieren",
+    "href": "projekt.html#schritt-5-basemap-konfigurieren",
+    "title": "2  Projekt aufsetzen",
+    "section": "2.6 Schritt 5: Basemap konfigurieren",
+    "text": "2.6 Schritt 5: Basemap konfigurieren",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Projekt aufsetzen</span>"
+    ]
+  },
+  {
+    "objectID": "projekt.html#schritt-6-layerspezifische-konfigurierungen-für-synchronisierung",
+    "href": "projekt.html#schritt-6-layerspezifische-konfigurierungen-für-synchronisierung",
+    "title": "2  Projekt aufsetzen",
+    "section": "2.7 Schritt 6: Layerspezifische Konfigurierungen für Synchronisierung",
+    "text": "2.7 Schritt 6: Layerspezifische Konfigurierungen für Synchronisierung\n\n\n\n\n\n\nTodo\n\n\n\nhttps://github.com/QField-ZHAW/QField-ZHAW.github.io/issues/1",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Projekt aufsetzen</span>"
     ]
@@ -114,7 +134,7 @@
     "href": "projekt.html#footnotes",
     "title": "2  Projekt aufsetzen",
     "section": "",
-    "text": "Bei Text kann optional die maximale Textlänge angegeben werden. Der Defaultwert 0 bedeutet “unbeschränkt”↩︎\nZahlen ohne Nachkommastellen im Wertebereich ca. -2.1 bis +2.1 Mio. Für grössere Zahlen 64 Bit verwenden↩︎\neine Fliesskommazahl↩︎",
+    "text": "Bei Text kann optional die maximale Textlänge angegeben werden. Der Defaultwert 0 bedeutet “unbeschränkt”↩︎\nEine Länge von 0 bedeutet, dass beliebig viele Zeichen eingegeben werden können.↩︎\nZahlen ohne Nachkommastellen im Wertebereich ca. -2.1 bis +2.1 Mio. Für grössere Zahlen 64 Bit verwenden↩︎\neine Fliesskommazahl↩︎",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Projekt aufsetzen</span>"
     ]
@@ -122,41 +142,51 @@
   {
     "objectID": "synchronisierung.html",
     "href": "synchronisierung.html",
-    "title": "3  Projekt Synchronisieren",
+    "title": "3  Projekt synchronisieren",
     "section": "",
-    "text": "3.1 Konvertierung QGIS → QField Project\nWenn das System aufgesetzt ist (siehe Kapitel 1) und das QGIS Projekt vorbereitet (siehe Kapitel 2) sind die Voraussetzungen gegeben mit QField Mobile zu Synchronisieren. Um ein Lokales QGIS Projekt mit QField Mobile zu Synchronisieren braucht es zwei Zwischentschritte:\nDie Schritte “Konvertierung” und “Sync” werden im nachfolgenden Unterkapiteln beschrieben.\nDanach wird das Projekt automatisch in/mit der Cloud synchronisiert",
+    "text": "3.1 Schritt A: QGIS Projekt → QField Projekt\nWenn das System aufgesetzt ist (siehe Kapitel 1) und das QGIS Projekt vorbereitet (siehe Kapitel 2) ist, sind die Voraussetzungen gegeben, mit QField Mobile zu synchronisieren. Um ein lokales QGIS Projekt mit QField Mobile zu synchronisieren, braucht folgende Schritte:\nDie Schritte Konvertierung und Sync werden im nachfolgenden Unterkapiteln beschrieben.\nQGIS Projekte (.qgz) können (leider) nicht direkt mit QField Cloud synchronisiert werden. Dazu braucht es zuerst ein gespeichertes QField Projekt (.qgs). Vorgehen sollte man wie folgt:\nPer Default wird das QField Projekt in Windows unter C:\\Users\\xy\\QField\\cloud gespeichert (Linux: home/xy/QField/cloud/). Nach Drücken des Knopfes create sollte die Meldung kommen, dass das QField Projekt automatisch mit der Cloud synchronisiert wird.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Projekt Synchronisieren</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Projekt synchronisieren</span>"
     ]
   },
   {
-    "objectID": "synchronisierung.html#konvertierung-qgis-qfield-project",
-    "href": "synchronisierung.html#konvertierung-qgis-qfield-project",
-    "title": "3  Projekt Synchronisieren",
+    "objectID": "synchronisierung.html#sec-konvertierung",
+    "href": "synchronisierung.html#sec-konvertierung",
+    "title": "3  Projekt synchronisieren",
     "section": "",
-    "text": "Schritt 1: Klick auf QField Cloud Projects Overview im QField Plugin Panel\n\n\n\n\n\n\n\nSchritt 2: Klick auf “Create New Project” um ein neues QField Projekt zu erstellen\n\n\n\n\n\n\n\nSchritt 3: “Convert currently open project…” auswählen und mit “Next” bestätigen\n\n\n\n\n\n\n\n\n\n\n\nTodo terz\n\n\n\n\nWie integriere ich (offline) basemaps?\nLayerspezifische Einstellungen ← hier weiss ich nicht mehr, was ich gemeint habe",
+    "text": "Schritt 1: Klick auf QField Cloud Projects Overview im QField Plugin Panel\n\n\n\n\n\n\n\nSchritt 2: Klick auf “Create New Project” um ein neues QField Projekt zu erstellen\n\n\n\n\n\n\n\nSchritt 3: “Convert currently open project…” auswählen und mit “Next” bestätigen",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Projekt Synchronisieren</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Projekt synchronisieren</span>"
     ]
   },
   {
-    "objectID": "synchronisierung.html#qfield-mobile-qfield-cloud",
-    "href": "synchronisierung.html#qfield-mobile-qfield-cloud",
-    "title": "3  Projekt Synchronisieren",
-    "section": "3.2 QField mobile ↔︎ QField Cloud",
-    "text": "3.2 QField mobile ↔︎ QField Cloud\n\nÖffnen des Projektes\n\n\n\n\n\n\nTodo terz\n\n\n\n\nKannst du das noch mehr in Worte fassen / beschreiben?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSynchronisierung mit Cloud\n\n\n\n\n\n\nTodo terz\n\n\n\n\nKannst du das noch mehr in Worte fassen / beschreiben?\n\n\n\n\n\n\n\n\n\n\n\n\n\nEntweder nur die gemachten Features mit Cloud updaten (push changes) oder ganzes Projekt synchronisieren",
+    "objectID": "synchronisierung.html#sec-project2cloud",
+    "href": "synchronisierung.html#sec-project2cloud",
+    "title": "3  Projekt synchronisieren",
+    "section": "3.2 Schritt B: QField Projekt ↔︎ QField Cloud",
+    "text": "3.2 Schritt B: QField Projekt ↔︎ QField Cloud\nMit dem Vorgehen in Kapitel 3.1 konnte sichergestellt werden, dass ein Projekt in der Cloud erstellt und mit dem QField Projekt synchronisiert wird. Synchronisierungen zwischen dem lokalen QField Projekt und der Cloud müssen jedoch manuell vorgenommen werden.\n\n\n\n\n\n\nKlick auf Synchronize current cloud project\n\n\n\n\n\n\n\n\n\nAuswahl der richtigen Action\n\n\n\n\n\nVor jeder Synchronisierung muss beachtet werden, ob die lokalen Daten oder die Daten in der Cloud die aktuelle Version beinhaltet. Dementsprechend muss die Action richtig ausgewählt werden (replace file on the cloud or replace local).",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Projekt Synchronisieren</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Projekt synchronisieren</span>"
     ]
   },
   {
-    "objectID": "synchronisierung.html#qfield-projekt-qfield-cloud",
-    "href": "synchronisierung.html#qfield-projekt-qfield-cloud",
-    "title": "3  Projekt Synchronisieren",
-    "section": "3.3 QField Projekt ↔︎ QField Cloud",
-    "text": "3.3 QField Projekt ↔︎ QField Cloud\n\n\n\n\n\n\nTodo terz\n\n\n\n\nKannst du das noch mehr in Worte fassen / beschreiben?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nActions werden meist richtig erkannt Aber hier ist vorsicht geboten, was aktualisiert werden muss",
+    "objectID": "synchronisierung.html#sec-mobile2cloud",
+    "href": "synchronisierung.html#sec-mobile2cloud",
+    "title": "3  Projekt synchronisieren",
+    "section": "3.3 Schritt C: QField mobile ↔︎ QField Cloud",
+    "text": "3.3 Schritt C: QField mobile ↔︎ QField Cloud\n\nÖffnen des Projektes\nBevor mit der Bearbeitung und Erfassung von Daten im Feld begonnen werden kann, muss das Projekt von der Cloud auf das mobile Gerät geholt werden. Nach Einloggen mit dem Cloud-Account werden unter QField Cloud projects alle Projekte angezeigt. Jenes Projekt, welches bearbeitet werden möchte, kann dann angeklickt werden.\n\n\n\n\n\n\nKlick auf QFieldCloud projects\n\n\n\n\n\n\n\nKorrektes Projekt auswählen\n\n\n\n\n\n\n\nSynchronisierung mit Cloud\nUm im Feld erfasste Daten mit der Cloud Synchronisert werden sollen, wird wie folgt vorgegangen:\n\nKlick auf den Menu Button (𑁔) oben links\nKlick auf das Wolken Symbol ☁️, siehe Abbildung 3.2\nWahl des Vorganges:\n\n⇅ Synchronize: Das ganze Projekt Synchronisieren (empfohlen)\n↑ Push changes: Nur Änderungen hochladen (ohne Download)\n↶ Revert local changes: Lokale Änderungen löschen\n\n\nEntweder können nur die geänderten Daten (Push changes) oder ein ganzes Projekt (Synchronize) mit der Cloud synchronisiert werden.\n\n\n\n\n\n\n\n\n\nAbbildung 3.2: Klick auf den ☁️ Button\n\n\n\n\n\n\n\n\n\n\n\nAbbildung 3.3: Wahl der gewünschten Synchronisation",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Projekt Synchronisieren</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Projekt synchronisieren</span>"
+    ]
+  },
+  {
+    "objectID": "synchronisierung.html#footnotes",
+    "href": "synchronisierung.html#footnotes",
+    "title": "3  Projekt synchronisieren",
+    "section": "",
+    "text": "Windows: C:\\Users\\xy\\QField\\cloud↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Projekt synchronisieren</span>"
     ]
   },
   {
@@ -164,7 +194,7 @@
     "href": "qfield-cloud-management.html",
     "title": "4  QField Cloud Management",
     "section": "",
-    "text": "4.1 Organisationsmitglieder hinzufügen\nWir haben an der ZHAW eine QField Cloud Organization mit Acacemic pricing. Dies beinhaltet unter anderem folgendes (siehe auch hier bzw. hier):\nUnsere Organisation heisst ZHAW, die URL für unsere Organisation lautet:\nhttps://app.qfield.cloud/a/ZHAW/\nWir können Mitglieder zu Organisation via Emailadresse oder Benutzernamen hinzufügen.\nBei Hinzufügen via Email: Falls kein QField-Cloud Account unter der angegebenen Emailadresse registriert ist, wird eine Einladung zur Registrierung an die angegebene Mailadresse verschickt.",
+    "text": "4.1 Organisationsmitglieder hinzufügen\nWir haben an der ZHAW eine QField Cloud Organization mit Academic pricing. Dies beinhaltet unter anderem folgendes (siehe auch hier bzw. hier):\nUnsere Organisation heisst ZHAW, die URL für unsere Organisation lautet:\nhttps://app.qfield.cloud/a/ZHAW/\nWir können Mitglieder zu Organisation via Emailadresse oder Benutzernamen hinzufügen.\nBei Hinzufügen via Email: Falls kein QField-Cloud Account unter der angegebenen Emailadresse registriert ist, wird eine Einladung zur Registrierung an die angegebene Mailadresse verschickt.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>QField Cloud Management</span>"
     ]
@@ -174,7 +204,7 @@
     "href": "qfield-cloud-management.html#organisationsmitglieder-hinzufügen",
     "title": "4  QField Cloud Management",
     "section": "",
-    "text": "Einzelne Nutzer können via dem Browserinterface hinzugefügt werden, siehe https://app.qfield.cloud/settings/ZHAW/members.\nMehrere Nutzer (z.B. eine ganze Schulklasse oder alle IUNR Mitarbeiter) können via der QField Cloud API hinzugefügt werden, siehe dazu Kapitel 5.2",
+    "text": "Einzelne Nutzer können via dem Browserinterface hinzugefügt werden, siehe https://app.qfield.cloud/settings/ZHAW/members.\nMehrere Nutzer (z.B. eine ganze Schulklasse oder alle IUNR Mitarbeiter) können via der QField Cloud API hinzugefügt werden, siehe dazu Kapitel 6.2",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>QField Cloud Management</span>"
     ]
@@ -210,33 +240,63 @@
     ]
   },
   {
+    "objectID": "faq.html",
+    "href": "faq.html",
+    "title": "5  FAQ",
+    "section": "",
+    "text": "5.1 Warum muss das QGIS Projekt zuerst in ein QField Projekt konvertiert werden?\n💡 Kurzantwort:\nWeil QField nicht direkt mit einem normalen QGIS-Projekt arbeiten kann – es braucht eine speziell vorbereitete, mobile-kompatible Version des Projekts.\n🧠 Etwas ausführlicher:\nEin typisches QGIS-Projekt auf dem Desktop enthält:\n🔄 Beim Konvertieren in ein QField-Projekt passiert:\n📦 Ergebnis:\nEin QField-kompatibles Paket, das:\n📌 Fazit:\nDas Konvertieren ist nötig, um sicherzustellen, dass alle Daten und Projekteinstellungen korrekt und kompatibel mit der mobilen Umgebung von QField sind.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>FAQ</span>"
+    ]
+  },
+  {
+    "objectID": "faq.html#warum-muss-das-qgis-projekt-zuerst-in-ein-qfield-projekt-konvertiert-werden",
+    "href": "faq.html#warum-muss-das-qgis-projekt-zuerst-in-ein-qfield-projekt-konvertiert-werden",
+    "title": "5  FAQ",
+    "section": "",
+    "text": "Verlinkte Daten (z. B. Pfade zu Dateien auf deiner Festplatte)\nGroße Raster- oder Vektorlayer\nFormate, die QField nicht direkt unterstützt (z. B. CSVs, Layer mit relativen Pfaden, komplexe Datenbanken)\nStyling, das für den mobilen Einsatz nicht optimiert ist\n\n\n\nKopieren aller notwendigen Daten – Alle Layer, die du brauchst, werden lokal zusammengeführt (also z. B. von /home/user/mydata/layer.shp → in den zentralen QField-Ordner)\nAnpassung von Pfaden – QField kann keine absoluten Pfade lesen – also werden Pfade in deinem Projekt relativ gemacht\nOptimierung von Layern – große Dateien werden ggf. geklont, vereinfacht oder zugeschnitten (z. B. Rasterschnitt auf Projektgebiet)\nAnpassung der Formularlogik und Offline-Funktionalität – z. B. vorbereitete Eingabemasken, Offline-Modus für Geopackages etc.\n\n\n\n\nauf einem Android-/iOS-Gerät funktioniert\nalle Daten enthält\nbereit ist für Upload zu QFieldCloud oder für manuellen Export auf ein Gerät",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>FAQ</span>"
+    ]
+  },
+  {
+    "objectID": "faq.html#kann-ich-das-qgis-projekt-nach-der-konvertierung-löschen-und-einfach-mit-dem-qfield-projekt-weiterarbeiten",
+    "href": "faq.html#kann-ich-das-qgis-projekt-nach-der-konvertierung-löschen-und-einfach-mit-dem-qfield-projekt-weiterarbeiten",
+    "title": "5  FAQ",
+    "section": "5.2 Kann ich das QGIS Projekt nach der Konvertierung löschen und einfach mit dem QField projekt weiterarbeiten?",
+    "text": "5.2 Kann ich das QGIS Projekt nach der Konvertierung löschen und einfach mit dem QField projekt weiterarbeiten?\nNein, du solltest das ursprüngliche QGIS-Projekt nicht löschen.\n🧠 Warum nicht?\nDas QField-Projekt ist nur eine Kopie, die für den Feldeinsatz vorbereitet wurde. Es ist nicht dafür gedacht, dauerhaft dein Hauptprojekt zu ersetzen oder weiterentwickelt zu werden.\nHier sind die wichtigsten Gründe:\n\n1. Das QField-Projekt ist technisch gesehen keine vollwertige Entwicklungsumgebung.\n\nEs enthält nur das Nötigste für die mobile Nutzung.\nEs fehlen evtl. Hintergrunddaten, externe Ressourcen, komplexe Layer oder Plugins.\nQField-Projekte sind darauf ausgelegt, nur Felddaten zu erfassen, nicht das Projektkonzept weiterzuentwickeln.\n\n2. Änderungen aus QField sollen in das Original-QGIS-Projekt zurückfließen.\n\nDu arbeitest im Feld (QField), synchronisierst zurück in dein QGIS-Projekt.\nWenn du das QGIS-Projekt gelöscht hast, gibt es keinen Ort mehr, an den du die Änderungen sauber zurückspielen kannst.\n\n3. Nur in QGIS kannst du das Projekt vollständig bearbeiten.\n\nNeue Layer hinzufügen\nStyling ändern\nAnalysen durchführen\nKartenlayouts gestalten\n\n4. Gefahr von Versionskonflikten und Datenverlust\n\nWenn du das QGIS-Projekt löscht und nur noch mit dem QField-Projekt arbeitest, verlierst du:\n\nDeinen Arbeitsstand\nDeine Projektstruktur\nMöglicherweise deine Datenquellen",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>FAQ</span>"
+    ]
+  },
+  {
     "objectID": "anhang.html",
     "href": "anhang.html",
-    "title": "5  Anhang",
+    "title": "6  Anhang",
     "section": "",
-    "text": "5.1 Anhang 1",
+    "text": "6.1 Anhang 1",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Anhang</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anhang</span>"
     ]
   },
   {
     "objectID": "anhang.html#anhang-1",
     "href": "anhang.html#anhang-1",
-    "title": "5  Anhang",
+    "title": "6  Anhang",
     "section": "",
-    "text": "Tabelle 5.1: Geopackage Data Types. Quelle: geopackage.org\n\n\n\n\n\n\n\n\n\nData Type\nSize and Description\n\n\n\n\nINTEGER 32 bit\n32-bit signed two’s complement integer. Stored as SQLite INTEGER with values in the range [-2147483648, 2147483647].\n\n\nINTEGER 64 bit\n64-bit signed two’s complement integer. Stored as SQLite INTEGER with values in the range [-9223372036854775808, 9223372036854775807].\n\n\nREAL\n64-bit IEEE floating point number. Stored as SQLite REAL.\n\n\nTEXT{(maxchar_count)}\nVariable length string encoded in either UTF-8 or UTF-16. The optional maxchar_count defines the maximum number of characters in the string. If not specified, the length is unbounded. Stored as SQLite TEXT.\n\n\nBLOB{(max_size)}\nVariable length binary data. The optional max_size defines the maximum number of bytes in the blob. If not specified, the length is unbounded.\n\n\nDATE\nISO 8601 date string in the form YYYY-MM-DD encoded in either UTF-8 or UTF-16. Stored as SQLite TEXT (see TEXT above).\n\n\nDATETIME\nISO-8601 date/time string in the form YYYY-MM-DDTHH:MM:SS.SSSZ with T separator character and Z suffix for coordinated universal time (UTC) encoded in either UTF-8 or UTF-16. Stored as SQLite TEXT (see TEXT above).",
+    "text": "Tabelle 6.1: Geopackage Data Types. Quelle: geopackage.org\n\n\n\n\n\n\n\n\n\nData Type\nSize and Description\n\n\n\n\nINTEGER 32 bit\n32-bit signed two’s complement integer. Stored as SQLite INTEGER with values in the range [-2147483648, 2147483647].\n\n\nINTEGER 64 bit\n64-bit signed two’s complement integer. Stored as SQLite INTEGER with values in the range [-9223372036854775808, 9223372036854775807].\n\n\nREAL\n64-bit IEEE floating point number. Stored as SQLite REAL.\n\n\nTEXT{(maxchar_count)}\nVariable length string encoded in either UTF-8 or UTF-16. The optional maxchar_count defines the maximum number of characters in the string. If not specified, the length is unbounded. Stored as SQLite TEXT.\n\n\nBLOB{(max_size)}\nVariable length binary data. The optional max_size defines the maximum number of bytes in the blob. If not specified, the length is unbounded.\n\n\nDATE\nISO 8601 date string in the form YYYY-MM-DD encoded in either UTF-8 or UTF-16. Stored as SQLite TEXT (see TEXT above).\n\n\nDATETIME\nISO-8601 date/time string in the form YYYY-MM-DDTHH:MM:SS.SSSZ with T separator character and Z suffix for coordinated universal time (UTC) encoded in either UTF-8 or UTF-16. Stored as SQLite TEXT (see TEXT above).",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Anhang</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anhang</span>"
     ]
   },
   {
     "objectID": "anhang.html#sec-python-sdk",
     "href": "anhang.html#sec-python-sdk",
-    "title": "5  Anhang",
-    "section": "5.2 Anhang 2",
-    "text": "5.2 Anhang 2\nEinzelne Nutzer können können sehr gut via dem Webinterface von QField Cloud hinzugefügt werden. Um mehrere Nutzer zu importieren, können wir die QFieldCloud API verwenden. Diese API kann man auf verschiedene Arten benutzen:\n\nQFieldCloud SDK via Python (Dokumentation)\nQFieldCloud SDK via Kommandozeile (Dokumentation)\n(RestAPI von der Kommandozeile (Dokumentation))\n\nIn den Beispielen verwenden wir die SDK via Python. Installation: pip install qfieldcloud-sdk\n\nEin einzelner Nutzer der Organisation hinzufügen\nimport getpass\nfrom qfieldcloud_sdk import sdk\n\nuser = getpass.getpass(\"Username:\")\npasswd = getpass.getpass(\"Password:\")\n\nclient = sdk.Client(url=\"https://app.qfield.cloud/api/v1/\")\nclient.login(user, passwd)\n\n# Der Nutzer \"BENUTZERNAME\" muss bereits existieren!\n# \"BENUTZERNAME\" darf keine Emailadresse sein :-(\nclient.add_organization_member(\"ZHAW\", \"BENUTZERNAME\", \"member\", False) \n\n\nMehrere Nutzer der Organisation hinzufügen\nUm mehrere Mitglieder unserer Organisation hinzuzufügen, braucht es eine CSV Datei mit folgender Struktur:\nusername,org_role,proj_role\nninja_1,member,reader\nninja_2,member,editor\nninja_3,admin,manager\nninja_4,member,reporter\nHier der Python code für das Importieren via CSV:\nimport requests, csv\nfrom qfieldcloud_sdk import sdk\n\nclient = sdk.Client(\n    url=\"https://app.qfield.cloud/api/v1/\"\n)\nclient.login(username='myuser', password='mypassword')\n\ndef read_csv(csv_path: str, organization: str, project_id: str, is_public: bool):\n    with open(csv_path, mode=\"r\", newline=\"\", encoding=\"utf-8\") as csvfile:\n        reader = csv.DictReader(csvfile)\n        for user in reader:\n            try:\n                client.add_organization_member(\n                    organization, user[\"username\"], user[\"org_role\"], is_public\n                )\n                print(\n                    f\"Added member {user['username']} with role {user['org_role']} in {organization}\"\n                )\n            except requests.exceptions.RequestException:\n                print(\"Oops!\")\n\n\nif __name__ == \"__main__\":\n    organization = \"ZHAW\"\n    is_public = False\n    csv_path = 'path/to/files/surveyors.csv'\n    read_csv(csv_path, organization, project_id, is_public)",
+    "title": "6  Anhang",
+    "section": "6.2 Anhang 2",
+    "text": "6.2 Anhang 2\nEinzelne Nutzer können können sehr gut via dem Webinterface von QField Cloud hinzugefügt werden. Um mehrere Nutzer zu importieren, können wir die QFieldCloud API verwenden. Diese API kann man auf verschiedene Arten benutzen:\n\nQFieldCloud SDK via Python (Dokumentation)\nQFieldCloud SDK via Kommandozeile (Dokumentation)\n(RestAPI von der Kommandozeile (Dokumentation))\n\nIn den Beispielen verwenden wir die SDK via Python. Installation: pip install qfieldcloud-sdk\n\n\n\n\n\n\nHinweis\n\n\n\nAktuell können nur bereits existierende QField Cloud Nutzer via der API unserer Organisation hinzugefügt werden. Das Hinzufügen funktioniert nur via Benutzername, nicht via Emailadresse. rata hat am 26.06.2025 einen Feature request gemacht, welches das Hinzufügen via Emailadresse ermöglichen soll. Bis dieses Feature implementiert ist, müssen die Studenten zuerst QField Cloud Accounts erstellen und uns im Anschluss die Benutzernamen mitteilen.\n\n\n\nEin einzelner Nutzer der Organisation hinzufügen\nimport getpass\nfrom qfieldcloud_sdk import sdk\n\nuser = getpass.getpass(\"Username:\")\npasswd = getpass.getpass(\"Password:\")\n\nclient = sdk.Client(url=\"https://app.qfield.cloud/api/v1/\")\nclient.login(user, passwd)\n\n# Der Nutzer \"BENUTZERNAME\" muss bereits existieren!\n# \"BENUTZERNAME\" darf keine Emailadresse sein :-(\nclient.add_organization_member(\"ZHAW\", \"BENUTZERNAME\", \"member\", False) \n\n\nMehrere Nutzer der Organisation hinzufügen\nUm mehrere Mitglieder unserer Organisation hinzuzufügen, braucht es eine CSV Datei mit folgender Struktur:\nusername,org_role,proj_role\nninja_1,member,reader\nninja_2,member,editor\nninja_3,admin,manager\nninja_4,member,reporter\nHier der Python code für das Importieren via CSV:\nimport requests, csv\nfrom qfieldcloud_sdk import sdk\n\nclient = sdk.Client(\n    url=\"https://app.qfield.cloud/api/v1/\"\n)\nclient.login(username='myuser', password='mypassword')\n\ndef read_csv(csv_path: str, organization: str, project_id: str, is_public: bool):\n    with open(csv_path, mode=\"r\", newline=\"\", encoding=\"utf-8\") as csvfile:\n        reader = csv.DictReader(csvfile)\n        for user in reader:\n            try:\n                client.add_organization_member(\n                    organization, user[\"username\"], user[\"org_role\"], is_public\n                )\n                print(\n                    f\"Added member {user['username']} with role {user['org_role']} in {organization}\"\n                )\n            except requests.exceptions.RequestException:\n                print(\"Oops!\")\n\n\nif __name__ == \"__main__\":\n    organization = \"ZHAW\"\n    is_public = False\n    csv_path = 'path/to/files/surveyors.csv'\n    read_csv(csv_path, organization, project_id, is_public)",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Anhang</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anhang</span>"
     ]
   }
 ]

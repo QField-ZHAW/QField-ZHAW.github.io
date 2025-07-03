@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Projekt Synchronisieren – Erfassen von Geodaten im Feld mit [qfield]{.q} und [qfield]{.q} Cloud</title>
+<title>3&nbsp; Projekt synchronisieren – Erfassen von Geodaten im Feld mit [qfield]{.q} und [qfield]{.q} Cloud</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -87,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./synchronisierung.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Projekt Synchronisieren</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./synchronisierung.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Projekt synchronisieren</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
@@ -133,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./synchronisierung.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Projekt Synchronisieren</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Projekt synchronisieren</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -144,8 +144,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">FAQ</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./anhang.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Anhang</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Anhang</span></span></a>
   </div>
 </li>
     </ul>
@@ -158,22 +164,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#konvertierung-qgis-qfield-project" id="toc-konvertierung-qgis-qfield-project" class="nav-link active" data-scroll-target="#konvertierung-qgis-qfield-project"><span class="header-section-number">3.1</span> Konvertierung QGIS → QField Project</a></li>
-  <li><a href="#qfield-mobile-qfield-cloud" id="toc-qfield-mobile-qfield-cloud" class="nav-link" data-scroll-target="#qfield-mobile-qfield-cloud"><span class="header-section-number">3.2</span> QField mobile ↔︎ QField Cloud</a>
+  <li><a href="#sec-konvertierung" id="toc-sec-konvertierung" class="nav-link active" data-scroll-target="#sec-konvertierung"><span class="header-section-number">3.1</span> Schritt A: QGIS Projekt → QField Projekt</a></li>
+  <li><a href="#sec-project2cloud" id="toc-sec-project2cloud" class="nav-link" data-scroll-target="#sec-project2cloud"><span class="header-section-number">3.2</span> Schritt B: QField Projekt ↔︎ QField Cloud</a></li>
+  <li><a href="#sec-mobile2cloud" id="toc-sec-mobile2cloud" class="nav-link" data-scroll-target="#sec-mobile2cloud"><span class="header-section-number">3.3</span> Schritt C: QField mobile ↔︎ QField Cloud</a>
   <ul class="collapse">
   <li><a href="#öffnen-des-projektes" id="toc-öffnen-des-projektes" class="nav-link" data-scroll-target="#öffnen-des-projektes">Öffnen des Projektes</a></li>
   <li><a href="#synchronisierung-mit-cloud" id="toc-synchronisierung-mit-cloud" class="nav-link" data-scroll-target="#synchronisierung-mit-cloud">Synchronisierung mit Cloud</a></li>
   </ul></li>
-  <li><a href="#qfield-projekt-qfield-cloud" id="toc-qfield-projekt-qfield-cloud" class="nav-link" data-scroll-target="#qfield-projekt-qfield-cloud"><span class="header-section-number">3.3</span> QField Projekt ↔︎ QField Cloud</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Projekt Synchronisieren</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Projekt synchronisieren</span></h1>
 </div>
 
 
@@ -190,71 +196,67 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Wenn das System aufgesetzt ist (siehe <a href="installation.html" class="quarto-xref"><span>Kapitel 1</span></a>) und das QGIS Projekt vorbereitet (siehe <a href="projekt.html" class="quarto-xref"><span>Kapitel 2</span></a>) sind die Voraussetzungen gegeben mit QField Mobile zu Synchronisieren. Um ein Lokales QGIS Projekt mit QField Mobile zu Synchronisieren braucht es zwei Zwischentschritte:</p>
-<ol type="1">
-<li>Das QGIS Projekt wird zuerst in ein lokales QField Projekt konvertiert (Schritt “Konvertierung” in <a href="#fig-flow" class="quarto-xref">Abbildung&nbsp;<span>3.1</span></a> )</li>
-<li>Das lokale QField Projekt wird mit QField Cloud Synchronisiert (Schritt “Sync” zwischen QField Projekt und QField Cloud in <a href="#fig-flow" class="quarto-xref">Abbildung&nbsp;<span>3.1</span></a>)</li>
-</ol>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
+<p>Wenn das System aufgesetzt ist (siehe <a href="installation.html" class="quarto-xref"><span>Kapitel 1</span></a>) und das QGIS Projekt vorbereitet (siehe <a href="projekt.html" class="quarto-xref"><span>Kapitel 2</span></a>) ist, sind die Voraussetzungen gegeben, mit QField Mobile zu synchronisieren. Um ein lokales QGIS Projekt mit QField Mobile zu synchronisieren, braucht folgende Schritte:</p>
+<ul>
+<li><strong>Schritt A</strong>: Das QGIS Projekt wird zuerst für QField in ein <em>QField Projekt</em> verpackt. Dieses Projekt befindet sich auf dem Laptop in einem Standartverzeichnis<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+<li><strong>Schritt B</strong>: Das QField Projekt wird mit QField Cloud synchronisiert.</li>
+<li><strong>Schritt C</strong>: Die QField Cloud wird mit den mobilen Geräten Synchronisiert.</li>
+</ul>
+<div class="cell page-columns page-full" data-layout-align="default">
+<div class="cell-output-display column-page">
 <div id="fig-flow" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
-<pre class="mermaid mermaid-js" data-label="fig-flow">flowchart LR
- subgraph lokal["lokal (laptop)"]
-        A["QGIS Projekt (.qgz)"]
+<pre class="mermaid mermaid-js" data-label="fig-flow">---
+config:
+  theme: 'base'
+  themeVariables:
+    primaryColor: '#80cc28'
+    edgeLabelBackground: '#f4f4f4FF'
+    tertiaryColor: '#f4f4f4'
+  flowchart:
+    htmlLabels: false
+---
+flowchart LR
+ subgraph lokal["Laptop"]
+        A["`QGIS Projekt (.qgz)`"]
         B["QField Projekt (.qgs)"]
   end
  subgraph mobile["Mobile Geräte"]
         D["QField Mobile 1"]
         E["QField Mobile 2"]
   end
- subgraph cloud["cloud"]
+ subgraph cloud["Cloud"]
         C["QField Cloud"]
   end
-    A -- Konvertierung --&gt; B
-    B &lt;-- Sync --&gt; C
-    C &lt;-- Sync --&gt; D
-    C &lt;-- Sync --&gt; E
-    style C fill:#80cc28,stroke:#333,stroke-width:2px,color:#fff
+    A -- "Konvertierung (Schritt A)" --&gt; B
+    B &lt;-- "Sync (Schritt B)" --&gt; C
+    C &lt;-- "Sync (Schritt C)" --&gt; D
+    C &lt;-- "Sync (Schritt C)" --&gt; E
+    style C fill:#4a6fae,stroke:#333,stroke-width:2px,color:#fff
+
 </pre>
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;3.1: Grundsätzlicher Workflow und das Zusammenspiel von Laptop, Cloud und Mobile
+Abbildung&nbsp;3.1: Grundsätzlicher Workflow und das Zusammenspiel von Laptop, Cloud und Mobile. Der Schritt A wird in <a href="#sec-konvertierung" class="quarto-xref"><span>Kapitel 3.1</span></a> behandelt, Schritt B in <a href="#sec-project2cloud" class="quarto-xref"><span>Kapitel 3.2</span></a> und Schritt C in <a href="#sec-mobile2cloud" class="quarto-xref"><span>Kapitel 3.3</span></a>
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Todo terz
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Was passiert eigentlich, wenn man im <strong>QGIS Projekt</strong> (nicht im <strong>QField Projekt</strong>) ein neues Feature hinzufügt und das auf Qfield Cloud bringen möchte. Geht das oder kommt es zu Konflikten?</li>
-<li>Wo können wir den Hinweis platzieren, dass sämtliche QField Projekte sich kaum von QGIS Projekten unterscheiden, aber Zentral gelagert (bei mir in <code>home/rata/QField/clooud/</code>, wo auf Windows?) werden. Wodurch unterscheiden sich eigentlich QField und QGIS Projekte?</li>
-<li></li>
-</ul>
-</div>
-</div>
-<p>Die Schritte “Konvertierung” und “Sync” werden im nachfolgenden Unterkapiteln beschrieben.</p>
-<section id="konvertierung-qgis-qfield-project" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="konvertierung-qgis-qfield-project"><span class="header-section-number">3.1</span> Konvertierung QGIS → QField Project</h2>
+<p>Die Schritte <strong>Konvertierung</strong> und <strong>Sync</strong> werden im nachfolgenden Unterkapiteln beschrieben.</p>
+<section id="sec-konvertierung" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="sec-konvertierung"><span class="header-section-number">3.1</span> Schritt A: QGIS Projekt → QField Projekt</h2>
+<p>QGIS Projekte (.qgz) können (leider) nicht direkt mit QField Cloud synchronisiert werden. Dazu braucht es zuerst ein gespeichertes QField Projekt (.qgs). Vorgehen sollte man wie folgt:</p>
 <div id="konvertierung" class="quarto-layout-panel" data-layout-nrow="1">
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/create_local_qfieldcloud_project1.png" class="img-fluid figure-img"></p>
-<figcaption>Schritt 1: Klick auf QField Cloud Projects Overview im QField Plugin Panel</figcaption>
+<figcaption>Schritt 1: Klick auf <em>QField Cloud Projects Overview</em> im QField Plugin Panel</figcaption>
 </figure>
 </div>
 </div>
@@ -276,116 +278,112 @@ Todo terz
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Todo terz
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Wie integriere ich (offline) basemaps?</li>
-<li>Layerspezifische Einstellungen ← hier weiss ich nicht mehr, was ich gemeint habe</li>
-</ul>
-</div>
-</div>
-<p>Danach wird das Projekt automatisch in/mit der Cloud synchronisiert</p>
+<p>Per Default wird das QField Projekt in Windows unter <code>C:\Users\xy\QField\cloud</code> gespeichert (Linux: <code>home/xy/QField/cloud/</code>). Nach Drücken des Knopfes <em>create</em> sollte die Meldung kommen, dass das QField Projekt automatisch mit der Cloud synchronisiert wird.</p>
 </section>
-<section id="qfield-mobile-qfield-cloud" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="qfield-mobile-qfield-cloud"><span class="header-section-number">3.2</span> QField mobile ↔︎ QField Cloud</h2>
+<section id="sec-project2cloud" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="sec-project2cloud"><span class="header-section-number">3.2</span> Schritt B: QField Projekt ↔︎ QField Cloud</h2>
+<p>Mit dem Vorgehen in <a href="#sec-konvertierung" class="quarto-xref"><span>Kapitel 3.1</span></a> konnte sichergestellt werden, dass ein Projekt in der Cloud erstellt und mit dem QField Projekt synchronisiert wird. Synchronisierungen zwischen dem lokalen QField Projekt und der Cloud müssen jedoch manuell vorgenommen werden.</p>
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/synchronize_cloud1.png" class="img-fluid figure-img"></p>
+<figcaption>Klick auf <em>Synchronize current cloud project</em></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/synchronize_cloud2.png" class="img-fluid figure-img"></p>
+<figcaption>Auswahl der richtigen <em>Action</em></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Vor jeder Synchronisierung muss beachtet werden, ob die lokalen Daten oder die Daten in der Cloud die aktuelle Version beinhaltet. Dementsprechend muss die <em>Action</em> richtig ausgewählt werden (replace file on the cloud or replace local).</p>
+</section>
+<section id="sec-mobile2cloud" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="sec-mobile2cloud"><span class="header-section-number">3.3</span> Schritt C: QField mobile ↔︎ QField Cloud</h2>
 <section id="öffnen-des-projektes" class="level3">
 <h3 class="anchored" data-anchor-id="öffnen-des-projektes">Öffnen des Projektes</h3>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Todo terz
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Kannst du das noch mehr in Worte fassen / beschreiben?</li>
-</ul>
-</div>
-</div>
+<p>Bevor mit der Bearbeitung und Erfassung von Daten im Feld begonnen werden kann, muss das Projekt von der Cloud auf das mobile Gerät geholt werden. Nach Einloggen mit dem Cloud-Account werden unter <em>QField Cloud projects</em> alle Projekte angezeigt. Jenes Projekt, welches bearbeitet werden möchte, kann dann angeklickt werden.</p>
 <div class="quarto-layout-panel" data-layout-nrow="1">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="images/open_project_mobile1.PNG" class="smartphone img-fluid"></p>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/open_project_mobile1.PNG" class="smartphone img-fluid figure-img"></p>
+<figcaption>Klick auf <em>QFieldCloud projects</em></figcaption>
+</figure>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="images/open_project_mobile2.PNG" class="smartphone img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/open_project_mobile2.PNG" class="smartphone img-fluid figure-img"></p>
+<figcaption>Korrektes Projekt auswählen</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </div>
 </section>
 <section id="synchronisierung-mit-cloud" class="level3">
 <h3 class="anchored" data-anchor-id="synchronisierung-mit-cloud">Synchronisierung mit Cloud</h3>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Todo terz
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<p>Um im Feld erfasste Daten mit der Cloud Synchronisert werden sollen, wird wie folgt vorgegangen:</p>
+<ol type="1">
+<li>Klick auf den Menu Button (𑁔) oben links</li>
+<li>Klick auf das Wolken Symbol ☁️, siehe <a href="#fig-synchronize-mobile-1" class="quarto-xref">Abbildung&nbsp;<span>3.2</span></a></li>
+<li>Wahl des Vorganges:
 <ul>
-<li>Kannst du das noch mehr in Worte fassen / beschreiben?</li>
-</ul>
-</div>
-</div>
+<li><strong>⇅ Synchronize</strong>: Das ganze Projekt Synchronisieren (<em>empfohlen</em>)</li>
+<li><strong>↑ Push changes</strong>: Nur Änderungen hochladen (ohne Download)</li>
+<li><strong>↶ Revert local changes</strong>: Lokale Änderungen löschen</li>
+</ul></li>
+</ol>
+<p>Entweder können nur die geänderten Daten (<em>Push changes</em>) oder ein ganzes Projekt (<em>Synchronize</em>) mit der Cloud synchronisiert werden.</p>
 <div class="quarto-layout-panel" data-layout-nrow="1">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="images/synchronize_mobile1.PNG" class="smartphone img-fluid"></p>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-synchronize-mobile-1" class="smartphone quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-synchronize-mobile-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/synchronize_mobile1.PNG" class="smartphone img-fluid figure-img">
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="images/synchronize_mobile2.PNG" class="smartphone img-fluid"></p>
-</div>
-</div>
-</div>
-<p>Entweder nur die gemachten Features mit Cloud updaten (push changes) oder ganzes Projekt synchronisieren</p>
-</section>
-</section>
-<section id="qfield-projekt-qfield-cloud" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="qfield-projekt-qfield-cloud"><span class="header-section-number">3.3</span> QField Projekt ↔︎ QField Cloud</h2>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Todo terz
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-synchronize-mobile-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;3.2: Klick auf den ☁️ Button
+</figcaption>
+</figure>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Kannst du das noch mehr in Worte fassen / beschreiben?</li>
-</ul>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-synchronize-mobile-2" class="smartphone quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-synchronize-mobile-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/synchronize_mobile2.PNG" class="smartphone img-fluid figure-img">
 </div>
-</div>
-<div class="quarto-layout-panel" data-layout-nrow="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<p><img src="images/synchronize_cloud1.png" class="img-fluid"></p>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<p><img src="images/synchronize_cloud2.png" class="img-fluid"></p>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-synchronize-mobile-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;3.3: Wahl der gewünschten Synchronisation
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
-<p>Actions werden meist richtig erkannt Aber hier ist vorsicht geboten, was aktualisiert werden muss</p>
+</div>
 
 
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Windows: <code>C:\Users\xy\QField\cloud</code><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
