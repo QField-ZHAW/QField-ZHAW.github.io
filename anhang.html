@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Anhang – Erfassen von Geodaten im Feld mit [qfield]{.q} und [qfield]{.q} Cloud</title>
+<title>5&nbsp; Anhang – Erfassen von Geodaten im Feld mit [qfield]{.q} und [qfield]{.q} Cloud</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./faq.html" rel="prev">
+<link href="./qfield-cloud-management.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./anhang.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Anhang</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./anhang.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Anhang</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
@@ -174,14 +174,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./faq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">FAQ</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./anhang.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Anhang</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Anhang</span></span></a>
   </div>
 </li>
     </ul>
@@ -194,11 +188,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#anhang-1" id="toc-anhang-1" class="nav-link active" data-scroll-target="#anhang-1"><span class="header-section-number">6.1</span> Anhang 1</a></li>
-  <li><a href="#sec-python-sdk" id="toc-sec-python-sdk" class="nav-link" data-scroll-target="#sec-python-sdk"><span class="header-section-number">6.2</span> Anhang 2</a>
+  <li><a href="#anhang-1" id="toc-anhang-1" class="nav-link active" data-scroll-target="#anhang-1"><span class="header-section-number">5.1</span> Anhang 1</a></li>
+  <li><a href="#sec-python-sdk" id="toc-sec-python-sdk" class="nav-link" data-scroll-target="#sec-python-sdk"><span class="header-section-number">5.2</span> Anhang 2</a>
   <ul class="collapse">
   <li><a href="#ein-einzelner-nutzer-der-organisation-hinzufügen" id="toc-ein-einzelner-nutzer-der-organisation-hinzufügen" class="nav-link" data-scroll-target="#ein-einzelner-nutzer-der-organisation-hinzufügen">Ein einzelner Nutzer der Organisation hinzufügen</a></li>
   <li><a href="#mehrere-nutzer-der-organisation-hinzufügen" id="toc-mehrere-nutzer-der-organisation-hinzufügen" class="nav-link" data-scroll-target="#mehrere-nutzer-der-organisation-hinzufügen">Mehrere Nutzer der Organisation hinzufügen</a></li>
+  </ul></li>
+  <li><a href="#faq" id="toc-faq" class="nav-link" data-scroll-target="#faq"><span class="header-section-number">5.3</span> FAQ</a>
+  <ul class="collapse">
+  <li><a href="#warum-muss-das-qgis-projekt-zuerst-in-ein-qfield-projekt-konvertiert-werden" id="toc-warum-muss-das-qgis-projekt-zuerst-in-ein-qfield-projekt-konvertiert-werden" class="nav-link" data-scroll-target="#warum-muss-das-qgis-projekt-zuerst-in-ein-qfield-projekt-konvertiert-werden">Warum muss das QGIS Projekt zuerst in ein QField Projekt konvertiert werden?</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -208,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Anhang</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Anhang</span></h1>
 </div>
 
 
@@ -225,12 +223,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="anhang-1" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="anhang-1"><span class="header-section-number">6.1</span> Anhang 1</h2>
+<section id="anhang-1" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="anhang-1"><span class="header-section-number">5.1</span> Anhang 1</h2>
 <div id="tbl-geopackage-datatypes" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-geopackage-datatypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabelle&nbsp;6.1: Geopackage Data Types. Quelle: <a href="https://www.geopackage.org/spec140/index.html">geopackage.org</a>
+Tabelle&nbsp;5.1: Geopackage Data Types. Quelle: <a href="https://www.geopackage.org/spec140/index.html">geopackage.org</a>
 </figcaption>
 <div aria-describedby="tbl-geopackage-datatypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -279,8 +277,8 @@ Tabelle&nbsp;6.1: Geopackage Data Types. Quelle: <a href="https://www.geopackage
 </figure>
 </div>
 </section>
-<section id="sec-python-sdk" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="sec-python-sdk"><span class="header-section-number">6.2</span> Anhang 2</h2>
+<section id="sec-python-sdk" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="sec-python-sdk"><span class="header-section-number">5.2</span> Anhang 2</h2>
 <p>Einzelne Nutzer können können sehr gut via dem Webinterface von QField Cloud hinzugefügt werden. Um <em>mehrere</em> Nutzer zu importieren, können wir die QFieldCloud API verwenden. Diese API kann man auf verschiedene Arten benutzen:</p>
 <ol type="1">
 <li>QFieldCloud SDK via Python (<a href="https://opengisch.github.io/qfieldcloud-sdk-python/">Dokumentation</a>)</li>
@@ -353,6 +351,13 @@ ninja_4,member,reporter</code></pre>
 <span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    is_public <span class="op">=</span> <span class="va">False</span></span>
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    csv_path <span class="op">=</span> <span class="st">'path/to/files/surveyors.csv'</span></span>
 <span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    read_csv(csv_path, organization, project_id, is_public)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="faq" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="faq"><span class="header-section-number">5.3</span> FAQ</h2>
+<section id="warum-muss-das-qgis-projekt-zuerst-in-ein-qfield-projekt-konvertiert-werden" class="level3">
+<h3 class="anchored" data-anchor-id="warum-muss-das-qgis-projekt-zuerst-in-ein-qfield-projekt-konvertiert-werden">Warum muss das QGIS Projekt zuerst in ein QField Projekt konvertiert werden?</h3>
+<p>Weil QField <strong>nicht direkt mit einem normalen QGIS-Projekt arbeiten kann</strong> – es braucht eine speziell vorbereitete, mobile-kompatible Version des Projekts.</p>
 
 
 </section>
@@ -760,8 +765,8 @@ ninja_4,member,reporter</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./faq.html" class="pagination-link" aria-label="FAQ">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">FAQ</span></span>
+      <a href="./qfield-cloud-management.html" class="pagination-link" aria-label="QField Cloud Management">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">QField Cloud Management</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

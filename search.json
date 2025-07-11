@@ -94,7 +94,7 @@
     "href": "projekt.html#sec-attribute",
     "title": "2  Projekt aufsetzen",
     "section": "2.4 Schritt 3: Attribute definieren",
-    "text": "2.4 Schritt 3: Attribute definieren\nDamit wir die Beobachtungen, die wir im Feld machen auch festhalten können, brauchen wir Spalten (sog. Attribute). Diese Attribute (engl: Fields) werden pro Tabelle separat erstellt. Für jede Spalte wird ein Datentyp ausgewählt, wobei folgende Datentypen am häufigsten sind:\n\nNummerische Werte (mit / ohne Nachkommastellen)\nText\nDatum (mit / ohne Uhrzeit)\nBilder\n\nSpalten können entweder direkt während der Erstellung der Tabelle (siehe Abbildung 2.2) oder auch nachträglich hinzugefügt werden. Für ein nachträgliches erfassen muss man im Browser Panel das Geopackage “ausklappen”, so dass die Fields sichtbar sind (siehe Abbildung 2.3 (a)). Mit Rechtsklick auf Fields → Add New Field können weitere Spalten hinzugefügt werden, mit Rechtsklick auf eine bestehendes “Field” kann dieses editiert (z.B. umbenannt) werden.\n\n\n\n\n\n\n\n\n\n\n\n(a) Im Browser Panel können Geopackages nachträglich editiert werden.\n\n\n\n\n\n\n\n\n\n\n\n(b) Für jedes Field muss ein Name und ein Datentyp definiert werden. Ein Alias sowie ein Kommentar helfen das Attribut besser zu beschreiben\n\n\n\n\n\n\n\nAbbildung 2.3\n\n\n\nDie Spalten für für die Tabelle wiesen_weiden sind in Tabelle 2.2 beschreiben. Die Spalten für die Tabelle baeume_straeucher sind in Tabelle 2.3 dargestellt.\nDie Namen der Felder sollten keine Umlaute, Leerschläge oder Sonderzeichen enthalten. Allerdings kann pro Feld ein Alias definiert werden: Dabei handelt es sich um eine alternative Bezeichnung, bei dem diese Regeln nicht gelten.\n\n\n\nTabelle 2.2: Spalten für wiesen_weiden\n\n\n\n\n\n\n\n\n\n\n\nBezeichnung / Alias\nDatentyp\nSpaltenname\nEigenschaften\n\n\n\n\nErfassungsdatum\nDate\nerfassungsdatum\n\n\n\nTyp\nText (String) 1\ntyp\nLength: 02\n\n\nAnzahl Arten\nInteger (32 Bit) 3\nanzahl_arten\n\n\n\n\n\n\n\n\n\n\nTabelle 2.3: Spalten für baeume_straeucher\n\n\n\n\n\n\n\n\n\n\n\nBezeichnung / Alias\nDatentyp\nSpaltenname\nEigenschaften\n\n\n\n\nErfassungsdatum\nDate\nerfassungsdatum\n\n\n\nArt\nText (String)\nart\nLength: 0\n\n\nWuchshöhe\nDecimal Number (real) 4\nwuchshoehe\n\n\n\nBemerkung\nText (String)\nbemerkung\nLength: 0\n\n\n\n\n\n\nDetailliertere Informationen zu den Datentypen in Geopackages findet ihr in Tabelle 6.1",
+    "text": "2.4 Schritt 3: Attribute definieren\nDamit wir die Beobachtungen, die wir im Feld machen auch festhalten können, brauchen wir Spalten (sog. Attribute). Diese Attribute (engl: Fields) werden pro Tabelle separat erstellt. Für jede Spalte wird ein Datentyp ausgewählt, wobei folgende Datentypen am häufigsten sind:\n\nNummerische Werte (mit / ohne Nachkommastellen)\nText\nDatum (mit / ohne Uhrzeit)\nBilder\n\nSpalten können entweder direkt während der Erstellung der Tabelle (siehe Abbildung 2.2) oder auch nachträglich hinzugefügt werden. Für ein nachträgliches erfassen muss man im Browser Panel das Geopackage “ausklappen”, so dass die Fields sichtbar sind (siehe Abbildung 2.3 (a)). Mit Rechtsklick auf Fields → Add New Field können weitere Spalten hinzugefügt werden, mit Rechtsklick auf eine bestehendes “Field” kann dieses editiert (z.B. umbenannt) werden.\n\n\n\n\n\n\n\n\n\n\n\n(a) Im Browser Panel können Geopackages nachträglich editiert werden.\n\n\n\n\n\n\n\n\n\n\n\n(b) Für jedes Field muss ein Name und ein Datentyp definiert werden. Ein Alias sowie ein Kommentar helfen das Attribut besser zu beschreiben\n\n\n\n\n\n\n\nAbbildung 2.3\n\n\n\nDie Spalten für für die Tabelle wiesen_weiden sind in Tabelle 2.2 beschreiben. Die Spalten für die Tabelle baeume_straeucher sind in Tabelle 2.3 dargestellt.\nDie Namen der Felder sollten keine Umlaute, Leerschläge oder Sonderzeichen enthalten. Allerdings kann pro Feld ein Alias definiert werden: Dabei handelt es sich um eine alternative Bezeichnung, bei dem diese Regeln nicht gelten.\n\n\n\nTabelle 2.2: Spalten für wiesen_weiden\n\n\n\n\n\n\n\n\n\n\n\nBezeichnung / Alias\nDatentyp\nSpaltenname\nEigenschaften\n\n\n\n\nErfassungsdatum\nDate\nerfassungsdatum\n\n\n\nTyp\nText (String) 1\ntyp\nLength: 02\n\n\nAnzahl Arten\nInteger (32 Bit) 3\nanzahl_arten\n\n\n\n\n\n\n\n\n\n\nTabelle 2.3: Spalten für baeume_straeucher\n\n\n\n\n\n\n\n\n\n\n\nBezeichnung / Alias\nDatentyp\nSpaltenname\nEigenschaften\n\n\n\n\nErfassungsdatum\nDate\nerfassungsdatum\n\n\n\nArt\nText (String)\nart\nLength: 0\n\n\nWuchshöhe\nDecimal Number (real) 4\nwuchshoehe\n\n\n\nBemerkung\nText (String)\nbemerkung\nLength: 0\n\n\n\n\n\n\nDetailliertere Informationen zu den Datentypen in Geopackages findet ihr in Tabelle 5.1",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Projekt aufsetzen</span>"
     ]
@@ -194,7 +194,7 @@
     "href": "qfield-cloud-management.html",
     "title": "4  QField Cloud Management",
     "section": "",
-    "text": "4.1 Organisationsmitglieder hinzufügen\nWir haben an der ZHAW eine QField Cloud Organization mit Academic pricing. Dies beinhaltet unter anderem folgendes (siehe auch hier bzw. hier):\nUnsere Organisation heisst ZHAW, die URL für unsere Organisation lautet:\nhttps://app.qfield.cloud/a/ZHAW/\nWir können Mitglieder zu Organisation via Emailadresse oder Benutzernamen hinzufügen.\nBei Hinzufügen via Email: Falls kein QField-Cloud Account unter der angegebenen Emailadresse registriert ist, wird eine Einladung zur Registrierung an die angegebene Mailadresse verschickt.",
+    "text": "4.1 Organisationsmitglieder hinzufügen\nWir haben an der ZHAW eine QField Cloud Organization mit Academic pricing. Dies beinhaltet unter anderem folgendes (siehe auch hier bzw. hier):\nUnsere Organisation heisst ZHAW, die URL für unsere Organisation lautet:\nhttps://app.qfield.cloud/a/ZHAW/",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>QField Cloud Management</span>"
     ]
@@ -204,7 +204,7 @@
     "href": "qfield-cloud-management.html#organisationsmitglieder-hinzufügen",
     "title": "4  QField Cloud Management",
     "section": "",
-    "text": "Einzelne Nutzer können via dem Browserinterface hinzugefügt werden, siehe https://app.qfield.cloud/settings/ZHAW/members.\nMehrere Nutzer (z.B. eine ganze Schulklasse oder alle IUNR Mitarbeiter) können via der QField Cloud API hinzugefügt werden, siehe dazu Kapitel 6.2",
+    "text": "Einzelne Mitglieder können wir via Emailadresse oder Benutzernamen zu unserer Organistation hinzufügen.\n\nURL: https://app.qfield.cloud/settings/ZHAW/members\nFalls kein QField-Cloud Account unter der angegebenen Emailadresse registriert ist, wird eine Einladung zur Registrierung an die angegebene Mailadresse verschickt.\n\nMehrere Nutzer (z.B. eine ganze Schulklasse oder alle IUNR Mitarbeiter) können via der QField Cloud API hinzugefügt werden, siehe dazu Kapitel 5.2.\n\nAktuell können auf diesem Wege nur Mitglieder hinzugefügt werden, welche bereits einen QField Cloud Account besitzen. Zudem muss uns der entsprechende Benutzername bekannt sein. (Dies kann sich in Zukunft noch ändern, Nils hat einen Feature Request gemacht)\nWer die die QField Cloud API selbst nicht verwenden möchte, kann eine CSV mit den Teilnehmern an Nils schicken",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>QField Cloud Management</span>"
     ]
@@ -240,63 +240,43 @@
     ]
   },
   {
-    "objectID": "faq.html",
-    "href": "faq.html",
-    "title": "5  FAQ",
-    "section": "",
-    "text": "5.1 Warum muss das QGIS Projekt zuerst in ein QField Projekt konvertiert werden?\n💡 Kurzantwort:\nWeil QField nicht direkt mit einem normalen QGIS-Projekt arbeiten kann – es braucht eine speziell vorbereitete, mobile-kompatible Version des Projekts.\n🧠 Etwas ausführlicher:\nEin typisches QGIS-Projekt auf dem Desktop enthält:\n🔄 Beim Konvertieren in ein QField-Projekt passiert:\n📦 Ergebnis:\nEin QField-kompatibles Paket, das:\n📌 Fazit:\nDas Konvertieren ist nötig, um sicherzustellen, dass alle Daten und Projekteinstellungen korrekt und kompatibel mit der mobilen Umgebung von QField sind.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>FAQ</span>"
-    ]
-  },
-  {
-    "objectID": "faq.html#warum-muss-das-qgis-projekt-zuerst-in-ein-qfield-projekt-konvertiert-werden",
-    "href": "faq.html#warum-muss-das-qgis-projekt-zuerst-in-ein-qfield-projekt-konvertiert-werden",
-    "title": "5  FAQ",
-    "section": "",
-    "text": "Verlinkte Daten (z. B. Pfade zu Dateien auf deiner Festplatte)\nGroße Raster- oder Vektorlayer\nFormate, die QField nicht direkt unterstützt (z. B. CSVs, Layer mit relativen Pfaden, komplexe Datenbanken)\nStyling, das für den mobilen Einsatz nicht optimiert ist\n\n\n\nKopieren aller notwendigen Daten – Alle Layer, die du brauchst, werden lokal zusammengeführt (also z. B. von /home/user/mydata/layer.shp → in den zentralen QField-Ordner)\nAnpassung von Pfaden – QField kann keine absoluten Pfade lesen – also werden Pfade in deinem Projekt relativ gemacht\nOptimierung von Layern – große Dateien werden ggf. geklont, vereinfacht oder zugeschnitten (z. B. Rasterschnitt auf Projektgebiet)\nAnpassung der Formularlogik und Offline-Funktionalität – z. B. vorbereitete Eingabemasken, Offline-Modus für Geopackages etc.\n\n\n\n\nauf einem Android-/iOS-Gerät funktioniert\nalle Daten enthält\nbereit ist für Upload zu QFieldCloud oder für manuellen Export auf ein Gerät",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>FAQ</span>"
-    ]
-  },
-  {
-    "objectID": "faq.html#kann-ich-das-qgis-projekt-nach-der-konvertierung-löschen-und-einfach-mit-dem-qfield-projekt-weiterarbeiten",
-    "href": "faq.html#kann-ich-das-qgis-projekt-nach-der-konvertierung-löschen-und-einfach-mit-dem-qfield-projekt-weiterarbeiten",
-    "title": "5  FAQ",
-    "section": "5.2 Kann ich das QGIS Projekt nach der Konvertierung löschen und einfach mit dem QField projekt weiterarbeiten?",
-    "text": "5.2 Kann ich das QGIS Projekt nach der Konvertierung löschen und einfach mit dem QField projekt weiterarbeiten?\nNein, du solltest das ursprüngliche QGIS-Projekt nicht löschen.\n🧠 Warum nicht?\nDas QField-Projekt ist nur eine Kopie, die für den Feldeinsatz vorbereitet wurde. Es ist nicht dafür gedacht, dauerhaft dein Hauptprojekt zu ersetzen oder weiterentwickelt zu werden.\nHier sind die wichtigsten Gründe:\n\n1. Das QField-Projekt ist technisch gesehen keine vollwertige Entwicklungsumgebung.\n\nEs enthält nur das Nötigste für die mobile Nutzung.\nEs fehlen evtl. Hintergrunddaten, externe Ressourcen, komplexe Layer oder Plugins.\nQField-Projekte sind darauf ausgelegt, nur Felddaten zu erfassen, nicht das Projektkonzept weiterzuentwickeln.\n\n2. Änderungen aus QField sollen in das Original-QGIS-Projekt zurückfließen.\n\nDu arbeitest im Feld (QField), synchronisierst zurück in dein QGIS-Projekt.\nWenn du das QGIS-Projekt gelöscht hast, gibt es keinen Ort mehr, an den du die Änderungen sauber zurückspielen kannst.\n\n3. Nur in QGIS kannst du das Projekt vollständig bearbeiten.\n\nNeue Layer hinzufügen\nStyling ändern\nAnalysen durchführen\nKartenlayouts gestalten\n\n4. Gefahr von Versionskonflikten und Datenverlust\n\nWenn du das QGIS-Projekt löscht und nur noch mit dem QField-Projekt arbeitest, verlierst du:\n\nDeinen Arbeitsstand\nDeine Projektstruktur\nMöglicherweise deine Datenquellen",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>FAQ</span>"
-    ]
-  },
-  {
     "objectID": "anhang.html",
     "href": "anhang.html",
-    "title": "6  Anhang",
+    "title": "5  Anhang",
     "section": "",
-    "text": "6.1 Anhang 1",
+    "text": "5.1 Anhang 1",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anhang</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Anhang</span>"
     ]
   },
   {
     "objectID": "anhang.html#anhang-1",
     "href": "anhang.html#anhang-1",
-    "title": "6  Anhang",
+    "title": "5  Anhang",
     "section": "",
-    "text": "Tabelle 6.1: Geopackage Data Types. Quelle: geopackage.org\n\n\n\n\n\n\n\n\n\nData Type\nSize and Description\n\n\n\n\nINTEGER 32 bit\n32-bit signed two’s complement integer. Stored as SQLite INTEGER with values in the range [-2147483648, 2147483647].\n\n\nINTEGER 64 bit\n64-bit signed two’s complement integer. Stored as SQLite INTEGER with values in the range [-9223372036854775808, 9223372036854775807].\n\n\nREAL\n64-bit IEEE floating point number. Stored as SQLite REAL.\n\n\nTEXT{(maxchar_count)}\nVariable length string encoded in either UTF-8 or UTF-16. The optional maxchar_count defines the maximum number of characters in the string. If not specified, the length is unbounded. Stored as SQLite TEXT.\n\n\nBLOB{(max_size)}\nVariable length binary data. The optional max_size defines the maximum number of bytes in the blob. If not specified, the length is unbounded.\n\n\nDATE\nISO 8601 date string in the form YYYY-MM-DD encoded in either UTF-8 or UTF-16. Stored as SQLite TEXT (see TEXT above).\n\n\nDATETIME\nISO-8601 date/time string in the form YYYY-MM-DDTHH:MM:SS.SSSZ with T separator character and Z suffix for coordinated universal time (UTC) encoded in either UTF-8 or UTF-16. Stored as SQLite TEXT (see TEXT above).",
+    "text": "Tabelle 5.1: Geopackage Data Types. Quelle: geopackage.org\n\n\n\n\n\n\n\n\n\nData Type\nSize and Description\n\n\n\n\nINTEGER 32 bit\n32-bit signed two’s complement integer. Stored as SQLite INTEGER with values in the range [-2147483648, 2147483647].\n\n\nINTEGER 64 bit\n64-bit signed two’s complement integer. Stored as SQLite INTEGER with values in the range [-9223372036854775808, 9223372036854775807].\n\n\nREAL\n64-bit IEEE floating point number. Stored as SQLite REAL.\n\n\nTEXT{(maxchar_count)}\nVariable length string encoded in either UTF-8 or UTF-16. The optional maxchar_count defines the maximum number of characters in the string. If not specified, the length is unbounded. Stored as SQLite TEXT.\n\n\nBLOB{(max_size)}\nVariable length binary data. The optional max_size defines the maximum number of bytes in the blob. If not specified, the length is unbounded.\n\n\nDATE\nISO 8601 date string in the form YYYY-MM-DD encoded in either UTF-8 or UTF-16. Stored as SQLite TEXT (see TEXT above).\n\n\nDATETIME\nISO-8601 date/time string in the form YYYY-MM-DDTHH:MM:SS.SSSZ with T separator character and Z suffix for coordinated universal time (UTC) encoded in either UTF-8 or UTF-16. Stored as SQLite TEXT (see TEXT above).",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anhang</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Anhang</span>"
     ]
   },
   {
     "objectID": "anhang.html#sec-python-sdk",
     "href": "anhang.html#sec-python-sdk",
-    "title": "6  Anhang",
-    "section": "6.2 Anhang 2",
-    "text": "6.2 Anhang 2\nEinzelne Nutzer können können sehr gut via dem Webinterface von QField Cloud hinzugefügt werden. Um mehrere Nutzer zu importieren, können wir die QFieldCloud API verwenden. Diese API kann man auf verschiedene Arten benutzen:\n\nQFieldCloud SDK via Python (Dokumentation)\nQFieldCloud SDK via Kommandozeile (Dokumentation)\n(RestAPI von der Kommandozeile (Dokumentation))\n\nIn den Beispielen verwenden wir die SDK via Python. Installation: pip install qfieldcloud-sdk\n\n\n\n\n\n\nHinweis\n\n\n\nAktuell können nur bereits existierende QField Cloud Nutzer via der API unserer Organisation hinzugefügt werden. Das Hinzufügen funktioniert nur via Benutzername, nicht via Emailadresse. rata hat am 26.06.2025 einen Feature request gemacht, welches das Hinzufügen via Emailadresse ermöglichen soll. Bis dieses Feature implementiert ist, müssen die Studenten zuerst QField Cloud Accounts erstellen und uns im Anschluss die Benutzernamen mitteilen.\n\n\n\nEin einzelner Nutzer der Organisation hinzufügen\nimport getpass\nfrom qfieldcloud_sdk import sdk\n\nuser = getpass.getpass(\"Username:\")\npasswd = getpass.getpass(\"Password:\")\n\nclient = sdk.Client(url=\"https://app.qfield.cloud/api/v1/\")\nclient.login(user, passwd)\n\n# Der Nutzer \"BENUTZERNAME\" muss bereits existieren!\n# \"BENUTZERNAME\" darf keine Emailadresse sein :-(\nclient.add_organization_member(\"ZHAW\", \"BENUTZERNAME\", \"member\", False) \n\n\nMehrere Nutzer der Organisation hinzufügen\nUm mehrere Mitglieder unserer Organisation hinzuzufügen, braucht es eine CSV Datei mit folgender Struktur:\nusername,org_role,proj_role\nninja_1,member,reader\nninja_2,member,editor\nninja_3,admin,manager\nninja_4,member,reporter\nHier der Python code für das Importieren via CSV:\nimport requests, csv\nfrom qfieldcloud_sdk import sdk\n\nclient = sdk.Client(\n    url=\"https://app.qfield.cloud/api/v1/\"\n)\nclient.login(username='myuser', password='mypassword')\n\ndef read_csv(csv_path: str, organization: str, project_id: str, is_public: bool):\n    with open(csv_path, mode=\"r\", newline=\"\", encoding=\"utf-8\") as csvfile:\n        reader = csv.DictReader(csvfile)\n        for user in reader:\n            try:\n                client.add_organization_member(\n                    organization, user[\"username\"], user[\"org_role\"], is_public\n                )\n                print(\n                    f\"Added member {user['username']} with role {user['org_role']} in {organization}\"\n                )\n            except requests.exceptions.RequestException:\n                print(\"Oops!\")\n\n\nif __name__ == \"__main__\":\n    organization = \"ZHAW\"\n    is_public = False\n    csv_path = 'path/to/files/surveyors.csv'\n    read_csv(csv_path, organization, project_id, is_public)",
+    "title": "5  Anhang",
+    "section": "5.2 Anhang 2",
+    "text": "5.2 Anhang 2\nEinzelne Nutzer können können sehr gut via dem Webinterface von QField Cloud hinzugefügt werden. Um mehrere Nutzer zu importieren, können wir die QFieldCloud API verwenden. Diese API kann man auf verschiedene Arten benutzen:\n\nQFieldCloud SDK via Python (Dokumentation)\nQFieldCloud SDK via Kommandozeile (Dokumentation)\n(RestAPI von der Kommandozeile (Dokumentation))\n\nIn den Beispielen verwenden wir die SDK via Python. Installation: pip install qfieldcloud-sdk\n\n\n\n\n\n\nHinweis\n\n\n\nAktuell können nur bereits existierende QField Cloud Nutzer via der API unserer Organisation hinzugefügt werden. Das Hinzufügen funktioniert nur via Benutzername, nicht via Emailadresse. rata hat am 26.06.2025 einen Feature request gemacht, welches das Hinzufügen via Emailadresse ermöglichen soll. Bis dieses Feature implementiert ist, müssen die Studenten zuerst QField Cloud Accounts erstellen und uns im Anschluss die Benutzernamen mitteilen.\n\n\n\nEin einzelner Nutzer der Organisation hinzufügen\nimport getpass\nfrom qfieldcloud_sdk import sdk\n\nuser = getpass.getpass(\"Username:\")\npasswd = getpass.getpass(\"Password:\")\n\nclient = sdk.Client(url=\"https://app.qfield.cloud/api/v1/\")\nclient.login(user, passwd)\n\n# Der Nutzer \"BENUTZERNAME\" muss bereits existieren!\n# \"BENUTZERNAME\" darf keine Emailadresse sein :-(\nclient.add_organization_member(\"ZHAW\", \"BENUTZERNAME\", \"member\", False) \n\n\nMehrere Nutzer der Organisation hinzufügen\nUm mehrere Mitglieder unserer Organisation hinzuzufügen, braucht es eine CSV Datei mit folgender Struktur:\nusername,org_role,proj_role\nninja_1,member,reader\nninja_2,member,editor\nninja_3,admin,manager\nninja_4,member,reporter\nHier der Python code für das Importieren via CSV:\nimport requests, csv\nfrom qfieldcloud_sdk import sdk\n\nclient = sdk.Client(\n    url=\"https://app.qfield.cloud/api/v1/\"\n)\nclient.login(username='myuser', password='mypassword')\n\ndef read_csv(csv_path: str, organization: str, project_id: str, is_public: bool):\n    with open(csv_path, mode=\"r\", newline=\"\", encoding=\"utf-8\") as csvfile:\n        reader = csv.DictReader(csvfile)\n        for user in reader:\n            try:\n                client.add_organization_member(\n                    organization, user[\"username\"], user[\"org_role\"], is_public\n                )\n                print(\n                    f\"Added member {user['username']} with role {user['org_role']} in {organization}\"\n                )\n            except requests.exceptions.RequestException:\n                print(\"Oops!\")\n\n\nif __name__ == \"__main__\":\n    organization = \"ZHAW\"\n    is_public = False\n    csv_path = 'path/to/files/surveyors.csv'\n    read_csv(csv_path, organization, project_id, is_public)",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anhang</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Anhang</span>"
+    ]
+  },
+  {
+    "objectID": "anhang.html#faq",
+    "href": "anhang.html#faq",
+    "title": "5  Anhang",
+    "section": "5.3 FAQ",
+    "text": "5.3 FAQ\n\nWarum muss das QGIS Projekt zuerst in ein QField Projekt konvertiert werden?\nWeil QField nicht direkt mit einem normalen QGIS-Projekt arbeiten kann – es braucht eine speziell vorbereitete, mobile-kompatible Version des Projekts.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Anhang</span>"
     ]
   }
 ]

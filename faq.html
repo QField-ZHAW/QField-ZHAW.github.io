@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; FAQ – Erfassen von Geodaten im Feld mit [qfield]{.q} und [qfield]{.q} Cloud</title>
+<title>faq – Erfassen von Geodaten im Feld mit [qfield]{.q} und [qfield]{.q} Cloud</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./faq.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">FAQ</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./faq.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">faq.html</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
@@ -141,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./faq.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">FAQ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">faq.html</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -155,105 +155,17 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Inhaltsverzeichnis</h2>
-   
-  <ul>
-  <li><a href="#warum-muss-das-qgis-projekt-zuerst-in-ein-qfield-projekt-konvertiert-werden" id="toc-warum-muss-das-qgis-projekt-zuerst-in-ein-qfield-projekt-konvertiert-werden" class="nav-link active" data-scroll-target="#warum-muss-das-qgis-projekt-zuerst-in-ein-qfield-projekt-konvertiert-werden"><span class="header-section-number">5.1</span> Warum muss das QGIS Projekt zuerst in ein QField Projekt konvertiert werden?</a></li>
-  <li><a href="#kann-ich-das-qgis-projekt-nach-der-konvertierung-löschen-und-einfach-mit-dem-qfield-projekt-weiterarbeiten" id="toc-kann-ich-das-qgis-projekt-nach-der-konvertierung-löschen-und-einfach-mit-dem-qfield-projekt-weiterarbeiten" class="nav-link" data-scroll-target="#kann-ich-das-qgis-projekt-nach-der-konvertierung-löschen-und-einfach-mit-dem-qfield-projekt-weiterarbeiten"><span class="header-section-number">5.2</span> Kann ich das QGIS Projekt nach der Konvertierung löschen und einfach mit dem QField projekt weiterarbeiten?</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">FAQ</span></h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
 
-
-<section id="warum-muss-das-qgis-projekt-zuerst-in-ein-qfield-projekt-konvertiert-werden" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="warum-muss-das-qgis-projekt-zuerst-in-ein-qfield-projekt-konvertiert-werden"><span class="header-section-number">5.1</span> Warum muss das QGIS Projekt zuerst in ein QField Projekt konvertiert werden?</h2>
-<p><strong>💡 Kurzantwort:</strong></p>
-<p>Weil QField <strong>nicht direkt mit einem normalen QGIS-Projekt arbeiten kann</strong> – es braucht eine speziell vorbereitete, mobile-kompatible Version des Projekts.</p>
-<p><strong>🧠 Etwas ausführlicher:</strong></p>
-<p>Ein typisches QGIS-Projekt auf dem Desktop enthält:</p>
-<ul>
-<li>Verlinkte Daten (z. B. Pfade zu Dateien auf deiner Festplatte)</li>
-<li>Große Raster- oder Vektorlayer</li>
-<li>Formate, die QField nicht direkt unterstützt (z. B. CSVs, Layer mit relativen Pfaden, komplexe Datenbanken)</li>
-<li>Styling, das für den mobilen Einsatz nicht optimiert ist</li>
-</ul>
-<p>🔄 Beim Konvertieren in ein QField-Projekt passiert:</p>
-<ol type="1">
-<li><p><strong>Kopieren aller notwendigen Daten</strong> – Alle Layer, die du brauchst, werden <strong>lokal zusammengeführt</strong> (also z. B. von <code>/home/user/mydata/layer.shp</code> → in den zentralen QField-Ordner)</p></li>
-<li><p><strong>Anpassung von Pfaden</strong> – QField kann keine absoluten Pfade lesen – also werden Pfade in deinem Projekt <strong>relativ</strong> gemacht</p></li>
-<li><p><strong>Optimierung von Layern</strong> – große Dateien werden ggf. geklont, vereinfacht oder zugeschnitten (z. B. Rasterschnitt auf Projektgebiet)</p></li>
-<li><p><strong>Anpassung der Formularlogik und Offline-Funktionalität</strong> – z. B. vorbereitete Eingabemasken, Offline-Modus für Geopackages etc.</p></li>
-</ol>
-<p><strong>📦 Ergebnis:</strong></p>
-<p>Ein <strong>QField-kompatibles Paket</strong>, das:</p>
-<ul>
-<li>auf einem Android-/iOS-Gerät funktioniert</li>
-<li>alle Daten enthält</li>
-<li>bereit ist für Upload zu <strong>QFieldCloud</strong> oder für manuellen Export auf ein Gerät</li>
-</ul>
-<p><strong>📌 Fazit:</strong></p>
-<p>Das Konvertieren ist nötig, um sicherzustellen, dass <strong>alle Daten</strong> und <strong>Projekteinstellungen</strong> korrekt und <strong>kompatibel</strong> mit der mobilen Umgebung von QField sind.</p>
-</section>
-<section id="kann-ich-das-qgis-projekt-nach-der-konvertierung-löschen-und-einfach-mit-dem-qfield-projekt-weiterarbeiten" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="kann-ich-das-qgis-projekt-nach-der-konvertierung-löschen-und-einfach-mit-dem-qfield-projekt-weiterarbeiten"><span class="header-section-number">5.2</span> Kann ich das QGIS Projekt nach der Konvertierung löschen und einfach mit dem QField projekt weiterarbeiten?</h2>
-<p><strong>Nein, du solltest das ursprüngliche QGIS-Projekt nicht löschen.</strong></p>
-<p><strong>🧠 Warum nicht?</strong></p>
-<p>Das <strong>QField-Projekt ist nur eine Kopie</strong>, die für den Feldeinsatz vorbereitet wurde. Es ist <strong>nicht dafür gedacht</strong>, dauerhaft dein Hauptprojekt zu ersetzen oder weiterentwickelt zu werden.</p>
-<p>Hier sind die wichtigsten Gründe:</p>
-<ul>
-<li><strong>1. Das QField-Projekt ist technisch gesehen keine vollwertige Entwicklungsumgebung.</strong>
-<ul>
-<li>Es enthält <strong>nur das Nötigste für die mobile Nutzung</strong>.</li>
-<li>Es fehlen evtl. Hintergrunddaten, externe Ressourcen, komplexe Layer oder Plugins.</li>
-<li>QField-Projekte sind darauf ausgelegt, <strong>nur Felddaten zu erfassen</strong>, nicht das Projektkonzept weiterzuentwickeln.</li>
-</ul></li>
-<li><strong>2. Änderungen aus QField sollen in das Original-QGIS-Projekt zurückfließen.</strong>
-<ul>
-<li>Du arbeitest im Feld (QField), <strong>synchronisierst zurück</strong> in dein QGIS-Projekt.</li>
-<li>Wenn du das QGIS-Projekt gelöscht hast, <strong>gibt es keinen Ort mehr</strong>, an den du die Änderungen sauber zurückspielen kannst.</li>
-</ul></li>
-<li><strong>3. Nur in QGIS kannst du das Projekt vollständig bearbeiten.</strong>
-<ul>
-<li>Neue Layer hinzufügen</li>
-<li>Styling ändern</li>
-<li>Analysen durchführen</li>
-<li>Kartenlayouts gestalten</li>
-</ul></li>
-<li><strong>4. Gefahr von Versionskonflikten und Datenverlust</strong>
-<ul>
-<li>Wenn du das QGIS-Projekt löscht und nur noch mit dem QField-Projekt arbeitest, verlierst du:
-<ul>
-<li>Deinen Arbeitsstand</li>
-<li>Deine Projektstruktur</li>
-<li>Möglicherweise deine Datenquellen</li>
-</ul></li>
-</ul></li>
-</ul>
-
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
